@@ -1,6 +1,6 @@
 # BalmJS template - vue-wechat-mp
 
-> A Vue.js project for WeChat miniprogram
+> A Vue.js project for WeChat Mini Program
 
 ## Installation
 

@@ -10,7 +10,7 @@
       "type": "string",
       "required": true,
       "label": "Project description",
-      "default": "A Vue.js project for WeChat miniprogram"
+      "default": "A Vue.js project for WeChat Mini Program"
     },
     "author": {
       "type": "string",
