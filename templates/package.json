@@ -1,0 +1,28 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "description": "{{ description }}",
+  "author": "{{ author }}",
+  "scripts": {
+    "dev": "gulp --silent",
+    "build:web": "gulp -p --silent",
+    "build:mp": "gulp -p --silent -mp -ssr",
+    "prod": "npm run build:web && npm run build:mp",
+    "test": "jest"
+  },
+  "dependencies": {
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "balm": "^2.8.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.2.1",
+    "gulp": "^4.0.2",
+    "mp-webpack-plugin": "^0.8.2",
+    "vue-loader": "^15.9.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "private": true
+}
