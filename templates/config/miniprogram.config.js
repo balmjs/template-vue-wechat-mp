@@ -23,8 +23,8 @@ module.exports = {
     navigationBarTitleText: 'miniprogram-project'
   },
   global: {
-    rem: true, // 是否支持 rem
-    pageStyle: true // 是否支持修改页面样式
+    // rem: true, // 是否支持 rem
+    // pageStyle: true // 是否支持修改页面样式
   },
   projectConfig: {
     appid: '',

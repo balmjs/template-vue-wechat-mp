@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
+const balm = require('balm');
 const env = require('./env');
 
 // Documentation - http://balmjs.com/docs/v2/config/
@@ -47,6 +48,10 @@ module.exports = {
           ]
         : [])
     ],
+    // extractCss: {
+    //   enabled: balm.config.env.isProd,
+    //   prefix: 'extra-'
+    // },
     alias: {
       vue$: 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, '..', 'app', 'scripts')
