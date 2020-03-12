@@ -1,8 +1,10 @@
+const demoRoutes = require('./demo-routes');
+
 module.exports = {
   origin: 'https://test.miniprogram.com',
-  entry: '/test/aaa',
+  entry: '/',
   router: {
-    index: ['/test/aaa', '/test/bbb']
+    index: ['/'].concat(demoRoutes)
   },
   redirect: {
     notFound: 'index',
