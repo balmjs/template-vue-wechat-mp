@@ -11,12 +11,18 @@ balm.go(mix => {
         extname: '.wxss'
       }
     });
-    mix.remove('./dist/mp/common/css/*.css');
+
+    // Fuck MP bug
+    mix.replace('./dist/mp/common/css/*.wxss', './dist/mp/common/css', {
+      substr: /(\.weui-article \*,)|(\*{margin:0;padding:0})|(\.weui-article \*{max-width:100%;box-sizing:border-box})/g,
+      replacement: ''
+    });
+    mix.replace('./dist/mp/common/css/*.wxss', './dist/mp/common/css', {
+      substr: /class\*=weui-icon-/g,
+      replacement: 'class^=weui-icon-'
+    });
+
     // For css entry
     mix.copy('./app/index.wxss', './dist/mp/pages/main');
-
-    // For test data
-    // mix.copy('./app/data/*', './dist/web/api');
-    // mix.copy('./app/data/*', './dist/mp/api');
   }
 });

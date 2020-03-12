@@ -1,19 +1,11 @@
+@use '../global/index' as global;
+
 .container {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  font-size: $fontSize-m;
+  font-size: global.$fontSize-m;
   margin-top: 10px;
-  text-align: center;
-  color: $primaryColor;
-  background-color: $primaryBgColor;
+  color: global.$primaryColor;
+  background-color: global.$primaryBgColor;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.content {
-  padding: 10px 20px;
-  text-align: left;
-}
-
-.logo {
-  width: 200px;
 }

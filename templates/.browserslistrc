@@ -1,3 +1,6 @@
 > 1%
 last 2 versions
-not ie <= 8
+Firefox ESR
+not dead
+ios 8
+android 4.4

@@ -1,23 +1,11 @@
 <template>
   <div class="container">
-    <img class="logo" :src="logo" alt />
-    <hello></hello>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from '@/views/components/hello';
-import logo from '@/assets/logo.png';
-
 export default {
-  name: 'app',
-  components: {
-    Hello
-  },
-  data() {
-    return {
-      logo
-    };
-  }
+  name: 'app'
 };
 </script>
