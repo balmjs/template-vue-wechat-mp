@@ -14,8 +14,6 @@ yarn
 npm i
 ```
 
-> (Recommended) [BalmUI](https://material.balmjs.com/) for your project
-
 ## Enjoy
 
 ```sh
@@ -26,13 +24,7 @@ npm run dev
 npm run prod
 ```
 
-- 进入小程序代码目录，安装小程序依赖包：
-
-```sh
-cd dist/mp
-npm install
-```
-
-- 最后使用小程序开发者工具直接打开此目录，并点击 **工具** 菜单下的 **构建 `npm`** 按钮，之后便可预览构建好的小程序了。
+- 使用小程序开发者工具导入项目 `dist/mp`，之后便可预览构建好的小程序了。
 
 > thx [BalmJS](https://balmjs.com/)
+> thx [kbone](https://github.com/Tencent/kbone)
