@@ -1,4 +1,4 @@
-# BalmJS template - vue-wechat-mp
+# BalmJS template - `vue-wechat-mp`
 
 > A Vue.js project for WeChat Mini Program
 
@@ -24,6 +24,6 @@ npm run dev
 npm run prod
 ```
 
-- 使用小程序开发者工具导入项目 `dist/mp`，之后便可预览构建好的小程序了。
+> 使用小程序开发者工具导入项目 `dist/mp`，之后便可预览构建好的小程序了。
 
-> thx [BalmJS](https://balmjs.com/) & [kbone](https://github.com/Tencent/kbone)
+- thx [BalmJS](https://balmjs.com/) & [kbone](https://github.com/Tencent/kbone)
