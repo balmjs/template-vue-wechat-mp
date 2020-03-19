@@ -1,26 +1,23 @@
 const demoRoutes = require('./demo-routes');
 
 module.exports = {
-  origin: 'https://test.miniprogram.com',
-  entry: '/',
+  origin: 'https://mp.balmjs.com',
+  entry: '/(home|index)?',
   router: {
     index: ['/'].concat(demoRoutes)
   },
   redirect: {
-    notFound: 'index',
-    accessDenied: 'index'
+    notFound: 'home',
+    accessDenied: 'home'
   },
   generate: {
     globalVars: [],
     autoBuildNpm: 'npm'
   },
   app: {
-    navigationBarTitleText: 'miniprogram-project'
+    navigationBarTitleText: 'BalmJS for MP'
   },
-  global: {
-    // rem: true, // 是否支持 rem
-    // pageStyle: true // 是否支持修改页面样式
-  },
+  global: {},
   projectConfig: {
     appid: '',
     projectname: 'vue-wechat-mp'

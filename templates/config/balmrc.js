@@ -1,9 +1,8 @@
-/*eslint-env node*/
 const path = require('path');
+const balm = require('balm');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
-const balm = require('balm');
 
 // Documentation - http://balmjs.com/docs/v2/config/
 // 中文文档 - https://balmjs.com/docs/v2/zh/config/
