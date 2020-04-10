@@ -5,8 +5,8 @@ import $http from '@/plugins/$http';
 import $bus from '@/plugins/$bus';
 import $store from '@/plugins/$store';
 
-import KboneUI from 'kbone-ui';
-import KboneAPI from 'kbone-api';
+import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
+import KboneAPI from 'kbone-api'; // 小程序API文档 - https://developers.weixin.qq.com/miniprogram/dev/api/
 
 Vue.config.productionTip = false;
 Vue.use($http);
