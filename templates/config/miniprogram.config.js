@@ -1,10 +1,9 @@
-const demoRoutes = require('./demo-routes');
-
+// Kbone 配置 - https://wechat-miniprogram.github.io/kbone/docs/config/
 module.exports = {
   origin: 'https://mp.balmjs.com',
   entry: '/(home|index)?',
   router: {
-    index: ['/'].concat(demoRoutes)
+    index: ['/']
   },
   redirect: {
     notFound: 'home',

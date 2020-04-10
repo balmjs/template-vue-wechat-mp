@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import defaultRoutes from './default';
-import uiDemosRoutes from './ui';
+import demosRoutes from './demos';
 
 Vue.use(VueRouter);
 
-let routes = defaultRoutes.concat(uiDemosRoutes);
+let routes = defaultRoutes.concat(demosRoutes);
 
 const router = new VueRouter({
   routes
