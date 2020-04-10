@@ -4,6 +4,7 @@ import router from '@/routes';
 import $http from '@/plugins/$http';
 import $bus from '@/plugins/$bus';
 import $store from '@/plugins/$store';
+import { isMP } from '@/config';
 
 import KboneUI from 'kbone-ui';
 import KboneAPI from 'kbone-api';
@@ -19,6 +20,13 @@ export default function createApp() {
   window.addEventListener('error', evt =>
     console.log("window.addEventListener('error') =>", evt)
   );
+
+  window.onload = function() {
+    if (isMP) {
+      document.documentElement.style.fontSize =
+        KboneAPI.getSystemInfoSync().screenWidth / 16 + 'px';
+    }
+  };
 
   Vue.config.productionTip = false;
   Vue.use($http);

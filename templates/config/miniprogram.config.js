@@ -16,7 +16,9 @@ module.exports = {
   app: {
     navigationBarTitleText: 'BalmJS for MP'
   },
-  global: {},
+  global: {
+    rem: true
+  },
   projectConfig: {
     appid: '',
     projectname: 'vue-wechat-mp'
