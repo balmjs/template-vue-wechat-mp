@@ -23,8 +23,9 @@ export default function createApp() {
 
   window.onload = function() {
     if (isMP) {
-      document.documentElement.style.fontSize =
-        KboneAPI.getSystemInfoSync().screenWidth / 16 + 'px';
+      const clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
+      const rootFontSize = `${clientWidth / 10}px`;
+      document.documentElement.style.fontSize = rootFontSize;
     }
   };
 

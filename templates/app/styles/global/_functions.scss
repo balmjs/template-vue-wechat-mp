@@ -1,5 +1,5 @@
-$rem: 37.5;
+$rootFontSize: 375 / 10;
 
-@function rem($size) {
-  @return ($size / $rem) + rem;
+@function px2rem($size) {
+  @return ($size / $rootFontSize) + rem;
 }
