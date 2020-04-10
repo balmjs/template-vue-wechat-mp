@@ -1,3 +1,4 @@
+import 'lib-flexible';
 import Vue from 'vue';
 import App from '@/views/layouts/app';
 import router from '@/routes';
