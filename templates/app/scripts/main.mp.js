@@ -6,8 +6,17 @@ import $bus from '@/plugins/$bus';
 import $store from '@/plugins/$store';
 import { isMP } from '@/config';
 
-import KboneUI from 'kbone-ui';
-import KboneAPI from 'kbone-api';
+import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
+import KboneAPI from 'kbone-api'; // 小程序API文档 - https://developers.weixin.qq.com/miniprogram/dev/api/
+
+function refreshRem() {
+  let clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
+  if (clientWidth > 540) {
+    clientWidth = 540;
+  }
+  const rootFontSize = `${clientWidth / 10}px`;
+  document.documentElement.style.fontSize = rootFontSize;
+}
 
 export default function createApp() {
   const container = document.createElement('div');
@@ -21,13 +30,17 @@ export default function createApp() {
     console.log("window.addEventListener('error') =>", evt)
   );
 
-  window.onload = function() {
-    if (isMP) {
-      const clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
-      const rootFontSize = `${clientWidth / 10}px`;
-      document.documentElement.style.fontSize = rootFontSize;
-    }
-  };
+  if (isMP) {
+    window.onload = refreshRem;
+
+    window.addEventListener('wxshow', refreshRem);
+
+    KboneAPI.onWindowResize(() => {
+      KboneAPI.nextTick(() => {
+        refreshRem();
+      });
+    });
+  }
 
   Vue.config.productionTip = false;
   Vue.use($http);
