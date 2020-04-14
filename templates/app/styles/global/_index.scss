@@ -1,3 +1,4 @@
-@forward './vendors';
+@use './reset';
+@use './vendors';
 @forward './vars';
 @forward './functions';

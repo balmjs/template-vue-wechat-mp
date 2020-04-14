@@ -1,7 +1,9 @@
+@use '../global/index' as global;
+
 .home-header {
   text-align: center;
 }
 
 .nav-item {
-  padding: 20px;
+  padding: global.px2rem(20);
 }
