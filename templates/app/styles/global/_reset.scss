@@ -1,8 +1,8 @@
 // NOTE: you can overwrite it for your miniprogram
 
 // Case 1: generate.appWxss = 'default'
-// @use './reset/app';
-// @use './reset/app.extra';
+// @use './reset/app' as app;
+// @use './reset/app.extra' as app-extra;
 
 // Case 2: generate.appWxss = 'display'
-// @use './reset/app.display';
+// @use './reset/app.display' as app-display;
