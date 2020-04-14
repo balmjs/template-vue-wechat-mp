@@ -1,4 +1,4 @@
-const appCssResetDir = 'app/styles/reset';
+const appCssResetDir = 'app/styles/app-reset';
 
 const wxss = ['app.extra', 'app', 'app.display'];
 
