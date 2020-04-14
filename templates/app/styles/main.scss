@@ -1,4 +1,4 @@
-@import 'global/index';
-@import 'layouts/main';
-@import 'pages/home';
-@import 'pages/demos';
+@use 'global/index';
+@use 'layouts/main';
+@use 'pages/home';
+@use 'pages/demos';
