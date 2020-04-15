@@ -12,13 +12,6 @@ export default {
     uiDemosNav() {
       return demosRoutes[0].children[0].children;
     }
-  },
-  methods: {
-    goto({ name }) {
-      this.$router.push({
-        name
-      });
-    }
   }
 };
 </script>
