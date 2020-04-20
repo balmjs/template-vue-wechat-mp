@@ -19,7 +19,9 @@
       </KCell>
     </KCells>
     <router-view v-else></router-view>
+    <br />
     <hr />
+    <br />
     <KButton @click="$router.back()">返回</KButton>
   </div>
 </template>

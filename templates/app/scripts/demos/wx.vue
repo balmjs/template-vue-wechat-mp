@@ -25,11 +25,19 @@
 </template>
 
 <script>
+import { isMP } from '@/config';
+
 export default {
   data() {
     return {
       result: null
     };
+  },
+  created() {
+    if (!(isMP && this.$api)) {
+      console.warn('请至“微信开发者工具”中测试 API');
+      this.$router.back();
+    }
   },
   methods: {
     async login() {
