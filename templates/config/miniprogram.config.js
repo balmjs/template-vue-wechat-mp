@@ -1,6 +1,8 @@
+const env = require('./env');
+
 // Kbone 配置 - https://wechat-miniprogram.github.io/kbone/docs/config/
 module.exports = {
-  origin: 'https://mp.balmjs.com',
+  origin: env.host,
   entry: '/(home|index)?',
   router: {
     index: ['/']
