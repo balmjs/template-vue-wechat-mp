@@ -34,7 +34,7 @@ export default {
     };
   },
   created() {
-    if (!(isMP && this.$api)) {
+    if (!isMP) {
       console.warn('请至“微信开发者工具”中测试 API');
       this.$router.back();
     }
