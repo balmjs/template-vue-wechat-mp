@@ -97,6 +97,7 @@ export default {
         url: 'test.php' // 仅为示例，并非真实的接口地址
       });
       console.log('success', res.data);
+      this.result = res.data;
     }
   }
 };
