@@ -12,7 +12,7 @@ module.exports = {
     accessDenied: 'home'
   },
   generate: {
-    appWxss: 'display',
+    appWxss: 'default',
     globalVars: [],
     autoBuildNpm: 'npm'
   },

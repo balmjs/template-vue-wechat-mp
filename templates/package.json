@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^0.6.3",
+    "kbone-ui": "^0.6.4",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.11",
     "vue-meta": "^2.3.3",
@@ -26,7 +26,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "gulp": "^4.0.2",
     "miragejs": "^0.1.37",
-    "mp-webpack-plugin": "^0.9.8",
+    "mp-webpack-plugin": "^0.9.11",
     "vue-loader": "^15.9.1",
     "vue-template-compiler": "^2.6.11"
   },
