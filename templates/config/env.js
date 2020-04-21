@@ -1,3 +1,4 @@
 module.exports = {
-  host: 'https://your.project.dev'
+  host: 'https://your.project.dev',
+  appid: ''
 };

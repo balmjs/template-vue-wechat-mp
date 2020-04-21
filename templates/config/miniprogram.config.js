@@ -23,7 +23,7 @@ module.exports = {
     rem: true
   },
   projectConfig: {
-    appid: '',
+    appid: env.appid,
     projectname: 'vue-wechat-mp'
   },
   packageConfig: {
