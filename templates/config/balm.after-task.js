@@ -1,6 +1,6 @@
 const balm = require('balm');
 const fs = require('fs');
-const myAppConfig = require('./mp.config');
+const myAppConfig = require('./miniprogram.config');
 const targetFile = 'dist/mp/app.json';
 
 function updateAppConfig() {

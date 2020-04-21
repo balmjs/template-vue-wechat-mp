@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('./env');
 
-// Documentation - http://balmjs.com/docs/v2/config/
+// Documentation - https://balmjs.com/docs/v2/config/
 // 中文文档 - https://balmjs.com/docs/v2/zh/config/
 module.exports = {
   server: {
@@ -45,7 +45,7 @@ module.exports = {
             new webpack.DefinePlugin({
               'process.env.isMiniprogram': process.env.isMiniprogram // 注入环境变量，用于业务代码判断
             }),
-            new MpPlugin(require('./miniprogram.config'))
+            new MpPlugin(require('./kbone.config'))
           ]
         : [])
     ],
