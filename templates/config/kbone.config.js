@@ -28,7 +28,7 @@ module.exports = {
     autoBuildNpm: 'npm'
   },
   app: {
-    navigationBarTitleText: 'BalmJS for MP'
+    navigationStyle: 'custom'
   },
   global: {
     rem: true

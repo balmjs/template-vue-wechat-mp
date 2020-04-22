@@ -9,7 +9,9 @@
         @back="goBack"
       ></top-status-bar>
     </template>
-    <router-view></router-view>
+    <div class="main-content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
