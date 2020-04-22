@@ -42,6 +42,8 @@ export default function createApp() {
     });
   }
 
+  Vue.prototype.isMP = isMP;
+
   Vue.config.productionTip = false;
   Vue.use($http);
   Vue.use($bus);

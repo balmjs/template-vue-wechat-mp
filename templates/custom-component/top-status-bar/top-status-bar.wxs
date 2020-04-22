@@ -1,0 +1,24 @@
+var linearGradient = function(isLinearGradient, sideOrCorner, colorStop) {
+  var result = '';
+
+  if (isLinearGradient && colorStop.length > 1) {
+    var gradientLineDefinition = sideOrCorner + ',';
+    var colorStopList = colorStop.join(',');
+    var value = sideOrCorner
+      ? gradientLineDefinition + colorStopList
+      : colorStopList;
+
+    result =
+      'background: -webkit-linear-gradient(' +
+      value +
+      '); background: linear-gradient(' +
+      value +
+      ');';
+  }
+
+  return result;
+};
+
+module.exports = {
+  linearGradient: linearGradient
+};
