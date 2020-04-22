@@ -2,7 +2,7 @@
   <div class="container">
     <template v-if="isMP">
       <top-status-bar
-        title="易班微社区"
+        title="BalmJS for MP"
         :hiddenGoBack="hiddenGoBack"
         bgColor="#A6D8FD"
         :colorStop="['#A6D8FD', '#6DB0FA']"
