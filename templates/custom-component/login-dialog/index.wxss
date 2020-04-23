@@ -1,0 +1,85 @@
+.login-dialog,
+.login-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.login-dialog {
+  display: none;
+  z-index: 7;
+}
+
+.login-dialog--open {
+  display: flex;
+}
+
+/* mask */
+.login-dialog__mask {
+  opacity: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.32);
+}
+
+.login-dialog--open .login-dialog__mask {
+  opacity: 1;
+}
+
+/* container */
+.login-dialog__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  height: 100%;
+  transform: scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.login-dialog--open .login-dialog__container {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* section */
+.login-dialog__section {
+  position: relative;
+  box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2),
+    0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: calc(100% - 32px);
+  min-width: 280px;
+  pointer-events: auto;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.login-dialog__action {
+  text-align: center;
+}
+
+@media (max-width: 592px) {
+  .login-dialog__section {
+    max-width: calc(100vw - 32px);
+  }
+}
+
+@media (min-width: 592px) {
+  .login-dialog__section {
+    max-width: 560px;
+  }
+}

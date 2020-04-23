@@ -12,6 +12,11 @@
     <div class="main-content">
       <router-view></router-view>
     </div>
+    <!-- <template v-if="isMP">
+      <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
+        <div>Hello BalmJS</div>
+      </login-dialog>
+    </template> -->
   </div>
 </template>
 

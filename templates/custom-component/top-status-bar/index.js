@@ -44,7 +44,6 @@ Component({
   },
   observers: {
     hiddenGoBack: function(value) {
-      // TODO: Setting data field "hiddenGoBack" to undefined is invalid.
       this.setData({
         showGoBack: !value
       });

@@ -1,0 +1,11 @@
+<view class="login-dialog{{ showDialog ? ' login-dialog--open' : '' }}">
+  <view class="login-dialog__container">
+    <view class="login-dialog__section">
+      <slot></slot>
+      <view class="login-dialog__action">
+        <button class="login-dialog__button" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">{{ buttonText }}</button>
+      </view>
+    </view>
+  </view>
+  <view class="login-dialog__mask"></view>
+</view>
