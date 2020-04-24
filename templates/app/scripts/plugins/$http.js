@@ -1,4 +1,5 @@
 import axios from 'axios';
+import bus from '@/store/bus';
 
 axios.defaults.baseURL = '/api';
 
@@ -13,10 +14,13 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   response => {
+    bus.$emit('off-loading');
+
     return response.data;
   },
   error => {
-    // TODO: error handler
+    bus.$emit('off-loading');
+
     return Promise.reject(error);
   }
 );

@@ -18,6 +18,7 @@ Component({
   },
   observers: {
     open: function(value) {
+      // TODO: 微信小程序bug？外部 AJAX 后 setData 不生效
       this.setData({
         showDialog: value
       });
@@ -43,6 +44,11 @@ Component({
           iv
         };
       }
+
+      // TODO: 临时解决 - 微信小程序bug？外部 AJAX 后 setData 不生效
+      this.setData({
+        showDialog: false
+      });
 
       this.triggerEvent('getPhoneNumber', result);
     }

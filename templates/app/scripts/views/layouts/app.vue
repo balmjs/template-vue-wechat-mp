@@ -12,6 +12,7 @@
     <div class="main-content">
       <router-view></router-view>
     </div>
+    <KToast type="loading" v-model="isLoading"></KToast>
     <!-- <template v-if="isMP">
       <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
         <div>Hello BalmJS</div>
@@ -25,6 +26,20 @@ import miniprogram from '@/mixins/miniprogram';
 
 export default {
   name: 'app',
-  mixins: [miniprogram]
+  mixins: [miniprogram],
+  data() {
+    return {
+      isLoading: false
+    };
+  },
+  created() {
+    this.$bus.$on('on-loading', () => {
+      this.isLoading = true;
+    });
+
+    this.$bus.$on('off-loading', () => {
+      this.isLoading = false;
+    });
+  }
 };
 </script>

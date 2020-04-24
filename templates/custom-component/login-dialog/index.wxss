@@ -57,6 +57,8 @@
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
   box-sizing: border-box;
   max-width: 100%;
   max-height: calc(100% - 32px);
@@ -69,6 +71,7 @@
 }
 
 .login-dialog__action {
+  width: 100%;
   text-align: center;
 }
 
