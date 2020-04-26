@@ -19,13 +19,15 @@
 /* Go Back */
 .top-status-bar .top-status-bar__section--align-start {
   position: absolute;
-  top: 11px;
-  left: 4px;
-  font-size: 12pt;
+  top: 6px;
+  left: 10px;
 }
 .top-status-bar .go-back {
   width: 22px;
   height: 22px;
+  padding: 4px 10px;
+  border-radius: 24px;
+  font-size: 12pt;
 }
 
 /* Title */
@@ -43,6 +45,9 @@
 
 .top-status-bar.top-status-bar--transparent {
   background: transparent !important;
+}
+.top-status-bar.top-status-bar--transparent .go-back {
+  background: #ccc;
 }
 .top-status-bar.top-status-bar--transparent .title {
   color: #000;

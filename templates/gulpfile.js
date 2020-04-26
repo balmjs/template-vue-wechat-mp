@@ -26,6 +26,6 @@ balm.go(mix => {
     // Clear miniprogram css
     mix.remove(['dist/web/index.wxss', 'dist/web/css/reset.css']);
 
-    publish(mix);
+    // publish(mix);
   }
 });
