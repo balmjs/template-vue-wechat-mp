@@ -13,7 +13,7 @@ const replaceOptions = [
 ];
 
 module.exports = function fuckMP(mix) {
-  if (mix.env.isMP && mix.env.isProd) {
+  if (mix.env.isProd) {
     // For external css
     mix.copy(`${webDir}/css/*`, `${mpCommonDir}/css`, {
       rename: {

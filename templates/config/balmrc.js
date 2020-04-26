@@ -57,6 +57,12 @@ module.exports = {
       vue$: 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, '..', 'app', 'scripts')
     }
+  },
+  assets: {
+    root: 'assets', // Replace 'assets' to your remote project root
+    subDir: balm.config.env.isMP ? '' : 'h5',
+    cache: !balm.config.env.isMP,
+    excludes: ['dist/web/h5/css/reset.css']
   }
   // More Config
 };
