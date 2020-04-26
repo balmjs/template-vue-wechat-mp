@@ -14,13 +14,6 @@ const replaceOptions = [
 
 module.exports = function fuckMP(mix) {
   if (mix.env.isProd) {
-    // For external css
-    mix.copy(`${webDir}/css/*`, `${mpCommonDir}/css`, {
-      rename: {
-        extname: '.wxss'
-      }
-    });
-
     // Fix MP bug
     mix.replace(
       `${mpCommonDir}/css/*.wxss`,

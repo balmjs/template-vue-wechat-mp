@@ -24,7 +24,7 @@ balm.go(mix => {
     fuckMP(mix);
   } else {
     // Clear miniprogram css
-    mix.remove(['dist/web/index.wxss', 'dist/web/h5/css/reset.css']);
+    mix.remove(['dist/web/index.wxss', 'dist/web/css/reset.css']);
 
     publish(mix);
   }

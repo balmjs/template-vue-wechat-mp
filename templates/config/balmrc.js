@@ -58,11 +58,12 @@ module.exports = {
       '@': path.resolve(__dirname, '..', 'app', 'scripts')
     }
   },
-  assets: {
-    root: 'assets', // Replace 'assets' to your remote project root
-    subDir: balm.config.env.isMP ? '' : 'h5',
-    cache: !balm.config.env.isMP,
-    excludes: ['dist/web/h5/css/reset.css']
-  }
+  assets: balm.config.env.isMP
+    ? {}
+    : {
+        root: 'assets', // Replace 'assets' to your remote project root
+        cache: true,
+        excludes: ['dist/web/css/reset.css']
+      }
   // More Config
 };
