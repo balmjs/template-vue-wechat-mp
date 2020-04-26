@@ -1,12 +1,13 @@
 <wxs src="top-status-bar.wxs" module="nav" />
 
-<view style="padding-top:{{ contentOffset ? statusBarHeight + 44 : 0 }}px;">
-  <view class="top-status-bar">
-    <view class="top-status-bar__section--align-start" style="padding-top:{{ statusBarHeight }}px;">
+<view class="top-status-bar{{ bgTransparent ? ' top-status-bar--transparent' : '' }}" style="background-color:{{ bgColor }};{{ nav.linearGradient(isLinearGradient, sideOrCorner, colorStop) }}color:{{ color }};">
+  <view class="top-status-bar__placeholder" style="height:{{ statusBarHeight }}px;"></view>
+  <view class="top-status-bar__row">
+    <view class="top-status-bar__section--align-start">
       <image wx:if="{{ showGoBack }}" class="go-back" src="back.png" bindtap="goBack"></image>
     </view>
-    <view class="top-status-bar__section{{ bgTransparent ? ' top-status-bar__section--transparent' : '' }}" style="padding-top:{{ statusBarHeight }}px; background-color:{{ bgColor }}; {{ nav.linearGradient(isLinearGradient, sideOrCorner, colorStop) }}">
-      <text class="title" style="color:{{ titleColor }};">{{ title }}</text>
+    <view class="top-status-bar__section">
+      <text class="title">{{ title }}</text>
     </view>
   </view>
 </view>

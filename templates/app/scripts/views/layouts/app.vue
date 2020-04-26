@@ -1,11 +1,12 @@
 <template>
-  <div class="container">
+  <div class="container" :style="{ 'padding-top': topStatusBarHeight }">
     <template v-if="isMP">
       <top-status-bar
         title="BalmJS for MP"
         :hiddenGoBack="hiddenGoBack"
         bgColor="#A6D8FD"
         :colorStop="['#A6D8FD', '#6DB0FA']"
+        @ready="onReady"
         @back="goBack"
       ></top-status-bar>
     </template>

@@ -1,41 +1,50 @@
 .top-status-bar {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 4;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.top-status-bar__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
   width: 100%;
 }
 
 /* Go Back */
 .top-status-bar .top-status-bar__section--align-start {
   position: absolute;
-  top: 7.5px;
+  top: 11px;
+  left: 4px;
   font-size: 12pt;
 }
 .top-status-bar .go-back {
   width: 22px;
   height: 22px;
-  padding: 6px 20px 0 15px;
 }
 
 /* Title */
 .top-status-bar .top-status-bar__section {
   display: flex;
   justify-content: center;
-  background: #fff;
+  align-items: center;
 }
 .top-status-bar .top-status-bar__section .title {
   height: 44px;
   line-height: 44px;
-  /* padding: 10pt 15pt; */
-  color: #fff;
   font-size: 16px;
-  /* font-weight: bold; */
+  font-weight: bold;
 }
 
-.top-status-bar .top-status-bar__section--transparent {
+.top-status-bar.top-status-bar--transparent {
   background: transparent !important;
 }
-.top-status-bar .top-status-bar__section--transparent .title {
-  color: #fff !important;
-  /* font-weight: lighter !important; */
+.top-status-bar.top-status-bar--transparent .title {
+  color: #000;
+  font-weight: normal;
 }

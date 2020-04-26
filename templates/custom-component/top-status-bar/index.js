@@ -1,16 +1,16 @@
 Component({
   properties: {
+    hiddenGoBack: {
+      type: Boolean,
+      value: true
+    },
     title: {
       type: String,
       value: ''
     },
-    titleColor: {
+    color: {
       type: String,
       value: '#fff'
-    },
-    hiddenGoBack: {
-      type: Boolean,
-      value: true
     },
     bgTransparent: {
       type: Boolean,
@@ -39,6 +39,7 @@ Component({
     }
   },
   data: {
+    topStatusBarHeight: 0,
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
     showGoBack: false
   },
@@ -46,6 +47,19 @@ Component({
     hiddenGoBack: function(value) {
       this.setData({
         showGoBack: !value
+      });
+    }
+  },
+  lifetimes: {
+    ready: function() {
+      if (this.data.contentOffset) {
+        this.setData({
+          topStatusBarHeight: this.data.statusBarHeight + 44
+        });
+      }
+
+      this.triggerEvent('ready', {
+        height: `${this.data.topStatusBarHeight}px`
       });
     }
   },

@@ -18,7 +18,7 @@ Component({
   },
   observers: {
     open: function(value) {
-      // TODO: 微信小程序bug？外部 AJAX 后 setData 不生效
+      // TODO: 微信小程序bug - 外部 AJAX 后 setData 不生效
       this.setData({
         showDialog: value
       });
@@ -45,7 +45,7 @@ Component({
         };
       }
 
-      // TODO: 临时解决 - 微信小程序bug？外部 AJAX 后 setData 不生效
+      // TODO: 临时解决 - 外部 AJAX 后 setData 不生效
       this.setData({
         showDialog: false
       });

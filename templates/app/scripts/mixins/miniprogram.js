@@ -1,6 +1,7 @@
 export default {
   data() {
     return {
+      topStatusBarHeight: 0,
       showLogin: false,
       code: ''
     };
@@ -14,6 +15,9 @@ export default {
     await this.wxlogin();
   },
   methods: {
+    onReady({ detail }) {
+      this.topStatusBarHeight = detail.height;
+    },
     goBack() {
       this.$router.back();
     },
