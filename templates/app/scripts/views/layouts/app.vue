@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :class="['container', { 'is-mp': isMP }]">
     <!-- <template v-if="isMP">
       <top-status-bar
         title="BalmJS for MP"
