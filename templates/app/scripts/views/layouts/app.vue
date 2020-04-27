@@ -12,13 +12,13 @@
     </template> -->
     <div class="main-content" :style="contentStyle">
       <router-view></router-view>
-      <KToast type="loading" v-model="isLoading"></KToast>
-      <!-- <template v-if="isMP">
-        <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
-          <div>Hello BalmJS</div>
-        </login-dialog>
-      </template> -->
     </div>
+    <KToast type="loading" v-model="isLoading"></KToast>
+    <!-- <template v-if="isMP">
+      <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
+        <div>Hello BalmJS</div>
+      </login-dialog>
+    </template> -->
   </div>
 </template>
 
