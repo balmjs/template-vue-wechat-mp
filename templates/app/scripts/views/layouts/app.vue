@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <template v-if="isMP">
+    <!-- <template v-if="isMP">
       <top-status-bar
         title="BalmJS for MP"
         :hiddenGoBack="hiddenGoBack"
@@ -9,7 +9,7 @@
         @ready="onReady"
         @back="goBack"
       ></top-status-bar>
-    </template>
+    </template> -->
     <div class="main-content" :style="contentStyle">
       <router-view></router-view>
       <KToast type="loading" v-model="isLoading"></KToast>
