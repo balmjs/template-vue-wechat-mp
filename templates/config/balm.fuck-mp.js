@@ -1,4 +1,3 @@
-const webDir = './dist/web';
 const mpDir = './dist/mp';
 const mpCommonDir = `${mpDir}/common`;
 const replaceOptions = [
