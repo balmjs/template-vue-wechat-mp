@@ -45,7 +45,7 @@ module.exports = {
             new webpack.DefinePlugin({
               'process.env.isMiniprogram': process.env.isMiniprogram // 注入环境变量，用于业务代码判断
             }),
-            new MpPlugin(require('./kbone.config'))
+            new MpPlugin(require('./wx.kbone.config'))
           ]
         : [])
     ],

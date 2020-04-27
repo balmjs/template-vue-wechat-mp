@@ -1,10 +1,11 @@
 <wxs src="top-status-bar.wxs" module="nav" />
 
-<view class="top-status-bar{{ bgTransparent ? ' top-status-bar--transparent' : '' }}" style="background-color:{{ bgColor }};{{ nav.linearGradient(isLinearGradient, sideOrCorner, colorStop) }}color:{{ color }};">
+<view class="top-status-bar{{ bgTransparent ? ' top-status-bar--transparent' : '' }}" style="color:{{ color }};background-color:{{ bgColor }};{{ nav.linearGradient(isLinearGradient, sideOrCorner, colorStop) }}">
   <view class="top-status-bar__placeholder" style="height:{{ statusBarHeight }}px;"></view>
   <view class="top-status-bar__row">
     <view class="top-status-bar__section--align-start">
       <image wx:if="{{ showGoBack }}" class="go-back" src="back.png" bindtap="goBack"></image>
+      <slot></slot>
     </view>
     <view class="top-status-bar__section">
       <text class="title">{{ title }}</text>

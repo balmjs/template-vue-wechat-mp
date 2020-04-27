@@ -2,7 +2,7 @@ const cssReset = process.argv.includes('--wxss');
 const balm = require('balm');
 const config = require('./config/balmrc');
 const publish = require('./config/balm.publish');
-const fuckMP = require('./config/fuck-mp');
+const fuckMP = require('./config/balm.fuck-mp');
 const afterTask = require('./config/balm.after-task');
 const resetCss = require('./config/reset-css');
 

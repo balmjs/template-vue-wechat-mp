@@ -10,10 +10,7 @@
         @back="goBack"
       ></top-status-bar>
     </template>
-    <div
-      class="main-content"
-      :style="isMP ? { 'padding-top': topStatusBarHeight } : {}"
-    >
+    <div class="main-content" :style="contentStyle">
       <router-view></router-view>
       <KToast type="loading" v-model="isLoading"></KToast>
       <!-- <template v-if="isMP">

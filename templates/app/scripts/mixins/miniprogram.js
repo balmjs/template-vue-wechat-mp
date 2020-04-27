@@ -9,6 +9,9 @@ export default {
   computed: {
     hiddenGoBack() {
       return this.$route.name === 'home';
+    },
+    contentStyle() {
+      return this.isMP ? { 'padding-top': `${this.topStatusBarHeight}px` } : {};
     }
   },
   async created() {

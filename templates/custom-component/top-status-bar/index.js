@@ -59,7 +59,7 @@ Component({
       }
 
       this.triggerEvent('ready', {
-        height: `${this.data.topStatusBarHeight}px`
+        height: this.data.topStatusBarHeight
       });
     }
   },
