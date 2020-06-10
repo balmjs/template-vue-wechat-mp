@@ -8,6 +8,8 @@ Vue.use(VueRouter);
 let routes = defaultRoutes.concat(demosRoutes);
 
 const router = new VueRouter({
+  mode: 'history',
+  // base: '/app/', // NOTE: for Back-end
   routes
 });
 

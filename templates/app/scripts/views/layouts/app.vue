@@ -26,7 +26,7 @@
 import miniprogram from '@/mixins/miniprogram';
 
 export default {
-  name: 'app',
+  name: 'App',
   mixins: [miniprogram],
   data() {
     return {

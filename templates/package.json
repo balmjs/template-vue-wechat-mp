@@ -13,20 +13,20 @@
   "dependencies": {
     "axios": "^0.19.2",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^0.6.4",
+    "kbone-ui": "^0.6.7",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.11",
-    "vue-meta": "^2.3.3",
-    "vue-router": "^3.1.6"
+    "vue-meta": "^2.3.4",
+    "vue-router": "^3.3.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "balm": "^2.13.1",
-    "eslint": "^7.0.0",
+    "balm": "^2.17.1",
+    "eslint": "^7.2.0",
     "eslint-plugin-vue": "^6.2.2",
     "gulp": "^4.0.2",
-    "miragejs": "^0.1.38",
-    "mp-webpack-plugin": "^0.9.14",
+    "miragejs": "^0.1.40",
+    "mp-webpack-plugin": "^0.9.17",
     "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11"
   },

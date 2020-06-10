@@ -15,7 +15,8 @@ module.exports = {
         target: env.host, // Target host
         changeOrigin: true // Needed for virtual hosted sites
       }
-    }
+    },
+    historyOptions: true // For vue-router `mode: 'history'`
   },
   roots: {
     source: 'app',
@@ -27,7 +28,7 @@ module.exports = {
   },
   scripts: {
     entry: {
-      lib: ['vue', 'vue-router'],
+      lib: ['vue', 'vue-router', 'vue-meta', 'axios'],
       main: balm.config.env.isMP
         ? './app/scripts/main.mp.js'
         : './app/scripts/main.js'
@@ -61,6 +62,7 @@ module.exports = {
   assets: balm.config.env.isMP
     ? {}
     : {
+        publicUrl: '/',
         root: 'assets', // Replace 'assets' to your remote project root
         cache: true,
         excludes: ['dist/web/css/reset.css']
