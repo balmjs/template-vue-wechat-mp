@@ -8,18 +8,9 @@
     @scrolltoupper="scrollToUpper"
     @scrolltolower="scrollToLower"
   >
-    <KView
-      style="height: 100%; background: green; text-align: center; line-height: 100px"
-      >纵向滚动</KView
-    >
-    <KView
-      style="height: 100%; background: cyan; text-align: center; line-height: 100px"
-      >纵向滚动</KView
-    >
-    <KView
-      style="height: 100%; background: pink; text-align: center; line-height: 100px"
-      >纵向滚动</KView
-    >
+    <KView style="height: 100%; background: green; text-align: center; line-height: 100px">纵向滚动</KView>
+    <KView style="height: 100%; background: cyan; text-align: center; line-height: 100px">纵向滚动</KView>
+    <KView style="height: 100%; background: pink; text-align: center; line-height: 100px">纵向滚动</KView>
   </KScrollView>
 </template>
 
@@ -27,13 +18,13 @@
 export default {
   data() {
     return {
-      scrollTop: '0'
+      scrollTop: '0px'
     };
   },
   methods: {
     scroll({ detail }) {
-      // console.log('scroll', detail);
-      this.scrollTop = `${detail.scrollTop}px`;
+      console.log('scroll');
+      // this.scrollTop = `${detail.scrollTop}px`;
     },
     scrollToUpper() {
       console.log('scrollToUpper');

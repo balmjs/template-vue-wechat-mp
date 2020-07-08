@@ -13,21 +13,21 @@
   "dependencies": {
     "axios": "^0.19.2",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^0.6.7",
+    "kbone-ui": "^0.6.8",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.11",
-    "vue-meta": "^2.3.4",
-    "vue-router": "^3.3.2"
+    "vue-meta": "^2.4.0",
+    "vue-router": "^3.3.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "balm": "^2.17.1",
-    "eslint": "^7.2.0",
+    "balm": "^2.21.1",
+    "eslint": "^7.4.0",
     "eslint-plugin-vue": "^6.2.2",
     "gulp": "^4.0.2",
     "miragejs": "^0.1.40",
-    "mp-webpack-plugin": "^0.9.17",
-    "vue-loader": "^15.9.2",
+    "mp-webpack-plugin": "^1.0.2",
+    "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.11"
   },
   "private": true
