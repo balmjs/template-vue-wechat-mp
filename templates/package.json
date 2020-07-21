@@ -28,7 +28,8 @@
     "miragejs": "^0.1.40",
     "mp-webpack-plugin": "^1.0.0",
     "vue-loader": "^15.9.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0"
   },
   "private": true
 }

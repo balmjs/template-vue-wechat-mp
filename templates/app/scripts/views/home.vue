@@ -1,8 +1,8 @@
 <template>
   <div class="page--home">
-    <header class="home-header">
+    <header class="hero">
       <h2>BalmJS</h2>
-      <p>A flexible front-end workflow for webapps</p>
+      <p>Webapp@vue to WeChat mini program</p>
       <hr />
       <router-link to="/demos">UI DEMOS</router-link>
     </header>
