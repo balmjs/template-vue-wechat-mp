@@ -4,8 +4,8 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('./env');
 
-// Documentation - https://balmjs.com/docs/v2/config/
-// 中文文档 - https://balmjs.com/docs/v2/zh/config/
+// Documentation - https://balm.js.org/docs/config/
+// 中文文档 - https://balm.js.org/docs/zh/config/
 module.exports = (balm, cssReset) => {
   const config = cssReset
     ? {
