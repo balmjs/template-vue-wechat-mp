@@ -52,7 +52,7 @@ export default function createApp() {
   Vue.use(KboneUI);
   Vue.use(KboneAPI);
 
-  new Vue({
+  return new Vue({
     el: '#app',
     render: h => h(App),
     router

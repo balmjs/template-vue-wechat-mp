@@ -11,24 +11,24 @@
     "prod": "npm run build:web && npm run build:mp"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.0",
     "kbone-api": "^0.2.1",
     "kbone-ui": "^0.6.0",
     "lib-flexible": "^0.3.2",
-    "vue": "^2.6.11",
+    "vue": "^2.6.0",
     "vue-meta": "^2.4.0",
-    "vue-router": "^3.4.2"
+    "vue-router": "^3.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "balm": "^3.0.0",
-    "eslint": "^7.6.0",
+    "eslint": "^7.15.0",
     "eslint-plugin-vue": "^6.2.2",
-    "miragejs": "^0.1.40",
+    "miragejs": "^0.1.41",
     "mp-webpack-plugin": "^1.0.0",
-    "vue-loader": "^15.9.3",
-    "vue-template-compiler": "^2.6.11",
-    "webpack": "^4.44.0"
+    "vue-loader": "^15.9.0",
+    "vue-template-compiler": "^2.6.0",
+    "webpack": "4"
   },
   "private": true
 }
