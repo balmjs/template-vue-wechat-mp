@@ -40,30 +40,17 @@ module.exports = (balm, cssReset) => {
           loaders: [
             {
               test: /\.vue$/,
-              use: balm.config.env.isMP
-                ? [
-                    'thread-loader',
-                    {
-                      loader: 'vue-loader',
-                      options: {
-                        compilerOptions: {
-                          preserveWhitespace: false
-                        }
-                      }
-                    },
-                    'vue-improve-loader'
-                  ]
-                : [
-                    'thread-loader',
-                    {
-                      loader: 'vue-loader',
-                      options: {
-                        compilerOptions: {
-                          preserveWhitespace: false
-                        }
-                      }
+              use: [
+                {
+                  loader: 'vue-loader',
+                  options: {
+                    compilerOptions: {
+                      preserveWhitespace: false
                     }
-                  ]
+                  }
+                },
+                ...(balm.config.env.isMP ? ['vue-improve-loader'] : [])
+              ]
             }
           ],
           plugins: [
@@ -71,7 +58,7 @@ module.exports = (balm, cssReset) => {
             ...(balm.config.env.isMP
               ? [
                   new webpack.DefinePlugin({
-                    'process.env.isMiniprogram': process.env.isMiniprogram // 注入环境变量，用于业务代码判断
+                    'process.env.isMiniprogram': process.env.isMiniprogram
                   }),
                   new MpPlugin(require('./wx.kbone.config'))
                 ]
@@ -85,7 +72,7 @@ module.exports = (balm, cssReset) => {
             vue$: 'vue/dist/vue.esm.js',
             '@': path.resolve(__dirname, '..', 'app', 'scripts')
           },
-          webpack: {
+          webpackOptions: {
             node: {
               // 避免 webpack 注入不必要的 setImmediate polyfill 因为 Vue 已经将其包含在内
               setImmediate: false

@@ -12,11 +12,6 @@
       <p>这段话不会在小程序里显示</p>
       <p>在构建的时候就会被 vue-improve-loader 给干掉了</p>
     </div>
-    <!-- reduce-loader -->
-    <web>
-      <p>这段话也不会在小程序里显示</p>
-      <p>在构建的时候就会被 reduce-loader 给干掉了</p>
-    </web>
     <!-- 样式隐藏 -->
     <div class="for-web">
       <p>这段话也不会在小程序里显示</p>
@@ -30,15 +25,12 @@
 import { isMP } from '@/config';
 import MyHeader from './common/header';
 import MyFooter from './common/footer';
-import Web from 'reduce-loader!./common/web';
-import 'reduce-loader!./web';
 
 export default {
   name: 'Home',
   components: {
     MyHeader,
-    MyFooter,
-    Web
+    MyFooter
   },
   created() {
     window.addEventListener('wxload', (query) =>

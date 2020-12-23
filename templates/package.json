@@ -17,7 +17,6 @@
     "kbone-ui": "^0.6.0",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.0",
-    "vue-meta": "^2.4.0",
     "vue-router": "^3.4.0"
   },
   "devDependencies": {
@@ -27,8 +26,6 @@
     "eslint-plugin-vue": "^6.2.2",
     "miragejs": "^0.1.41",
     "mp-webpack-plugin": "^1.2.0",
-    "reduce-loader": "^0.3.2",
-    "thread-loader": "^3.0.1",
     "vue-improve-loader": "^0.3.5",
     "vue-loader": "^15.9.0",
     "vue-template-compiler": "^2.6.0",
