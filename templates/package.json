@@ -5,9 +5,9 @@
   "author": "{{ author }}",
   "scripts": {
     "css:reset": "balm --wxss",
-    "dev": "balm --silent",
-    "build:web": "balm -p --silent",
-    "build:mp": "balm -p --silent -mp",
+    "dev": "balm",
+    "build:web": "balm -p",
+    "build:mp": "balm -p -mp",
     "prod": "npm run build:web && npm run build:mp"
   },
   "dependencies": {
@@ -21,11 +21,14 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "balm": "^3.0.0",
-    "eslint": "^7.15.0",
+    "balm": "^3.9.3",
+    "eslint": "^7.16.0",
     "eslint-plugin-vue": "^6.2.2",
     "miragejs": "^0.1.41",
-    "mp-webpack-plugin": "^1.0.0",
+    "mp-webpack-plugin": "^1.2.0",
+    "reduce-loader": "^0.3.2",
+    "thread-loader": "^3.0.1",
+    "vue-improve-loader": "^0.3.5",
     "vue-loader": "^15.9.0",
     "vue-template-compiler": "^2.6.0",
     "webpack": "4"

@@ -1,6 +1,6 @@
-import FlexDemo from '@/demos/flex';
-import ProgressDemo from '@/demos/progress';
-import SliderDemo from '@/demos/slider';
+import FlexDemo from '@/demos/kbone/flex';
+import ProgressDemo from '@/demos/kbone/progress';
+import SliderDemo from '@/demos/kbone/slider';
 
 export default [
   {

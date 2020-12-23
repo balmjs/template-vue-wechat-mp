@@ -1,13 +1,12 @@
 const env = require('./env');
+const router = require('./wx.router');
 const customConfig = require('./wx.custom-component');
 
 // Kbone 配置 - https://wechat-miniprogram.github.io/kbone/docs/config/
 const kboneConfig = {
   origin: env.host,
-  entry: '/(home|index)?',
-  router: {
-    index: ['/']
-  },
+  entry: '/',
+  router,
   redirect: {
     notFound: 'home',
     accessDenied: 'home'
@@ -25,7 +24,12 @@ const kboneConfig = {
     },
     customConfig.app
   ),
+  appExtraConfig: {
+    sitemapLocation: 'sitemap.json'
+  },
   global: {
+    share: true,
+    windowScroll: false,
     rem: true
   },
   projectConfig: {

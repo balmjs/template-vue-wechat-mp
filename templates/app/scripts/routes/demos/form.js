@@ -1,6 +1,6 @@
-import ButtonDemo from '@/demos/button';
-import FormDemo from '@/demos/form';
-import CellsDemo from '@/demos/cells';
+import ButtonDemo from '@/demos/kbone/button';
+import FormDemo from '@/demos/kbone/form';
+import CellsDemo from '@/demos/kbone/cells';
 
 export default [
   {

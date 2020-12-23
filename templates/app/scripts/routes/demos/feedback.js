@@ -1,7 +1,7 @@
-import ActionSheetDemo from '@/demos/action-sheet';
-import ToastDemo from '@/demos/toast';
-import DialogDemo from '@/demos/dialog';
-import ToptipsDemo from '@/demos/toptips';
+import ActionSheetDemo from '@/demos/kbone/action-sheet';
+import ToastDemo from '@/demos/kbone/toast';
+import DialogDemo from '@/demos/kbone/dialog';
+import ToptipsDemo from '@/demos/kbone/toptips';
 
 export default [
   {

@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import App from '@/views/layouts/app';
 import router from '@/routes';
-import $http from '@/plugins/$http';
-import $bus from '@/plugins/$bus';
-import $store from '@/plugins/$store';
+import $http from '@/plugins/http';
+import $bus from '@/plugins/bus';
+import $store from '@/plugins/store';
 import { isMP } from '@/config';
 
 import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/

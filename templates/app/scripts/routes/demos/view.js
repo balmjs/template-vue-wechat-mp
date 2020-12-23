@@ -1,7 +1,7 @@
-import PickerDemo from '@/demos/picker';
-import SwiperDemo from '@/demos/swiper';
-import ScrollViewDemo from '@/demos/scroll-view';
-import MovableDemo from '@/demos/movable';
+import PickerDemo from '@/demos/kbone/picker';
+import SwiperDemo from '@/demos/kbone/swiper';
+import ScrollViewDemo from '@/demos/kbone/scroll-view';
+import MovableDemo from '@/demos/kbone/movable';
 
 export default [
   {

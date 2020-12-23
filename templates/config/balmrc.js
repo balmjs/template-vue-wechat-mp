@@ -40,7 +40,30 @@ module.exports = (balm, cssReset) => {
           loaders: [
             {
               test: /\.vue$/,
-              loader: 'vue-loader'
+              use: balm.config.env.isMP
+                ? [
+                    'thread-loader',
+                    {
+                      loader: 'vue-loader',
+                      options: {
+                        compilerOptions: {
+                          preserveWhitespace: false
+                        }
+                      }
+                    },
+                    'vue-improve-loader'
+                  ]
+                : [
+                    'thread-loader',
+                    {
+                      loader: 'vue-loader',
+                      options: {
+                        compilerOptions: {
+                          preserveWhitespace: false
+                        }
+                      }
+                    }
+                  ]
             }
           ],
           plugins: [
@@ -61,6 +84,12 @@ module.exports = (balm, cssReset) => {
           alias: {
             vue$: 'vue/dist/vue.esm.js',
             '@': path.resolve(__dirname, '..', 'app', 'scripts')
+          },
+          webpack: {
+            node: {
+              // 避免 webpack 注入不必要的 setImmediate polyfill 因为 Vue 已经将其包含在内
+              setImmediate: false
+            }
           }
         },
         assets: balm.config.env.isMP

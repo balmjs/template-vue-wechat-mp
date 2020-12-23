@@ -11,6 +11,7 @@ let routes = defaultRoutes.concat(demosRoutes);
 const router = new VueRouter(
   isMP
     ? {
+        mode: 'history',
         routes
       }
     : {

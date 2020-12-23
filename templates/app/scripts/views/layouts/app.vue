@@ -13,7 +13,7 @@
     <div class="main-content" :style="contentStyle">
       <router-view></router-view>
     </div>
-    <KToast type="loading" v-model="isLoading"></KToast>
+    <!-- <KToast type="loading" v-model="isLoading"></KToast> -->
     <!-- <template v-if="isMP">
       <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
         <div>Hello BalmJS</div>
