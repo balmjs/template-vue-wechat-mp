@@ -16,7 +16,7 @@ export default {
   name: 'TitleBar',
   data() {
     return {
-      titles: ['零度的田', '微信小程序', 'kbone-api'],
+      titles: ['BalmJS', '微信小程序', 'kbone-api'],
       toggleFlag: undefined
     };
   },

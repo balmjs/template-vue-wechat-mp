@@ -42,13 +42,13 @@ export default {
   methods: {
     openToast() {
       this.$api.showToast({
-        title: '零度的田',
+        title: 'Hello BalmJS',
         icon: 'success'
       });
     },
     openCoverToast() {
       this.$api.showToast({
-        title: '零度的田',
+        title: 'Hello BalmJS',
         icon: 'loading',
         mask: true
       });
@@ -56,7 +56,7 @@ export default {
     showModal() {
       this.$api.showModal({
         title: '微信小程序',
-        content: '零度的田弹窗确认',
+        content: 'Hello BalmJS',
         cancelText: '取消',
         confirmText: '确认'
       });

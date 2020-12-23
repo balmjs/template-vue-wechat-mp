@@ -18,7 +18,7 @@
     </KCells>
     <KCells title="Checkbox">
       <KCheckboxGroup @change="handleChange" v-model="checkboxGrpValues">
-        <KCheckbox value="零度的田">零度的田</KCheckbox>
+        <KCheckbox value="BalmJS">BalmJS</KCheckbox>
         <KCheckbox value="小程序开发">小程序开发</KCheckbox>
       </KCheckboxGroup>
     </KCells>
