@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "axios-miniprogram-adapter": "^0.3.2",
     "kbone-api": "^0.2.1",
     "kbone-ui": "^0.6.0",
     "lib-flexible": "^0.3.2",

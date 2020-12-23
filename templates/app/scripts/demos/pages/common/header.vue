@@ -1,11 +1,11 @@
 <template>
-  <div class="footer">
-    <p>Footer</p>
+  <div class="header">
+    <p>Header</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'WxFooter'
+  name: 'MyHeader'
 };
 </script>

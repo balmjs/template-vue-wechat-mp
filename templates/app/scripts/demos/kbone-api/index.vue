@@ -1,17 +1,8 @@
 <template>
-  <div class="ui-demos">
-    <KCells v-if="$route.name === 'demos'" title="Demos">
+  <div class="page--api-demos">
+    <KCells v-if="$route.name === 'demos.api'" title="API Demos">
       <KCell
-        v-for="item in demosNav"
-        :key="item.name"
-        :value="item.path"
-        @click.native="goto(item)"
-      >
-      </KCell>
-    </KCells>
-    <KCells v-else-if="$route.name === 'demos.ui'" title="UI Demos">
-      <KCell
-        v-for="item in uiDemosNav"
+        v-for="item in apiDemosNav"
         :key="item.name"
         :value="item.path"
         @click.native="goto(item)"
@@ -27,15 +18,19 @@
 </template>
 
 <script>
-import demosRoutes from '@/routes/demos';
+import demosRoutes from '@/routes/demos/api';
+import { isMP } from '@/config';
 
 export default {
   computed: {
-    demosNav() {
+    apiDemosNav() {
       return demosRoutes[0].children;
-    },
-    uiDemosNav() {
-      return this.demosNav[0].children;
+    }
+  },
+  created() {
+    if (!isMP) {
+      console.warn('请至“微信开发者工具”中测试 API');
+      this.$router.back();
     }
   },
   methods: {

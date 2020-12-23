@@ -1,21 +1,21 @@
 <template>
   <div class="cnt">
-    <wx-header></wx-header>
+    <my-header></my-header>
     <button @click="onClickBack">回到上一页</button>
-    <wx-footer></wx-footer>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import { isMP } from '@/config';
-import WxHeader from '@/demos/common/header';
-import WxFooter from '@/demos/common/footer';
+import MyHeader from './common/header';
+import MyFooter from './common/footer';
 
 export default {
   name: 'Detail',
   components: {
-    WxHeader,
-    WxFooter
+    MyHeader,
+    MyFooter
   },
   created() {
     window.addEventListener('wxload', (query) =>

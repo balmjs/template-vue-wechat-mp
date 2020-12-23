@@ -1,6 +1,6 @@
 <template>
   <div class="cnt">
-    <wx-header></wx-header>
+    <my-header></my-header>
     <div>
       <a href="/test/list/321">当前页跳转</a>
       <a href="/test/detail/123" target="_blank">新开页面跳转</a>
@@ -22,22 +22,22 @@
       <p>这段话也不会在小程序里显示</p>
       <p>在渲染时会被样式隐藏</p>
     </div>
-    <wx-footer></wx-footer>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import { isMP } from '@/config';
-import WxHeader from '@/demos/common/header';
-import WxFooter from '@/demos/common/footer';
-import Web from 'reduce-loader!@/demos/common/web';
+import MyHeader from './common/header';
+import MyFooter from './common/footer';
+import Web from 'reduce-loader!./common/web';
 import 'reduce-loader!./web';
 
 export default {
   name: 'Home',
   components: {
-    WxHeader,
-    WxFooter,
+    MyHeader,
+    MyFooter,
     Web
   },
   created() {

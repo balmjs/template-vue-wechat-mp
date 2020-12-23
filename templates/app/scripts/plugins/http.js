@@ -1,5 +1,11 @@
 import axios from 'axios';
+import mpAdapter from 'axios-miniprogram-adapter';
 import bus from '@/store/bus';
+import { isMP } from '@/config';
+
+if (isMP) {
+  axios.defaults.adapter = mpAdapter;
+}
 
 axios.defaults.baseURL = '/api';
 

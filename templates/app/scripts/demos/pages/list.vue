@@ -1,21 +1,21 @@
 <template>
   <div class="cnt">
-    <wx-header></wx-header>
-    <a href="/home">回到首页</a>
+    <my-header></my-header>
+    <a href="/test/home">回到首页</a>
     <button @click="onClickJump">回到首页</button>
-    <wx-footer></wx-footer>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
-import WxHeader from '@/demos/common/header';
-import WxFooter from '@/demos/common/footer';
+import MyHeader from './common/header';
+import MyFooter from './common/footer';
 
 export default {
   name: 'List',
   components: {
-    WxHeader,
-    WxFooter
+    MyHeader,
+    MyFooter
   },
   created() {
     window.addEventListener('wxload', (query) =>
@@ -28,7 +28,7 @@ export default {
   },
   methods: {
     onClickJump() {
-      window.location.href = '/home';
+      window.location.href = '/test/home';
     }
   }
 };

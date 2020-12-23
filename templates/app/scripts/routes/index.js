@@ -8,17 +8,15 @@ Vue.use(VueRouter);
 
 let routes = defaultRoutes.concat(demosRoutes);
 
-const router = new VueRouter(
-  isMP
-    ? {
-        mode: 'history',
-        routes
-      }
-    : {
-        mode: 'history',
-        base: '/m/', // NOTE: for Back-end
-        routes
-      }
-);
+let routerOptions = {
+  mode: 'history',
+  routes
+};
+
+// if (!isMP) {
+//   routerOptions.base = '/m/'; // NOTE: for Back-end
+// }
+
+const router = new VueRouter(routerOptions);
 
 export default router;
