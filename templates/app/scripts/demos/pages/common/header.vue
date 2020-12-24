@@ -1,11 +1,14 @@
 <template>
   <div class="header">
-    <p>Header</p>
+    <p>Hello {{ $store.sitename }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MyHeader'
+  name: 'MyHeader',
+  mounted() {
+    this.$store.sitename = 'BalmJS';
+  }
 };
 </script>

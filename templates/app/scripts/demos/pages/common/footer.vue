@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-    <p>Footer</p>
+    <p>
+      <button @click="$router.push({ name: 'home' })">返回首页</button>
+    </p>
   </div>
 </template>
 

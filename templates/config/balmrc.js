@@ -32,7 +32,8 @@ module.exports = (balm, cssReset) => {
         },
         scripts: {
           entry: {
-            lib: ['vue', 'vue-router', 'vue-meta', 'axios'],
+            lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
+            ui: ['kbone-ui'],
             main: balm.config.env.isMP
               ? './app/scripts/main.mp.js'
               : './app/scripts/main.js'

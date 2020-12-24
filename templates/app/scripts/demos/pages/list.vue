@@ -1,8 +1,8 @@
 <template>
   <div class="cnt">
     <my-header></my-header>
-    <a href="/test/home">回到首页</a>
-    <button @click="onClickJump">回到首页</button>
+    <a href="/test/home">回到测试首页</a>
+    <button @click="onClickJump">回到测试首页</button>
     <my-footer></my-footer>
   </div>
 </template>
