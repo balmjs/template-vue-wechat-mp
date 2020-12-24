@@ -95,6 +95,9 @@ module.exports = (balm, cssInit) => {
   if (devMP) {
     config.useDefaults = false;
     config.styles.minify = true; // Fuck MP sourcemap bug
+    config.styles.options = {
+      minifySelectors: false // 因为 wxss 编译器不支持 .some>:first-child 这样格式的代码，所以暂时禁掉这个
+    };
     config.scripts.minify = true; // 开发者工具可能无法完美支持业务代码使用到的 es 特性，建议自己做代码压缩
   }
 
