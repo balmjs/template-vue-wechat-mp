@@ -11,7 +11,7 @@ const replaceOptions = {
   }
 };
 
-module.exports = function cssReset(mix) {
+module.exports = function getResetCss(mix) {
   wxss.forEach(name => {
     mix.copy(
       `./node_modules/mp-webpack-plugin/src/tmpl/${name}.tmpl.wxss`,

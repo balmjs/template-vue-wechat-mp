@@ -1,3 +1,4 @@
+const devMP = process.argv.includes('--dev-mp');
 const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -6,8 +7,8 @@ const env = require('./env');
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
-module.exports = (balm, cssReset) => {
-  const config = cssReset
+module.exports = (balm, cssInit) => {
+  const config = cssInit
     ? {
         useDefaults: false
       }
@@ -90,6 +91,12 @@ module.exports = (balm, cssReset) => {
             }
         // More Config
       };
+
+  if (devMP) {
+    config.useDefaults = false;
+    config.styles.minify = true; // Fuck MP sourcemap bug
+    config.scripts.minify = true; // 开发者工具可能无法完美支持业务代码使用到的 es 特性，建议自己做代码压缩
+  }
 
   return config;
 };
