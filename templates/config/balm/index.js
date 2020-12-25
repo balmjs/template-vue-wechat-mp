@@ -72,7 +72,7 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, '..', 'app', 'scripts')
+            '@': path.resolve(__dirname, '../../app/scripts')
           },
           webpackOptions: {
             node: {
