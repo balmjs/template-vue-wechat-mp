@@ -1,6 +1,7 @@
 <template>
   <div v-if="isMP" class="page--wx-demos">
-    <rich-text :content="html" @input="onInput"></rich-text>
+    <div>（需开启）自定义组件</div>
+    <rich-text :content="html"></rich-text>
   </div>
 </template>
 
@@ -11,11 +12,6 @@ export default {
       html:
         '<div class="div_class" style="line-height: 60px; color: red;">Hello&nbsp;World!</div>'
     };
-  },
-  methods: {
-    onInput(content) {
-      console.log('input', content);
-    }
   }
 };
 </script>
