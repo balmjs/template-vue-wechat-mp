@@ -22,7 +22,6 @@
 </template>
 
 <script>
-import { isMP } from '@/config';
 import MyHeader from './common/header';
 import MyFooter from './common/footer';
 
@@ -41,7 +40,7 @@ export default {
     window.addEventListener('wxhide', () => console.log('page1 wxhide'));
     window.addEventListener('wxunload', () => console.log('page1 wxunload'));
 
-    if (isMP) {
+    if (this.isMP) {
       console.log('I am in miniprogram');
     } else {
       console.log('I am in Web');

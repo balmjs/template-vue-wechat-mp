@@ -1,0 +1,3 @@
+<view class="rich-text-wrapper">
+  <rich-text nodes="{{content}}" bindinput="onInput"></rich-text>
+</view>

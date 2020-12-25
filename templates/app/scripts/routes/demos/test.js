@@ -5,17 +5,17 @@ import Detail from '@/demos/pages/detail';
 export default [
   {
     path: '/test/home',
-    name: 'HomeTest',
+    name: 'test.home',
     component: Home
   },
   {
     path: '/test/list/:id',
-    name: 'List',
+    name: 'test.list',
     component: List
   },
   {
     path: '/test/detail/:id',
-    name: 'Detail',
+    name: 'test.detail',
     component: Detail
   }
 ];

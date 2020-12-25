@@ -13,6 +13,9 @@
       <p>
         <router-link to="/test/home">Test DEMOS</router-link>
       </p>
+      <p>
+        <router-link to="/wx">WX DEMOS</router-link>
+      </p>
     </header>
   </div>
 </template>

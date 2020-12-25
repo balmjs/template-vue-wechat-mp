@@ -1,4 +1,4 @@
-.top-status-bar {
+.top-app-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.top-status-bar__row {
+.top-app-bar__row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +18,12 @@
 }
 
 /* Go Back */
-.top-status-bar .top-status-bar__section--align-start {
+.top-app-bar .top-app-bar__section--align-start {
   position: absolute;
   top: 6px;
   left: 10px;
 }
-.top-status-bar .go-back {
+.top-app-bar .go-back {
   width: 22px;
   height: 22px;
   padding: 4px 10px;
@@ -32,25 +32,25 @@
 }
 
 /* Title */
-.top-status-bar .top-status-bar__section {
+.top-app-bar .top-app-bar__section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.top-status-bar .top-status-bar__section .title {
+.top-app-bar .top-app-bar__section .title {
   height: 44px;
   line-height: 44px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.top-status-bar.top-status-bar--transparent {
+.top-app-bar.top-app-bar--transparent {
   background: transparent !important;
 }
-.top-status-bar.top-status-bar--transparent .go-back {
+.top-app-bar.top-app-bar--transparent .go-back {
   background: #ccc;
 }
-.top-status-bar.top-status-bar--transparent .title {
+.top-app-bar.top-app-bar--transparent .title {
   color: #000;
   font-weight: normal;
 }

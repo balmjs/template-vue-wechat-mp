@@ -6,7 +6,7 @@
   "scripts": {
     "css:init": "balm --css-init",
     "dev": "balm",
-    "dev:mp": "balm -mp --dev-mp",
+    "dev:mp": "rimraf .tmp && balm -mp --dev-mp",
     "build:web": "balm -p",
     "build:mp": "balm -p -mp",
     "prod": "npm run build:web && npm run build:mp"

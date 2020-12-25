@@ -1,19 +1,19 @@
 <template>
   <div :class="['container', { 'is-mp': isMP }]">
     <!-- <template v-if="isMP">
-      <top-status-bar
+      <top-app-bar
         title="BalmJS for MP"
         :hiddenGoBack="hiddenGoBack"
         bgColor="#A6D8FD"
         :colorStop="['#A6D8FD', '#6DB0FA']"
         @ready="onReady"
         @back="goBack"
-      ></top-status-bar>
+      ></top-app-bar>
     </template> -->
     <div class="main-content" :style="contentStyle">
       <router-view></router-view>
     </div>
-    <!-- <KToast type="loading" v-model="isLoading"></KToast> -->
+    <KToast type="loading" v-model="isLoading"></KToast>
     <!-- <template v-if="isMP">
       <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
         <div>Hello BalmJS</div>

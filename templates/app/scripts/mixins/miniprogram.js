@@ -1,17 +1,19 @@
+const goBackBlockList = ['home', 'test.list', 'test.detail']; // vue route names
+
 export default {
   data() {
     return {
-      topStatusBarHeight: 0,
+      topAppBarHeight: 0,
       showLogin: false,
       code: ''
     };
   },
   computed: {
     hiddenGoBack() {
-      return this.$route.name === 'home';
+      return goBackBlockList.includes(this.$route.name);
     },
     contentStyle() {
-      return this.isMP ? { 'padding-top': `${this.topStatusBarHeight}px` } : {};
+      return this.isMP ? { 'padding-top': `${this.topAppBarHeight}px` } : {};
     }
   },
   async created() {
@@ -19,10 +21,14 @@ export default {
   },
   methods: {
     onReady({ detail }) {
-      this.topStatusBarHeight = detail.height;
+      this.topAppBarHeight = detail.height;
     },
     goBack() {
-      this.$router.back();
+      if (this.$route.name === 'test.home') {
+        this.$router.replace({ name: 'home' });
+      } else {
+        this.$router.back();
+      }
     },
     async wxlogin() {
       let { code } = await this.$api.login();

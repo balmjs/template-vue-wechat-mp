@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import { isMP } from '@/config';
 import MyHeader from './common/header';
 import MyFooter from './common/footer';
 
@@ -28,7 +27,7 @@ export default {
   },
   methods: {
     onClickBack() {
-      if (isMP) {
+      if (this.isMP) {
         wx.navigateBack();
       }
     }

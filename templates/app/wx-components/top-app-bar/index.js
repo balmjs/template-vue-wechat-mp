@@ -39,7 +39,7 @@ Component({
     }
   },
   data: {
-    topStatusBarHeight: 0,
+    topAppBarHeight: 0,
     statusBarHeight: wx.getSystemInfoSync().statusBarHeight,
     showGoBack: false
   },
@@ -54,12 +54,12 @@ Component({
     ready: function() {
       if (this.data.contentOffset) {
         this.setData({
-          topStatusBarHeight: this.data.statusBarHeight + 44
+          topAppBarHeight: this.data.statusBarHeight + 44
         });
       }
 
       this.triggerEvent('ready', {
-        height: this.data.topStatusBarHeight
+        height: this.data.topAppBarHeight
       });
     }
   },
