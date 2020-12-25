@@ -1,6 +1,6 @@
-const env = require('./env');
-const router = require('./wx.router');
-const customConfig = require('./wx.custom-component');
+const env = require('../env');
+const router = require('./router');
+const customConfig = require('./custom-component');
 
 // Kbone 配置 - https://wechat-miniprogram.github.io/kbone/docs/config/
 const kboneConfig = {

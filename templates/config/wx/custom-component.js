@@ -2,6 +2,9 @@ const path = require('path');
 
 const useCustomComponent = false; // 是否使用自定义微信组件
 
+// NOTE: run `npm run wx:init` first
+const wxVendorComponents = {};
+
 const wxCustomComponents = {
   'top-app-bar': {
     path: 'top-app-bar/index',
@@ -27,12 +30,16 @@ module.exports = useCustomComponent
   ? {
       generate: {
         wxCustomComponent: {
-          root: path.join(__dirname, '../app/wx-components'),
-          usingComponents: wxCustomComponents
+          root: path.join(__dirname, '../../app/wx-components'),
+          usingComponents: Object.assign(
+            {},
+            wxVendorComponents,
+            wxCustomComponents
+          )
         }
       },
       app: {
-        navigationStyle: 'custom'
+        // navigationStyle: 'custom' // For `top-app-bar`
       }
     }
   : {

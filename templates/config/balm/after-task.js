@@ -1,9 +1,9 @@
 const fs = require('fs');
-const myAppConfig = require('./wx.miniprogram.config');
+const myAppConfig = require('../wx/miniprogram.config');
 const targetFile = 'dist/mp/app.json';
 
-function updateAppConfig(balm, cssInit) {
-  return cssInit
+function updateAppConfig(balm, wxInit) {
+  return wxInit
     ? () => {}
     : () => {
         if (balm.config.env.isMP && balm.config.env.isProd) {

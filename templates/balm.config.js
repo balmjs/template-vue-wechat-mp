@@ -1,12 +1,12 @@
-const cssInit = process.argv.includes('--css-init');
-const getConfig = require('./config/balmrc');
-const getAfterTask = require('./config/balm.after-task');
-const getApi = require('./config/balm.api');
+const wxInit = process.argv.includes('--wx-init');
+const getConfig = require('./config/balm');
+const getAfterTask = require('./config/balm/after-task');
+const getApi = require('./config/balm/api');
 
 module.exports = balm => {
   return {
-    config: getConfig(balm, cssInit),
-    afterTask: getAfterTask(balm, cssInit),
-    api: getApi(balm, cssInit)
+    config: getConfig(balm, wxInit),
+    afterTask: getAfterTask(balm, wxInit),
+    api: getApi(balm, wxInit)
   };
 };

@@ -3,12 +3,12 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
-const env = require('./env');
+const env = require('../env');
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
-module.exports = (balm, cssInit) => {
-  const config = cssInit
+module.exports = (balm, wxInit) => {
+  const config = wxInit
     ? {
         useDefaults: false
       }
@@ -62,7 +62,7 @@ module.exports = (balm, cssInit) => {
                   new webpack.DefinePlugin({
                     'process.env.isMiniprogram': process.env.isMiniprogram
                   }),
-                  new MpPlugin(require('./wx.kbone.config'))
+                  new MpPlugin(require('../wx/kbone.config'))
                 ]
               : [])
           ],

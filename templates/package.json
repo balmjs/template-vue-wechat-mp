@@ -4,7 +4,7 @@
   "description": "{{ description }}",
   "author": "{{ author }}",
   "scripts": {
-    "css:init": "balm --css-init",
+    "wx:init": "balm --wx-init",
     "dev": "balm",
     "dev:mp": "rimraf .tmp && balm -mp --dev-mp",
     "build:web": "balm -p",
