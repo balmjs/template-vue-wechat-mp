@@ -2,7 +2,7 @@
   <div class="cnt">
     <my-header></my-header>
     <a href="/test/home">回到测试首页</a>
-    <button @click="onClickJump">回到测试首页</button>
+    <KButton @click="onClickJump">回到测试首页</KButton>
     <my-footer></my-footer>
   </div>
 </template>

@@ -2,17 +2,19 @@
   <div>
     <div>Selected: {{ selectedValue }}</div>
     <KPickerView
-      v-model="index"
+      v-model="selectedIndex"
       indicator-style="height: 50px;"
-      style="width: 100%; height: 300px;"
+      style="width: 100%; height: 300px"
       @change="changeIndex"
     >
       <KPickerViewColumn>
         <KView
           v-for="(item, index) in singleData"
-          style="line-height: 50px;"
+          style="line-height: 50px"
           :key="index"
-        >{{ item }}</KView>
+        >
+          {{ item }}
+        </KView>
       </KPickerViewColumn>
     </KPickerView>
   </div>
@@ -23,7 +25,7 @@ export default {
   data() {
     return {
       singleData: ['A', 'B', 'C', 'D'],
-      index: [0],
+      selectedIndex: [0],
       selectedValue: 'A'
     };
   },

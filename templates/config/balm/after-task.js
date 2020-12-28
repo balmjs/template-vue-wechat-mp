@@ -1,12 +1,15 @@
 const fs = require('fs');
 const myAppConfig = require('../wx/miniprogram.config');
-const targetFile = 'dist/mp/app.json';
 
 function updateAppConfig(balm, wxInit) {
   return wxInit
     ? () => {}
     : () => {
-        if (balm.config.env.isMP && balm.config.env.isProd) {
+        const targetFile = balm.config.env.isProd
+          ? 'dist/mp/app.json'
+          : '.tmp/app.json';
+
+        if (balm.config.env.isMP) {
           fs.readFile(targetFile, { encoding: 'utf8' }, (err, data) => {
             let defaultAppCnfig = JSON.parse(data);
 

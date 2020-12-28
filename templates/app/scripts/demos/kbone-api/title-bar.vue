@@ -22,9 +22,8 @@ export default {
   },
   methods: {
     changeTitle() {
-      const index = parseInt(Math.random() * 10, 10) % 3;
       this.$api.setNavigationBarTitle({
-        title: this.titles[index]
+        title: 'Hello BalmJS'
       });
     },
     toggleAnimation() {

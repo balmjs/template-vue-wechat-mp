@@ -4,8 +4,8 @@
     <div>
       <a href="/test/list/321">当前页跳转</a>
       <a href="/test/detail/123" target="_blank">新开页面跳转</a>
-      <button @click="onClickJump">当前页跳转</button>
-      <button @click="onClickOpen">新开页面跳转</button>
+      <KButton @click="onClickJump">当前页跳转</KButton>
+      <KButton @click="onClickOpen">新开页面跳转</KButton>
     </div>
     <!-- vue-improve-loader -->
     <div check-reduce>

@@ -23,7 +23,7 @@
       </KCheckboxGroup>
     </KCells>
     <KCells title="Switch">
-      <KSwitch v-model="switchItem" label="Switch文本" />
+      <KSwitch v-model="switchItem" label="Switch文本"></KSwitch>
     </KCells>
     <KCells title="Radio">
       <KRadioGroup @change="raidoChange" v-model="radioValue">

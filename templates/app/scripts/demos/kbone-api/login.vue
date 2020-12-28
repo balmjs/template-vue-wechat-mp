@@ -9,9 +9,10 @@
     </KView>
     <KView class="page__hd">
       <KButton @click="login"> 登录 </KButton>
-      <KButton open-type="getUserInfo" @click="getUserInfo">
+      <!-- 需企业appid -->
+      <!-- <KButton open-type="getUserInfo" @click="getUserInfo">
         获取用户信息
-      </KButton>
+      </KButton> -->
       <KButton @click="getSetting"> 获取小程序设置 </KButton>
       <KButton open-type="openSetting"> 打开小程序设置 </KButton>
     </KView>
@@ -52,12 +53,11 @@ export default {
         this.result = res;
       }
     },
-    getSetting() {
+    async getSetting() {
       // 获取用户设置
-      return this.$api.getSetting().then((res) => {
-        this.$api.showToast({
-          title: res.nickName || 'Hello BalmJS'
-        });
+      let res = await this.$api.getSetting();
+      this.$api.showToast({
+        title: `Hello ${res.nickName || 'BalmJS'}`
       });
     }
   }

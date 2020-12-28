@@ -1,7 +1,7 @@
 <template>
   <div>
-    <KSlider />
-    <KSlider v-model="value" :show-value="true" />
+    <KSlider></KSlider>
+    <KSlider v-model="value" :show-value="true"></KSlider>
   </div>
 </template>
 

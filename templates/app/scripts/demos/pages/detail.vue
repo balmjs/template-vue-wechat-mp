@@ -1,7 +1,7 @@
 <template>
   <div class="cnt">
     <my-header></my-header>
-    <button @click="onClickBack">回到上一页</button>
+    <KButton @click="onClickBack">回到上一页</KButton>
     <my-footer></my-footer>
   </div>
 </template>

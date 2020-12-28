@@ -1,7 +1,8 @@
 <template>
   <div class="footer">
+    <hr />
     <p>
-      <button @click="$router.push({ name: 'home' })">返回首页</button>
+      <KButton @click="$router.push({ name: 'home' })">返回首页</KButton>
     </p>
   </div>
 </template>

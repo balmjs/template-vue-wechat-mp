@@ -4,9 +4,9 @@
     <KButton @click="showToast('loading')">加载中提示</KButton>
     <KButton @click="showToast('warn')">警告提示</KButton>
     <KButton @click="showToast('info')">提示</KButton>
-    <KToast :type="type" v-model="loadingToast" :duration="3000"
-      >提示文字</KToast
-    >
+    <KToast :type="type" v-model="loadingToast" :duration="3000">
+      提示文字
+    </KToast>
   </div>
 </template>
 

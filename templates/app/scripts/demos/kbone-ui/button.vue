@@ -1,8 +1,8 @@
 <template>
   <KButtonArea>
     <KButton type="primary">页面主要操作</KButton>
-    <KButton type="primary" open-type="getUserInfo" @getuserinfo="getUserInfo"
-      >getUserInfo
+    <KButton type="primary" open-type="getUserInfo" @getuserinfo="getUserInfo">
+      getUserInfo
     </KButton>
     <KButton type="primary" :loading="true">BalmJS</KButton>
     <KButton type="primary" :disabled="true">小程序开发</KButton>
