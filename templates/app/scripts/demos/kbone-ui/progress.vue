@@ -1,7 +1,7 @@
 <template>
   <div>
-    <KProgress :percent="percent"></KProgress>
-    <KProgress :percent="percent" showInfo></KProgress>
+    <KProgress></KProgress>
+    <KProgress :percent="percent" show-info></KProgress>
   </div>
 </template>
 

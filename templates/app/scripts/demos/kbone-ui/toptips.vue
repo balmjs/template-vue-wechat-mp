@@ -3,9 +3,8 @@
     <KButton @click="showToptips('success')">Success</KButton>
     <KButton @click="showToptips('info')">Info</KButton>
     <KButton @click="showToptips('error')">Error</KButton>
-    <KToptips v-model="infoShow" :type="type" :duration="1000">
-      提示
-    </KToptips>
+
+    <KToptips v-model="infoShow" :type="type" :duration="1000">提示</KToptips>
   </div>
 </template>
 

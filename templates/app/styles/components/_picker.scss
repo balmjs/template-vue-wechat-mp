@@ -1,0 +1,7 @@
+.weui-picker {
+  height: 50vh;
+
+  &.weui-picker--active {
+    transform: translateY(0);
+  }
+}

@@ -1,5 +1,9 @@
 @use '../global/index' as global;
 
+body {
+  margin: 0;
+}
+
 .container {
   background-color: global.$theme-bgcolor;
   color: global.$text-primary-color;

@@ -1,60 +1,56 @@
 <template>
-  <div>
-    <KCells title="表单输入">
-      <KInput
-        label="卡号"
-        @change="inputChange"
-        v-model="inputCardValue"
-        placeholder="填写本人卡号"
-        clearable
-      ></KInput>
-      <KInput
-        label="昵称"
-        @change="inputChange"
-        v-model="inputNickName"
-        placeholder="填写信号的昵称"
-        clearable
-      ></KInput>
-    </KCells>
-    <KCells title="Checkbox">
-      <KCheckboxGroup @change="handleChange" v-model="checkboxGrpValues">
-        <KCheckbox value="BalmJS">BalmJS</KCheckbox>
-        <KCheckbox value="小程序开发">小程序开发</KCheckbox>
-      </KCheckboxGroup>
-    </KCells>
-    <KCells title="Switch">
-      <KSwitch v-model="switchItem" label="Switch文本"></KSwitch>
-    </KCells>
-    <KCells title="Radio">
-      <KRadioGroup @change="raidoChange" v-model="radioValue">
-        <KRadio :value="1">微信</KRadio>
-        <KRadio :value="2">微信支付</KRadio>
-        <KRadio :value="3">小程序</KRadio>
-      </KRadioGroup>
-    </KCells>
+  <div class="page--ui-demos">
+    <template v-if="$route.name === 'ui.form'">
+      <KCells title="表单页">
+        <KCell
+          v-for="item in navItems"
+          :key="item.name"
+          class="weui-cell_access"
+          :value="NavNames[item.path]"
+          @click.native="goto(item)"
+        ></KCell>
+      </KCells>
+    </template>
+    <router-view v-else></router-view>
   </div>
 </template>
 
 <script>
+import { formRoutes } from '@/routes/demos/ui';
+
+const NavNames = {
+  'form-page': '表单结构',
+  'form-input-status': '输入框状态',
+  'form-vcode': '验证码',
+  'form-checkbox': '复选框',
+  'form-radio': '单选框',
+  'form-switch': '开关',
+  'form-select': '选择框',
+  'form-textarea': '文本域'
+};
+
 export default {
   data() {
     return {
-      checkboxGrpValues: [],
-      switchItem: false,
-      radioValue: 1,
-      inputCardValue: '',
-      inputNickName: ''
+      NavNames
     };
   },
+  computed: {
+    navItems() {
+      return formRoutes.map(({ path, name, children }) => {
+        return {
+          path,
+          name,
+          children
+        };
+      });
+    }
+  },
   methods: {
-    handleChange(val) {
-      console.log('handleChange', val);
-    },
-    raidoChange(val) {
-      console.log('raidoChange', val);
-    },
-    inputChange(val) {
-      console.log('inputChange', val);
+    goto({ name }) {
+      this.$router.push({
+        name
+      });
     }
   }
 };

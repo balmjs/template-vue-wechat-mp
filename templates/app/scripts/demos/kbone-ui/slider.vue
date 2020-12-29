@@ -1,7 +1,7 @@
 <template>
   <div>
     <KSlider></KSlider>
-    <KSlider v-model="value" :show-value="true"></KSlider>
+    <KSlider v-model="value" show-value></KSlider>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   data() {
     return {
-      value: 10
+      value: 50
     };
   }
 };
