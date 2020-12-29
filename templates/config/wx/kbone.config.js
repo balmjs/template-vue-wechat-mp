@@ -31,7 +31,6 @@ const kboneConfig = {
   },
   global: {
     share: true,
-    windowScroll: false,
     rem: true
   },
   projectConfig: {
