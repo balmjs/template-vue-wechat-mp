@@ -2,6 +2,10 @@
 
 > A Vue.js project for WeChat Mini Program
 
+## Demos
+
+![vue-wechat-mp](vue-wechat-mp.jpg)
+
 - 使用 Vue 开发微信小程序
 - 默认内置 Weui 常用组件和微信 API
 - 支持自定义小程序组件
