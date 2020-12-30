@@ -1,8 +1,18 @@
 <template>
   <div class="cnt">
     <my-header></my-header>
-    <a href="/test/home">回到测试首页</a>
-    <KButton @click="onClickJump">回到测试首页</KButton>
+    <KFlex>
+      <KFlexItem>
+        <KView class="placeholder">
+          <a href="/test/home">回到测试首页</a>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <KButton size="mini" @click="onClickJump">回到测试首页</KButton>
+        </KView>
+      </KFlexItem>
+    </KFlex>
     <my-footer></my-footer>
   </div>
 </template>

@@ -1,7 +1,13 @@
 <template>
   <div class="cnt">
     <my-header></my-header>
-    <KButton @click="onClickBack">回到上一页</KButton>
+    <KFlex>
+      <KFlexItem>
+        <KView class="placeholder">
+          <KButton size="mini" @click="onClickBack">回到上一页</KButton>
+        </KView>
+      </KFlexItem>
+    </KFlex>
     <my-footer></my-footer>
   </div>
 </template>

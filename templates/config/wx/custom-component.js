@@ -38,9 +38,11 @@ module.exports = useCustomComponent
           )
         }
       },
-      app: {
-        // navigationStyle: 'custom' // For `top-app-bar`
-      }
+      app: wxCustomComponents['top-app-bar']
+        ? {
+            navigationStyle: 'custom'
+          }
+        : {}
     }
   : {
       generate: {},

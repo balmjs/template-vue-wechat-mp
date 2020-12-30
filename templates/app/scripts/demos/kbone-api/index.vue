@@ -4,6 +4,7 @@
       <KCell
         v-for="item in apiDemosNav"
         :key="item.name"
+        class="weui-cell_access"
         :value="item.path"
         @click.native="goto(item)"
       >

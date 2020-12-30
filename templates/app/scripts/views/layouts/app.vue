@@ -1,6 +1,6 @@
 <template>
   <div :class="['container', { 'is-mp': isMP }]">
-    <!-- <template v-if="isMP">
+    <template v-if="isMP">
       <top-app-bar
         title="BalmJS for MP"
         :hiddenGoBack="hiddenGoBack"
@@ -9,7 +9,7 @@
         @ready="onReady"
         @back="goBack"
       ></top-app-bar>
-    </template> -->
+    </template>
     <div class="main-content" :style="contentStyle">
       <router-view></router-view>
     </div>

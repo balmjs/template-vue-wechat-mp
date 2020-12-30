@@ -7,7 +7,8 @@
       <div :class="['weui-picker', { 'weui-picker--active': show }]">
         <KPickerView
           v-model="selectedIndex"
-          indicator-style="height: 48px;"
+          indicator-style="height: 48px"
+          style="height: 240px"
           @change="changeIndex"
         >
           <KPickerViewColumn>

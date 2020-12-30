@@ -1,12 +1,31 @@
 <template>
   <div class="cnt">
     <my-header></my-header>
-    <div>
-      <a href="/test/list/321">当前页跳转</a>
-      <a href="/test/detail/123" target="_blank">新开页面跳转</a>
-      <KButton @click="onClickJump">当前页跳转</KButton>
-      <KButton @click="onClickOpen">新开页面跳转</KButton>
-    </div>
+    <KFlex>
+      <KFlexItem>
+        <KView class="placeholder">
+          <a href="/test/list/123">当前页跳转</a>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <a href="/test/detail/123" target="_blank">新开页面跳转</a>
+        </KView>
+      </KFlexItem>
+    </KFlex>
+    <br />
+    <KFlex>
+      <KFlexItem>
+        <KView class="placeholder">
+          <KButton @click="onClickJump" size="mini">当前页跳转</KButton>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <KButton @click="onClickOpen" size="mini">新开页面跳转</KButton>
+        </KView>
+      </KFlexItem>
+    </KFlex>
     <!-- vue-improve-loader -->
     <div check-reduce>
       <p>这段话不会在小程序里显示</p>
@@ -50,7 +69,6 @@ export default {
     onClickJump() {
       window.location.href = '/test/list/123';
     },
-
     onClickOpen() {
       window.open('/test/detail/123');
     }

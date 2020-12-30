@@ -9,8 +9,13 @@
 export default {
   data() {
     return {
-      checkedValue: 2
+      checkedValue: 0
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.checkedValue = 2;
+    }, 1);
   }
 };
 </script>

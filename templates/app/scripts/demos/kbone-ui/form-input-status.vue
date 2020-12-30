@@ -6,15 +6,21 @@
         label="卡号"
         placeholder="请输入8位数卡号"
         clearable
+        :focus="false"
       ></KInput>
     </KCells>
     <KCells title="表单只读、置灰">
-      <KInput v-model="email" label="EMail" readonly></KInput>
-      <KInput v-model="wechatId" label="微信号" disabled></KInput>
+      <KInput v-model="email" label="EMail" readonly :focus="false"></KInput>
+      <KInput
+        v-model="wechatId"
+        label="微信号"
+        disabled
+        :focus="false"
+      ></KInput>
     </KCells>
-    <KButton type="primary" :disabled="disabled" @click="onConfirm"
-      >确定</KButton
-    >
+    <KButton type="primary" :disabled="disabled" @click="onConfirm">
+      确定
+    </KButton>
 
     <KToast v-model="showSuccess" type="success" :duration="3000">
       已完成
