@@ -5,7 +5,7 @@
       <p class="page__desc">请求 apis 相关内容</p>
     </KView>
     <KView class="page__hd">
-      <!-- <KButton @click="requestUrl"> 发起请求 </KButton> -->
+      <KButton @click="requestUrl"> 发起请求 </KButton>
       <KButton @click="downloadUrl"> 图片下载 </KButton>
       <KView style="text-align: center; margin: 20px">
         <img
@@ -23,7 +23,7 @@
 // import urlConfig from './url-config';
 
 const urlConfig = {
-  requestUrl: '',
+  requestUrl: 'https://elf-mouse.github.io/now/animal-crossing',
   downloadExampleUrl:
     'https://elf-mouse.github.io/now/animal-crossing/img/fishing'
 };
