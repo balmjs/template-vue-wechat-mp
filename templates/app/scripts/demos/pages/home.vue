@@ -36,19 +36,16 @@
       <p>这段话也不会在小程序里显示</p>
       <p>在渲染时会被样式隐藏</p>
     </div>
-    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import MyHeader from './common/header';
-import MyFooter from './common/footer';
 
 export default {
   name: 'Home',
   components: {
-    MyHeader,
-    MyFooter
+    MyHeader
   },
   created() {
     window.addEventListener('wxload', (query) =>

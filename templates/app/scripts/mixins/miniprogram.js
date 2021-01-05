@@ -1,4 +1,12 @@
-const goBackBlockList = ['home', 'test.list', 'test.detail']; // vue route names
+const goBackBlockList = [
+  'home',
+  'demos.ui',
+  'demos.api',
+  'demos.test',
+  'test.list',
+  'test.detail',
+  'demos.wx'
+]; // vue route names
 
 export default {
   data() {

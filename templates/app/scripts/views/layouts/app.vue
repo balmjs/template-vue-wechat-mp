@@ -10,9 +10,38 @@
         @back="goBack"
       ></top-app-bar>
     </template> -->
-    <div class="main-content" :style="contentStyle">
-      <router-view></router-view>
+    <div class="main-body" :style="contentStyle">
+      <div class="main-content">
+        <router-view></router-view>
+      </div>
     </div>
+    <KFlex class="main-nav">
+      <KFlexItem>
+        <KView class="placeholder">
+          <router-link :to="{ name: 'home' }">Home</router-link>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <router-link :to="{ name: 'demos.ui' }">UI</router-link>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <router-link :to="{ name: 'demos.api' }">API</router-link>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <router-link :to="{ name: 'demos.test' }">Test</router-link>
+        </KView>
+      </KFlexItem>
+      <KFlexItem>
+        <KView class="placeholder">
+          <router-link :to="{ name: 'demos.wx' }">WX</router-link>
+        </KView>
+      </KFlexItem>
+    </KFlex>
     <KToast type="loading" v-model="isLoading"></KToast>
     <!-- <template v-if="isMP">
       <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">

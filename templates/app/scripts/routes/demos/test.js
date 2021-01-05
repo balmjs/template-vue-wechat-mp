@@ -5,7 +5,7 @@ import Detail from '@/demos/pages/detail';
 export default [
   {
     path: '/test/home',
-    name: 'test.home',
+    name: 'demos.test',
     component: Home
   },
   {

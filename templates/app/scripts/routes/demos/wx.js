@@ -3,7 +3,7 @@ import Index from '@/demos/wx-components/index';
 export default [
   {
     path: '/wx',
-    name: 'wx.index',
+    name: 'demos.wx',
     component: Index
   }
 ];

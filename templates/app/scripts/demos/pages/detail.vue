@@ -8,19 +8,16 @@
         </KView>
       </KFlexItem>
     </KFlex>
-    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import MyHeader from './common/header';
-import MyFooter from './common/footer';
 
 export default {
   name: 'Detail',
   components: {
-    MyHeader,
-    MyFooter
+    MyHeader
   },
   created() {
     window.addEventListener('wxload', (query) =>
