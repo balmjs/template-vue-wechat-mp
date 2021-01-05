@@ -18,3 +18,30 @@
     display: block;
   }
 }
+
+.h5-code[class*='language-'],
+.h5-pre[class*='language-'] {
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+.h5-pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(.h5-pre) > .h5-code[class*='language-'],
+.h5-pre[class*='language-'] {
+  background: #2d2d2d;
+}

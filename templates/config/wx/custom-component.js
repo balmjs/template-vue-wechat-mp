@@ -1,6 +1,6 @@
 const path = require('path');
 
-const useCustomComponent = false; // 是否使用自定义微信组件
+const useCustomComponent = true; // 是否使用自定义微信组件
 
 // NOTE: run `npm run wx:init` first
 const wxVendorComponents = {};

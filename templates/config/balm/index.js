@@ -41,6 +41,17 @@ module.exports = (balm, wxInit) => {
           },
           loaders: [
             {
+              test: /\.md$/,
+              use: [
+                {
+                  loader: 'html-loader',
+                  options: {
+                    minimize: false
+                  }
+                }
+              ]
+            },
+            {
               test: /\.vue$/,
               use: [
                 {

@@ -5,6 +5,7 @@ import $http from '@/plugins/http';
 import $bus from '@/plugins/bus';
 import $store from '@/plugins/store';
 import { isMP } from '@/config';
+import getReadme from '@/config/readme';
 
 import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
 import KboneAPI from 'kbone-api'; // 小程序API文档 - https://developers.weixin.qq.com/miniprogram/dev/api/
@@ -43,6 +44,7 @@ export default function createApp() {
   }
 
   Vue.prototype.isMP = isMP;
+  Vue.prototype.readme = getReadme();
 
   Vue.config.productionTip = false;
   Vue.use($http);
