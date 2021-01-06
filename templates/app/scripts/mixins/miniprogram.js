@@ -40,7 +40,6 @@ export default {
     },
     async wxlogin() {
       let { code } = await this.$api.login();
-      console.log('login code', code);
       this.code = code;
     },
     async login(detail) {

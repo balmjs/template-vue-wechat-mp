@@ -10,15 +10,6 @@ import getReadme from '@/config/readme';
 
 import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
 
-function refreshRem() {
-  let clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
-  if (clientWidth > 540) {
-    clientWidth = 540;
-  }
-  const rootFontSize = `${clientWidth / 10}px`;
-  document.documentElement.style.fontSize = rootFontSize;
-}
-
 export default function createApp() {
   const container = document.createElement('div');
   container.id = 'app';
