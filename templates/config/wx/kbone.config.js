@@ -26,9 +26,6 @@ const kboneConfig = {
     },
     customConfig.app
   ),
-  appExtraConfig: {
-    sitemapLocation: 'sitemap.json'
-  },
   global: {
     share: true,
     rem: true
