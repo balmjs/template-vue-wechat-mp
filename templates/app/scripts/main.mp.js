@@ -4,10 +4,10 @@ import router from '@/routes';
 import $http from '@/plugins/http';
 import $bus from '@/plugins/bus';
 import $store from '@/plugins/store';
-import { isMP } from '@/config';
+import wxInit from '@/config/wx';
+import logInit from '@/config/logger';
 
 import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
-import KboneAPI from 'kbone-api'; // 小程序API文档 - https://developers.weixin.qq.com/miniprogram/dev/api/
 
 function refreshRem() {
   let clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
@@ -23,26 +23,8 @@ export default function createApp() {
   container.id = 'app';
   document.body.appendChild(container);
 
-  window.onerror = (message, source, lineno, colno, error) => {
-    console.log('window.onerror => ', message, source, lineno, colno, error);
-  };
-  window.addEventListener('error', evt =>
-    console.log("window.addEventListener('error') =>", evt)
-  );
-
-  if (isMP) {
-    window.onload = refreshRem;
-
-    window.addEventListener('wxshow', refreshRem);
-
-    KboneAPI.onWindowResize(() => {
-      KboneAPI.nextTick(() => {
-        refreshRem();
-      });
-    });
-  }
-
-  Vue.prototype.isMP = isMP;
+  wxInit(Vue);
+  logInit();
 
   Vue.config.productionTip = false;
   Vue.use($http);
@@ -50,7 +32,6 @@ export default function createApp() {
   Vue.use($store);
 
   Vue.use(KboneUI);
-  Vue.use(KboneAPI);
 
   return new Vue({
     el: '#app',
