@@ -2,27 +2,38 @@ import KboneAPI from 'kbone-api'; // 小程序API文档 - https://developers.wei
 import { isMP } from '@/config';
 
 function autoUpdateVersion() {
-  const updateManager = KboneAPI.getUpdateManager();
+  if (KboneAPI.canIUse('getUpdateManager')) {
+    const updateManager = KboneAPI.getUpdateManager();
 
-  updateManager.onCheckForUpdate(({ hasUpdate }) => {
-    console.log('是否有新版本', hasUpdate);
-  });
+    updateManager.onCheckForUpdate(({ hasUpdate }) => {
+      if (hasUpdate) {
+        updateManager.onUpdateReady(() => {
+          KboneAPI.showModal({
+            title: '更新提示',
+            content: '新版本已经准备好，是否重启应用？',
+            success({ confirm }) {
+              if (confirm) {
+                updateManager.applyUpdate();
+              }
+            }
+          });
+        });
 
-  updateManager.onUpdateReady(() => {
-    KboneAPI.showModal({
-      title: '更新提示',
-      content: '新版本已经准备好，是否重启应用？',
-      success(res) {
-        if (res.confirm) {
-          updateManager.applyUpdate();
-        }
+        updateManager.onUpdateFailed(() => {
+          KboneAPI.showModal({
+            title: '更新提示',
+            content: '新版本已经准备好，请您删除当前小程序，重新搜索打开哟~'
+          });
+        });
       }
     });
-  });
-
-  updateManager.onUpdateFailed(() => {
-    // 新版本下载失败
-  });
+  } else {
+    KboneAPI.showModal({
+      title: '提示',
+      content:
+        '当前微信版本过低，无法自动更新小程序，请升级到最新微信版本后重试。'
+    });
+  }
 }
 
 function refreshRem() {
