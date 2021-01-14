@@ -1,11 +1,13 @@
 const { src, dest, parallel } = require('gulp');
 
+const tmpRoot = '.mp';
+
 function syncWxss() {
-  return src('./app/index.wxss').pipe(dest('.tmp/pages/main'));
+  return src('./app/index.wxss').pipe(dest(`${tmpRoot}/pages/main`));
 }
 
 module.exports = function useMP(mix) {
-  const mpDir = mix.env.isProd ? './dist/mp' : '.tmp';
+  const mpDir = mix.env.isProd ? './dist/mp' : tmpRoot;
   const mpCommonDir = `${mpDir}/common`;
 
   // sync wxss entry

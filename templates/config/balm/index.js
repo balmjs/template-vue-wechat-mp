@@ -25,6 +25,7 @@ module.exports = (balm, wxInit) => {
         },
         roots: {
           source: 'app',
+          tmp: balm.config.env.isMP ? '.mp' : '.tmp',
           target: balm.config.env.isMP ? 'dist/mp' : 'dist/web'
         },
         styles: {

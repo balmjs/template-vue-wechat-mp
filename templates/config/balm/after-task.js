@@ -5,9 +5,10 @@ function updateAppConfig(balm, wxInit) {
   return wxInit
     ? () => {}
     : () => {
-        const targetFile = balm.config.env.isProd
-          ? 'dist/mp/app.json'
-          : '.tmp/app.json';
+        const targetRoot = balm.config.env.isProd
+          ? balm.config.roots.target
+          : balm.config.roots.tmp;
+        const targetFile = `${targetRoot}/app.json`;
 
         if (balm.config.env.isMP) {
           fs.readFile(targetFile, { encoding: 'utf8' }, (err, data) => {
