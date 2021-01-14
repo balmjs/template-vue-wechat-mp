@@ -44,16 +44,18 @@ npm i
 ## Enjoy
 
 ```sh
-# For development
-npm run dev # for web
-npm run dev:mp # for miniprogram
+# For web development
+npm run dev:web
+
+# For miniprogram development
+npm run dev:mp
 ```
 
-> 使用微信开发者工具导入项目 `.tmp`，之后便可以像开发 web 项目一样开发小程序
+> 使用微信开发者工具导入项目 `.mp`，之后便可以像开发 web 项目一样开发小程序
 
 ```sh
-# For production
-npm run prod # build for web & miniprogram
+# For web & miniprogram production
+npm run prod
 ```
 
 > 使用微信开发者工具导入项目 `dist/mp`，之后便可预览构建好的小程序

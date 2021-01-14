@@ -14,6 +14,7 @@ web_modules/
 
 # Build build output
 .tmp/
+.mp/
 dist/
 /assets/
 

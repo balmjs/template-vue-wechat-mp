@@ -5,8 +5,8 @@
   "author": "Elf-mousE",
   "scripts": {
     "wx:init": "balm --wx-init",
-    "dev": "balm",
-    "dev:mp": "rimraf .tmp && balm -mp --dev-mp",
+    "dev:web": "balm",
+    "dev:mp": "rimraf .mp && balm -mp --dev-mp",
     "build:web": "balm -p",
     "build:mp": "balm -p -mp",
     "prod": "npm run build:web && npm run build:mp"
