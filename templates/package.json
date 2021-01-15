@@ -15,7 +15,7 @@
     "axios": "^0.21.1",
     "axios-miniprogram-adapter": "^0.3.2",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^0.6.0",
+    "kbone-ui": "^1.0.0",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.0",
     "vue-router": "^3.4.0"
