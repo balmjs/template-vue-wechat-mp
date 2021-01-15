@@ -16,7 +16,7 @@ module.exports = (balm, wxInit) => {
       useMP(mix);
     } else {
       // Clear miniprogram css
-      mix.remove(['dist/web/index.wxss', 'dist/web/css/reset.css']);
+      mix.remove('dist/web/css/reset.css');
 
       publish(mix);
     }

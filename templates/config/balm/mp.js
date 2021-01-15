@@ -1,9 +1,10 @@
 const { src, dest, parallel } = require('gulp');
 
 const tmpRoot = '.mp';
+const wxssEntry = './app/wx-pages/main/index.wxss';
 
 function syncWxss() {
-  return src('./app/index.wxss').pipe(dest(`${tmpRoot}/pages/main`));
+  return src(wxssEntry).pipe(dest(`${tmpRoot}/pages/main`));
 }
 
 module.exports = function useMP(mix) {
@@ -11,7 +12,7 @@ module.exports = function useMP(mix) {
   const mpCommonDir = `${mpDir}/common`;
 
   // sync wxss entry
-  mix.copy('./app/index.wxss', `${mpDir}/pages/main`);
+  mix.copy(wxssEntry, `${mpDir}/pages/main`);
 
   if (mix.env.isDev) {
     mix.serve((watcher, reload) => {
