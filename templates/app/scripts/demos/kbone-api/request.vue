@@ -20,14 +20,11 @@
 </template>
 
 <script>
-import { isProd } from '@/config';
 // import urlConfig from './url-config';
 
 const urlConfig = {
   requestUrl: 'https://mp.balmjs.com',
-  downloadExampleUrl: isProd
-    ? 'https://mp.balmjs.com/img'
-    : 'http://localhost:3000/images'
+  downloadExampleUrl: 'https://mp.balmjs.com/img'
 };
 
 export default {
