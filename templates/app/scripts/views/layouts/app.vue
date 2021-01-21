@@ -15,34 +15,28 @@
         <router-view></router-view>
       </div>
     </div>
-    <KFlex class="main-nav">
-      <KFlexItem>
-        <KView class="placeholder">
+    <div class="weui-flex main-nav">
+      <div class="weui-flex__item">
+        <div class="placeholder">
           <router-link :to="{ name: 'home' }">Home</router-link>
-        </KView>
-      </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
-          <router-link :to="{ name: 'demos.ui' }">UI</router-link>
-        </KView>
-      </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
+        </div>
+      </div>
+      <div class="weui-flex__item">
+        <div class="placeholder">
           <router-link :to="{ name: 'demos.api' }">API</router-link>
-        </KView>
-      </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
+        </div>
+      </div>
+      <div class="weui-flex__item">
+        <div class="placeholder">
           <router-link :to="{ name: 'demos.test' }">Test</router-link>
-        </KView>
-      </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
+        </div>
+      </div>
+      <div class="weui-flex__item">
+        <div class="placeholder">
           <router-link :to="{ name: 'demos.wx' }">WX</router-link>
-        </KView>
-      </KFlexItem>
-    </KFlex>
-    <KToast type="loading" v-model="isLoading"></KToast>
+        </div>
+      </div>
+    </div>
     <!-- <template v-if="isMP">
       <login-dialog :open="showLogin" @getPhoneNumber="getUserInfo">
         <div>Hello BalmJS</div>
@@ -52,6 +46,7 @@
 </template>
 
 <script>
+import { useBus } from 'balm-ui/plugins/event';
 import miniprogram from '@/mixins/miniprogram';
 
 export default {
@@ -63,11 +58,13 @@ export default {
     };
   },
   created() {
-    this.$bus.$on('on-loading', () => {
+    const bus = useBus();
+
+    bus.on('on-loading', () => {
       this.isLoading = true;
     });
 
-    this.$bus.$on('off-loading', () => {
+    bus.on('off-loading', () => {
       this.isLoading = false;
     });
   }

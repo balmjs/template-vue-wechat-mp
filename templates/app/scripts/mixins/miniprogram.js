@@ -1,6 +1,10 @@
+import { useBus } from 'balm-ui/plugins/event';
+import { useHttp } from '@/plugins/http';
+
+const bus = useBus();
+
 const goBackBlockList = [
   'home',
-  'demos.ui',
   'demos.api',
   'demos.test',
   'test.list',
@@ -44,14 +48,16 @@ export default {
       this.code = code;
     },
     async login(detail) {
+      const http = useHttp();
+
       let data = Object.assign({}, detail);
       data.code = this.code;
 
-      let res = await this.$http.post('/wxlogin', data); // NOTE: 后台接口需自行修改
+      let res = await http.post('/wxlogin', data); // NOTE: 后台接口需自行修改
       console.log(res); // TODO: 自动登录后获取用户信息
     },
     async getUserInfo({ detail }) {
-      this.$bus.$emit('on-loading');
+      bus.emit('on-loading');
       this.showLogin = false;
 
       try {

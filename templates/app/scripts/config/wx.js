@@ -45,7 +45,7 @@ function refreshRem() {
   document.documentElement.style.fontSize = rootFontSize;
 }
 
-function wxInit(Vue) {
+function wxInit(app) {
   if (isMP) {
     window.onload = refreshRem;
 
@@ -59,8 +59,8 @@ function wxInit(Vue) {
     });
   }
 
-  Vue.prototype.isMP = isMP;
-  Vue.use(KboneAPI);
+  app.config.globalProperties.isMP = isMP;
+  app.config.globalProperties.$api = KboneAPI;
 }
 
 export default wxInit;

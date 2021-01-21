@@ -1,41 +1,29 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from '@/views/layouts/app';
 import router from '@/routes';
 import $http from '@/plugins/http';
-import $bus from '@/plugins/bus';
-import $store from '@/plugins/store';
+import $event from 'balm-ui/plugins/event';
+import $store from 'balm-ui/plugins/store';
+import myStore from '@/store';
 import wxInit from '@/config/wx';
 import logInit from '@/config/logger';
 
-import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
-
-function refreshRem() {
-  let clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
-  if (clientWidth > 540) {
-    clientWidth = 540;
-  }
-  const rootFontSize = `${clientWidth / 10}px`;
-  document.documentElement.style.fontSize = rootFontSize;
-}
-
-export default function createApp() {
+export default function createBalmApp() {
   const container = document.createElement('div');
   container.id = 'app';
   document.body.appendChild(container);
 
-  wxInit(Vue);
+  const app = createApp(App);
+
+  wxInit(app);
   logInit();
 
-  Vue.config.productionTip = false;
-  Vue.use($http);
-  Vue.use($bus);
-  Vue.use($store);
+  app.use(router);
+  app.use($http);
+  app.use($event);
+  app.use($store, myStore);
 
-  Vue.use(KboneUI);
+  app.mount('#app');
 
-  return new Vue({
-    el: '#app',
-    render: h => h(App),
-    router
-  });
+  return app;
 }

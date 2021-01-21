@@ -2,7 +2,7 @@ const devWithMP = process.argv.includes('--with-mp');
 const path = require('path');
 const webpack = require('webpack');
 const { spawn } = require('child_process');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
 
@@ -82,7 +82,7 @@ module.exports = (balm, wxInit) => {
           //   prefix: 'extra-'
           // },
           alias: {
-            vue$: 'vue/dist/vue.esm.js',
+            vue$: 'vue/dist/vue.esm-bundler.js',
             '@': resolve('app/scripts')
           },
           webpackOptions: {

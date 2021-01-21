@@ -1,15 +1,16 @@
 import Home from '@/views/home';
 import NotFound from '@/views/not-found';
+import demosRoutes from './demos';
 
 let baseRoutes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
-    component: Home,
-    alias: '/'
+    component: Home
   },
+  ...demosRoutes,
   {
-    path: '*',
+    path: '/:catchAll(.*)',
     component: NotFound
   }
 ];

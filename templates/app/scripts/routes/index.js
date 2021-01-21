@@ -1,22 +1,10 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import defaultRoutes from './default';
-import demosRoutes from './demos';
-import { isMP } from '@/config';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import routes from './main';
 
-Vue.use(VueRouter);
-
-let routes = defaultRoutes.concat(demosRoutes);
-
-let routerOptions = {
-  mode: 'history',
+const history = createWebHashHistory();
+const router = createRouter({
+  history,
   routes
-};
-
-// if (!isMP) {
-//   routerOptions.base = '/m/'; // NOTE: for Back-end
-// }
-
-const router = new VueRouter(routerOptions);
+});
 
 export default router;
