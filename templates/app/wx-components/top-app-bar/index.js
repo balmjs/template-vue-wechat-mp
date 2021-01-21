@@ -53,9 +53,7 @@ Component({
   lifetimes: {
     ready: function() {
       if (this.data.contentOffset) {
-        this.setData({
-          topAppBarHeight: this.data.statusBarHeight + 44
-        });
+        this.data.topAppBarHeight = this.data.statusBarHeight + 44;
       }
 
       this.triggerEvent('ready', {

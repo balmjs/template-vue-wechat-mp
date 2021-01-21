@@ -95,7 +95,6 @@ module.exports = (balm, wxInit) => {
         assets: isMP
           ? {}
           : {
-              publicUrl: '/',
               root: 'assets', // Replace 'assets' to your remote project root
               cache: true,
               excludes: ['dist/web/css/reset.css']
