@@ -20,8 +20,6 @@
 </template>
 
 <script>
-// import urlConfig from './url-config';
-
 const urlConfig = {
   requestUrl: 'https://mp.balmjs.com',
   downloadExampleUrl: 'https://mp.balmjs.com/img'
