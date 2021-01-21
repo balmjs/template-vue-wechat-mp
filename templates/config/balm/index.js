@@ -1,13 +1,20 @@
-const devMP = process.argv.includes('--dev-mp');
+const devWithMP = process.argv.includes('--with-mp');
 const path = require('path');
 const webpack = require('webpack');
+const { spawn } = require('child_process');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
 
+function resolve(dir) {
+  return path.join(path.join(__dirname, '..', '..'), dir);
+}
+
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
 module.exports = (balm, wxInit) => {
+  const { isMP, isDev } = balm.config.env;
+
   const config = wxInit
     ? {
         useDefaults: false
@@ -21,12 +28,17 @@ module.exports = (balm, wxInit) => {
               changeOrigin: true // Needed for virtual hosted sites
             }
           },
-          historyOptions: true // For vue-router `mode: 'history'`
+          historyOptions: true, // For vue-router `mode: 'history'`,
+          next: () => {
+            if (!isMP && devWithMP) {
+              spawn('npm', ['run', 'dev:mp'], { stdio: 'inherit' });
+            }
+          }
         },
         roots: {
           source: 'app',
-          tmp: balm.config.env.isMP ? '.mp' : '.tmp',
-          target: balm.config.env.isMP ? 'dist/mp' : 'dist/web'
+          tmp: isMP ? '.mp' : '.tmp',
+          target: isMP ? 'dist/mp' : 'dist/web'
         },
         styles: {
           extname: 'scss',
@@ -36,9 +48,7 @@ module.exports = (balm, wxInit) => {
           entry: {
             lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
             ui: ['kbone-ui'],
-            main: balm.config.env.isMP
-              ? './app/scripts/main.mp.js'
-              : './app/scripts/main.js'
+            main: isMP ? './app/scripts/main.mp.js' : './app/scripts/main.js'
           },
           loaders: [
             {
@@ -52,13 +62,13 @@ module.exports = (balm, wxInit) => {
                     }
                   }
                 },
-                ...(balm.config.env.isMP ? ['vue-improve-loader'] : [])
+                ...(isMP ? ['vue-improve-loader'] : [])
               ]
             }
           ],
           plugins: [
             new VueLoaderPlugin(),
-            ...(balm.config.env.isMP
+            ...(isMP
               ? [
                   new webpack.DefinePlugin({
                     'process.env.isMiniprogram': process.env.isMiniprogram
@@ -73,7 +83,7 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, '../../app/scripts')
+            '@': resolve('app/scripts')
           },
           webpackOptions: {
             node: {
@@ -82,7 +92,7 @@ module.exports = (balm, wxInit) => {
             }
           }
         },
-        assets: balm.config.env.isMP
+        assets: isMP
           ? {}
           : {
               publicUrl: '/',
@@ -93,7 +103,7 @@ module.exports = (balm, wxInit) => {
         // More Config
       };
 
-  if (devMP) {
+  if (isMP && isDev) {
     config.useDefaults = false;
     config.styles.minify = true; // Fuck MP sourcemap bug
     config.styles.options = {

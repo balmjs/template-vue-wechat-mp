@@ -19,21 +19,24 @@ module.exports = function useMP(mix) {
       watcher.on('change', file => {
         const extname = file.split('.')[1];
 
-        if (extname === 'scss') {
-          mix.sass('app/styles/main.scss', `${mpCommonDir}/css`);
-        }
-
-        if (extname === 'js' || extname === 'vue') {
-          mix.webpack(
-            {
-              main: './app/scripts/main.mp.js'
-            },
-            `${mpCommonDir}/js`,
-            {},
-            () => {
-              parallel(syncWxss)();
-            }
-          );
+        switch (extname) {
+          case 'scss':
+            mix.sass('app/styles/main.scss', `${mpCommonDir}/css`);
+            break;
+          case 'js':
+          case 'vue':
+            mix.webpack(
+              {
+                main: './app/scripts/main.mp.js'
+              },
+              `${mpCommonDir}/js`,
+              {},
+              () => {
+                parallel(syncWxss)();
+              }
+            );
+            break;
+          default:
         }
       });
     });

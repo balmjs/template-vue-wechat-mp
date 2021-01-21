@@ -49,6 +49,9 @@ npm run dev:web
 
 # For miniprogram development
 npm run dev:mp
+
+# For web & miniprogram development
+npm run dev
 ```
 
 > 使用微信开发者工具导入项目 `.mp`，之后便可以像开发 web 项目一样开发小程序
