@@ -11,7 +11,7 @@
     "build:web": "balm -p",
     "build:mp": "balm -p -mp",
     "prod": "npm run build:web && npm run build:mp",
-    "release:h5": "./scripts/release.sh"
+    "release:h5": "./scripts/release-h5.sh"
   },
   "dependencies": {
     "axios": "^0.21.1",
