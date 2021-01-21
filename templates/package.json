@@ -1,6 +1,6 @@
 {
   "name": "balm.mp",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "BalmJS 微信小程序",
   "author": "Elf-mousE",
   "scripts": {
@@ -10,7 +10,8 @@
     "dev": "balm --with-mp",
     "build:web": "balm -p",
     "build:mp": "balm -p -mp",
-    "prod": "npm run build:web && npm run build:mp"
+    "prod": "npm run build:web && npm run build:mp",
+    "release:h5": "./scripts/release.sh"
   },
   "dependencies": {
     "axios": "^0.21.1",

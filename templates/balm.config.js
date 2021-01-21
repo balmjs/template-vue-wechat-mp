@@ -7,6 +7,6 @@ module.exports = balm => {
   return {
     config: getConfig(balm, wxInit),
     afterTask: getAfterTask(balm, wxInit),
-    api: getApi(balm, wxInit)
+    api: getApi(wxInit)
   };
 };
