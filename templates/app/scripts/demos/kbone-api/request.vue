@@ -20,12 +20,14 @@
 </template>
 
 <script>
+import { isProd } from '@/config';
 // import urlConfig from './url-config';
 
 const urlConfig = {
-  requestUrl: 'https://elf-mouse.github.io/now/animal-crossing',
-  downloadExampleUrl:
-    'https://elf-mouse.github.io/now/animal-crossing/img/fishing'
+  requestUrl: 'https://mp.balmjs.com',
+  downloadExampleUrl: isProd
+    ? 'https://mp.balmjs.com/img'
+    : 'http://localhost:3000/images'
 };
 
 export default {
@@ -52,9 +54,11 @@ export default {
       const max = 80;
       const x = Math.floor(Math.random() * (max - min + 1)) + min;
 
+      const type = Math.floor(Math.random() * 2) ? 'fishing' : 'insect';
+
       return this.$api
         .downloadFile({
-          url: `${urlConfig.downloadExampleUrl}/${x}.jpg`
+          url: `${urlConfig.downloadExampleUrl}/${type}/${x}.jpg`
         })
         .then((res) => {
           this.imgUrl = res.tempFilePath;
