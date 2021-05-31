@@ -5,18 +5,18 @@
   "author": "{{ author }}",
   "scripts": {
     "wx:init": "balm --wx-init",
-    "dev:web": "balm",
-    "dev:mp": "rimraf .mp && balm -mp",
+    "web:dev": "balm",
+    "mp:dev": "rimraf .mp && balm -mp",
     "dev": "balm --with-mp",
-    "build:web": "balm -p",
-    "build:mp": "balm -p -mp",
-    "prod": "npm run build:web && npm run build:mp"
+    "web:build": "balm -p",
+    "mp:build": "balm -p -mp",
+    "prod": "npm run web:build && npm run mp:build"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "axios-miniprogram-adapter": "^0.3.2",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^0.6.0",
+    "kbone-ui": "0.6.15",
     "lib-flexible": "^0.3.2",
     "vue": "^2.6.0",
     "vue-router": "^3.5.0"

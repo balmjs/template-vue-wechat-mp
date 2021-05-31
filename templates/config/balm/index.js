@@ -31,7 +31,7 @@ module.exports = (balm, wxInit) => {
           historyOptions: true, // For vue-router `mode: 'history'`,
           next: () => {
             if (!isMP && devWithMP) {
-              spawn('npm', ['run', 'dev:mp'], { stdio: 'inherit' });
+              spawn('npm', ['run', 'mp:dev'], { stdio: 'inherit' });
             }
           }
         },
