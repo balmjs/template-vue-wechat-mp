@@ -6,11 +6,11 @@
   "scripts": {
     "wx:init": "balm --wx-init",
     "web:dev": "balm",
-    "mp:dev": "rimraf .mp && balm -mp",
+    "web:prod": "balm -p",
     "dev": "balm --with-mp",
-    "web:build": "balm -p",
-    "mp:build": "balm -p -mp",
-    "prod": "npm run web:build && npm run mp:build"
+    "mp:dev": "rimraf .mp && balm -mp",
+    "mp:prod": "balm -p -mp",
+    "prod": "npm run web:prod && npm run mp:prod"
   },
   "dependencies": {
     "axios": "^0.21.1",

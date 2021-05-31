@@ -45,10 +45,10 @@ npm i
 
 ```sh
 # For web development
-npm run dev:web
+npm run web:dev
 
 # For miniprogram development
-npm run dev:mp
+npm run mp:dev
 
 # For web & miniprogram development
 npm run dev
