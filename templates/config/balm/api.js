@@ -1,15 +1,15 @@
 const getResetCss = require('../init/css-reset');
 const useWeuiCss = require('../init/css-weui');
-const useVendorUI = require('../init/vendor-ui');
+// const useVendorUI = require('../init/vendor-ui');
 const useMP = require('./mp');
 const publish = require('./publish');
 
 module.exports = (balm, wxInit) => {
-  const api = mix => {
+  const api = (mix) => {
     if (wxInit) {
       getResetCss(mix);
       useWeuiCss(mix);
-      useVendorUI(mix);
+      // useVendorUI(mix);
     }
 
     if (mix.env.isMP) {

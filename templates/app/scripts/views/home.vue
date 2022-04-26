@@ -1,5 +1,5 @@
 <template>
-  <div class="page home page--home">
+  <div class="page-home">
     <header class="hero">
       <h1>BalmJS</h1>
       <p>Webapp@vue to WeChat mini program</p>
