@@ -1,14 +1,18 @@
 const devWithMP = process.argv.includes('--with-mp');
 const path = require('path');
-const webpack = require('webpack');
 const { spawn } = require('child_process');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+const webpack = require('webpack');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
 
+const workspace = path.join(__dirname, '..', '..');
+
 function resolve(dir) {
-  return path.join(path.join(__dirname, '..', '..'), dir);
+  return path.join(workspace, dir);
 }
+
+const appRoot = 'app';
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
@@ -36,19 +40,20 @@ module.exports = (balm, wxInit) => {
           }
         },
         roots: {
-          source: 'app',
+          source: appRoot,
           tmp: isMP ? '.mp' : '.tmp',
           target: isMP ? 'dist/mp' : 'dist/web'
         },
         styles: {
-          extname: 'scss',
-          dartSass: true
+          extname: 'scss'
         },
         scripts: {
           entry: {
             lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
             ui: ['kbone-ui'],
-            main: isMP ? './app/scripts/main.mp.js' : './app/scripts/main.js'
+            main: isMP
+              ? `./${appRoot}/scripts/main.mp.js`
+              : `./${appRoot}/scripts/main.js`
           },
           loaders: [
             {
@@ -94,7 +99,7 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': resolve('app/scripts')
+            '@': resolve(`${appRoot}/scripts`)
           },
           webpackOptions: {
             node: {

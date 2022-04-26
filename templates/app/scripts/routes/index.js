@@ -1,12 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import defaultRoutes from './default';
-import demosRoutes from './demos';
+import routes from './main';
 import { isMP } from '@/config';
 
 Vue.use(VueRouter);
-
-let routes = defaultRoutes.concat(demosRoutes);
 
 let routerOptions = {
   mode: 'history',

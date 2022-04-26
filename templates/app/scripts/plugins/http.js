@@ -1,7 +1,9 @@
 import axios from 'axios';
 import mpAdapter from 'axios-miniprogram-adapter';
-import bus from '@/store/bus';
+import { useBus } from '@/plugins/bus';
 import { isMP } from '@/config';
+
+const bus = useBus();
 
 if (isMP) {
   axios.defaults.adapter = mpAdapter;
@@ -10,29 +12,32 @@ if (isMP) {
 axios.defaults.baseURL = '/api';
 
 axios.interceptors.request.use(
-  config => {
+  (config) => {
     return config;
   },
-  error => {
+  (error) => {
     return Promise.reject(error);
   }
 );
 
 axios.interceptors.response.use(
-  response => {
+  (response) => {
     bus.$emit('off-loading');
 
     return response.data;
   },
-  error => {
+  (error) => {
     bus.$emit('off-loading');
 
     return Promise.reject(error);
   }
 );
 
+const useHttp = () => axios;
+
 export default {
-  install(Vue) {
-    Vue.prototype.$http = axios;
+  install(app) {
+    app.prototype.$http = axios;
   }
 };
+export { useHttp };

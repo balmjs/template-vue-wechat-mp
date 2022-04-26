@@ -4,6 +4,7 @@ import router from '@/routes';
 import $http from '@/plugins/http';
 import $bus from '@/plugins/bus';
 import $store from '@/plugins/store';
+import myStore from '@/store';
 import wxInit from '@/config/wx';
 import logInit from '@/config/logger';
 import getReadme from '@/config/readme';
@@ -22,13 +23,13 @@ export default function createApp() {
   Vue.prototype.readme = getReadme();
   Vue.use($http);
   Vue.use($bus);
-  Vue.use($store);
+  Vue.use($store, myStore);
 
   Vue.use(KboneUI);
 
   return new Vue({
     el: '#app',
-    render: h => h(App),
+    render: (h) => h(App),
     router
   });
 }
