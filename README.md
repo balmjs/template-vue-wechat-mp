@@ -33,7 +33,7 @@ balm -V
 ## Installation
 
 ```sh
-balm init vue-wechat-mp my-project
+balm init vue-wechat-mp#legacy my-project
 
 cd my-project
 yarn
