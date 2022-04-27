@@ -63,11 +63,11 @@ export default {
     };
   },
   created() {
-    this.$bus.$on('on-loading', () => {
+    this.$bus.on('on-loading', () => {
       this.isLoading = true;
     });
 
-    this.$bus.$on('off-loading', () => {
+    this.$bus.on('off-loading', () => {
       this.isLoading = false;
     });
   }

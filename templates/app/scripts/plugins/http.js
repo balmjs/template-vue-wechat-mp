@@ -1,6 +1,7 @@
 import axios from 'axios';
 import mpAdapter from 'axios-miniprogram-adapter';
-import { useBus } from '@/plugins/bus';
+// import { useBus } from '@/plugins/bus';
+import { useBus } from 'balm-ui/plugins/event';
 import { isMP } from '@/config';
 
 const bus = useBus();
@@ -22,12 +23,12 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   (response) => {
-    bus.$emit('off-loading');
+    bus.emit('off-loading');
 
     return response.data;
   },
   (error) => {
-    bus.$emit('off-loading');
+    bus.emit('off-loading');
 
     return Promise.reject(error);
   }

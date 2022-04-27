@@ -2,8 +2,10 @@ import Vue from 'vue';
 import App from '@/views/layouts/app';
 import router from '@/routes';
 import $http from '@/plugins/http';
-import $bus from '@/plugins/bus';
-import $store from '@/plugins/store';
+// import $bus from '@/plugins/bus';
+// import $store from '@/plugins/store';
+import $event from 'balm-ui/plugins/event';
+import $store from 'balm-ui/plugins/store';
 import myStore from '@/store';
 import wxInit from '@/config/wx';
 import logInit from '@/config/logger';
@@ -22,7 +24,7 @@ export default function createApp() {
   Vue.config.productionTip = false;
   Vue.prototype.readme = getReadme();
   Vue.use($http);
-  Vue.use($bus);
+  Vue.use($event);
   Vue.use($store, myStore);
 
   Vue.use(KboneUI);

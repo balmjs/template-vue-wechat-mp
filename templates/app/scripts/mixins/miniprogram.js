@@ -50,7 +50,7 @@ export default {
       console.log(res); // TODO: 自动登录后获取用户信息
     },
     async getUserInfo({ detail }) {
-      this.$bus.$emit('on-loading');
+      this.$bus.emit('on-loading');
       this.showLogin = false;
 
       try {
