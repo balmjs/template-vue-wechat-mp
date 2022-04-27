@@ -37,7 +37,8 @@ function autoUpdateVersion() {
 }
 
 function refreshRem() {
-  let clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
+  const clientWidth = KboneAPI.getSystemInfoSync().screenWidth;
+  console.log('clientWidth', clientWidth);
   if (clientWidth > 540) {
     clientWidth = 540;
   }
@@ -47,16 +48,16 @@ function refreshRem() {
 
 function wxInit(Vue) {
   if (isMP) {
-    window.onload = refreshRem;
+    // window.onload = refreshRem;
 
     window.addEventListener('wxload', autoUpdateVersion);
-    window.addEventListener('wxshow', refreshRem);
+    // window.addEventListener('wxshow', refreshRem);
 
-    KboneAPI.onWindowResize(() => {
-      KboneAPI.nextTick(() => {
-        refreshRem();
-      });
-    });
+    // KboneAPI.onWindowResize(() => {
+    //   KboneAPI.nextTick(() => {
+    //     refreshRem();
+    //   });
+    // });
   }
 
   Vue.prototype.isMP = isMP;

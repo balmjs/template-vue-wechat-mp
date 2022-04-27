@@ -17,12 +17,6 @@ const wxCustomComponents = {
     path: 'login-dialog/index',
     props: ['open'],
     events: ['getPhoneNumber']
-  },
-  // 小程序官方组件
-  'rich-text': {
-    path: 'rich-text/index',
-    props: ['content'],
-    events: ['input']
   }
 };
 

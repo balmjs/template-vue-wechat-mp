@@ -1,6 +1,6 @@
 import Home from '@/views/home';
 import NotFound from '@/views/not-found';
-import demoRoutes from './demos';
+import demoRoutes from './demo';
 
 export default [
   {

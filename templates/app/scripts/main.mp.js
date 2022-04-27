@@ -8,7 +8,13 @@ import myStore from '@/store';
 import wxInit from '@/config/wx';
 import logInit from '@/config/logger';
 
-import KboneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/ui/intro/
+import { customComponents } from '@/config/components';
+import KBoneUI from 'kbone-ui'; // UI文档 - https://wechat-miniprogram.github.io/kbone/docs/kbone-ui/
+import * as kbone from 'kbone-tool';
+import VConsole from 'vconsole';
+
+// relations 不支持跨自定义组件，得在逻辑层解决
+kbone.weui.useForm();
 
 export default function createApp() {
   const container = document.createElement('div');
@@ -23,7 +29,12 @@ export default function createApp() {
   Vue.use($bus);
   Vue.use($store, myStore);
 
-  Vue.use(KboneUI);
+  customComponents.forEach((Component) => {
+    Vue.component(Component.name, Component);
+  });
+
+  KBoneUI.register();
+  new VConsole();
 
   return new Vue({
     el: '#app',
