@@ -1,6 +1,6 @@
 <template>
   <div class="page--api-demos">
-    <teamplte v-if="isMP">
+    <template v-if="isMP">
       <KCells v-if="$route.name === 'demos.api'" title="API Demos">
         <KCell
           v-for="item in apiDemosNav"
@@ -12,7 +12,7 @@
         </KCell>
       </KCells>
       <router-view v-else></router-view>
-    </teamplte>
+    </template>
     <p v-else>请至“微信开发者工具”中测试 API</p>
   </div>
 </template>

@@ -3,18 +3,16 @@
     <KView class="page__hd">
       <h1 class="page__title">apis</h1>
       <p class="page__desc">调用 api 相关信息</p>
-      <p>
-        {{ result }}
-      </p>
+      <p>{{ result }}</p>
     </KView>
     <KView class="page__hd">
-      <KButton @click="login"> 登录 </KButton>
+      <KButton @click="login">登录</KButton>
       <!-- 需企业appid -->
       <!-- <KButton open-type="getUserInfo" @click="getUserInfo">
         获取用户信息
       </KButton> -->
-      <KButton @click="getSetting"> 获取小程序设置 </KButton>
-      <KButton open-type="openSetting"> 打开小程序设置 </KButton>
+      <KButton @click="getSetting">获取小程序设置</KButton>
+      <KButton open-type="openSetting">打开小程序设置</KButton>
     </KView>
   </KView>
 </template>

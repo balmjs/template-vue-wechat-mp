@@ -5,8 +5,8 @@
       <p class="page__desc">标题 api 使用</p>
     </KView>
     <KView class="page__hd">
-      <KButton @click="changeTitle"> 更换页面标题 </KButton>
-      <KButton @click="toggleAnimation"> 切换标题动画 </KButton>
+      <KButton @click="changeTitle">更换页面标题</KButton>
+      <KButton @click="toggleAnimation">切换标题动画</KButton>
     </KView>
   </KView>
 </template>

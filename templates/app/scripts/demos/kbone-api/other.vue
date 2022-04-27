@@ -1,12 +1,10 @@
 <template>
   <KView class="page login js_show">
-    <p>
-      {{ result }}
-    </p>
+    <p>{{ result }}</p>
     <KView class="page__hd">
-      <KButton @click="getLocation"> 获取当前的地理位置、速度 </KButton>
-      <KButton @click="chooseImage"> 从本地相册选择图片或使用相机拍照 </KButton>
-      <!-- <KButton @click="onRequest"> AJAX </KButton> -->
+      <KButton @click="getLocation">获取当前的地理位置、速度</KButton>
+      <KButton @click="chooseImage">从本地相册选择图片或使用相机拍照</KButton>
+      <!-- <KButton @click="onRequest">AJAX</KButton> -->
     </KView>
   </KView>
 </template>
