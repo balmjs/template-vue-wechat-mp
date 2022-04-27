@@ -1,4 +1,4 @@
 module.exports = {
-  host: 'https://your.project.dev',
+  host: 'https://mp.balmjs.com',
   appid: 'wx08d0ca8fad40ec22'
 };

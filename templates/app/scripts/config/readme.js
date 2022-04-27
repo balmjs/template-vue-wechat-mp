@@ -1,4 +1,4 @@
-import marked from 'marked';
+import { marked } from 'marked';
 import readme from '@/assets/readme.md';
 import { isMP } from '@/config';
 
@@ -9,7 +9,7 @@ const addTokenReg = /<span class="token[^>]*>add<\/span>/g;
 function getReadme() {
   const html = marked(readme);
 
-  return html.replace(preReg, function($0, $1) {
+  return html.replace(preReg, function ($0, $1) {
     let result = `<pre class="language-bash"><code class="language-bash">${Prism.highlight(
       $1,
       Prism.languages.bash,
@@ -18,8 +18,8 @@ function getReadme() {
 
     if (isMP) {
       result = result
-        .replace(tokenReg, $0 => `${$0}<span>&nbsp;</span>`)
-        .replace(addTokenReg, $0 => `<span>&nbsp;</span>${$0}`)
+        .replace(tokenReg, ($0) => `${$0}<span>&nbsp;</span>`)
+        .replace(addTokenReg, ($0) => `<span>&nbsp;</span>${$0}`)
         .replace(/\n/g, '<div></div>');
     }
 
