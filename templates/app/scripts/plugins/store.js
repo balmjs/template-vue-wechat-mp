@@ -8,12 +8,16 @@ const useStore = () => store;
 
 export default {
   install(app, options = {}) {
-    store = new Vue({
-      el,
-      name: 'store',
-      render: (createElement) => createElement(''),
-      options
-    });
+    store = new Vue(
+      Object.assign(
+        {
+          el,
+          name: 'Store',
+          render: (createElement) => createElement('')
+        },
+        options
+      )
+    );
 
     app.prototype.$store = store;
   }
