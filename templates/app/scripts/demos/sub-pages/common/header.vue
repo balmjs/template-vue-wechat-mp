@@ -4,8 +4,8 @@
 
     <div>
       <a href="/wx" target="_blank">link main page</a>
-      <KButton @click="onClickJump('/wx')">jump main page</KButton>
-      <KButton @click="onClickOpen('/wx')">open main page</KButton>
+      <KButton @click="$store.onClickJump('/wx')">jump main page</KButton>
+      <KButton @click="$store.onClickOpen('/wx')">open main page</KButton>
     </div>
   </div>
 </template>

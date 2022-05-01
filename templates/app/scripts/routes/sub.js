@@ -1,8 +1,15 @@
 import createRouter from './config';
 import NotFound from '@/views/not-found';
-import subRoutes from './sub';
+import Home from '@/demos/sub-pages/home';
+import subRoutes from './demos/sub';
 
 const routes = [
+  {
+    path: '/sub/home',
+    name: 'sub',
+    component: Home,
+    alias: '/'
+  },
   ...subRoutes,
   {
     path: '*',

@@ -6,6 +6,7 @@
   "scripts": {
     "wx:init": "balm --wx-init",
     "web:dev": "balm",
+    "web:sub:dev": "balm --sub",
     "web:prod": "balm -p",
     "mp:dev": "rimraf .mp && balm -mp",
     "mp:prod": "balm -p -mp",

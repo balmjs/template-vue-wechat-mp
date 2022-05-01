@@ -5,8 +5,12 @@
 
       <div>
         <a href="/sub/home" target="_blank">link sub page</a>
-        <KButton @click="onClickJump('/sub/home')">jump sub page</KButton>
-        <KButton @click="onClickOpen('/sub/home')">open sub page</KButton>
+        <KButton @click="$store.onClickJump('/sub/home')">
+          Jump sub page
+        </KButton>
+        <KButton @click="$store.onClickOpen('/sub/home')">
+          Open sub page
+        </KButton>
       </div>
     </template>
     <div v-else>未开启自定义组件配置</div>
