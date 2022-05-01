@@ -1,7 +1,7 @@
 <template>
   <div class="page--api-demos">
     <template v-if="isMP">
-      <KCells v-if="$route.name === 'demos.api'" title="API Demos">
+      <KCells v-if="$route.name === 'main.demos.api'" title="API Demos">
         <KCell
           v-for="item in apiDemosNav"
           :key="item.name"
@@ -28,9 +28,11 @@ export default {
   },
   methods: {
     goto({ name }) {
-      this.$router.push({
-        name
-      });
+      if (this.$route.name !== name) {
+        this.$router.push({
+          name
+        });
+      }
     }
   }
 };

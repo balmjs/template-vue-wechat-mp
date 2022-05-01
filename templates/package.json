@@ -6,15 +6,17 @@
   "scripts": {
     "wx:init": "balm --wx-init",
     "web:dev": "balm",
+    "web:sub:dev": "balm --sub",
     "web:prod": "balm -p",
-    "dev": "balm --with-mp",
     "mp:dev": "rimraf .mp && balm -mp",
     "mp:prod": "balm -p -mp",
+    "dev": "balm --with-mp",
     "prod": "npm run web:prod && npm run mp:prod"
   },
   "dependencies": {
-    "axios": "^0.27.1",
+    "axios": "^0.27.2",
     "axios-miniprogram-adapter": "^0.3.2",
+    "balm-ui": "8",
     "kbone-api": "^0.2.1",
     "kbone-ui": "0.6.17",
     "lib-flexible": "^0.3.2",

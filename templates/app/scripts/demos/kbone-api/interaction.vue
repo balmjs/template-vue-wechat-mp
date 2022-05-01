@@ -23,11 +23,11 @@
           hideToast
         </KButton>
       </KButtonArea>
-      <KButton type="primary" @click="openCoverToast"> toast cover </KButton>
-      <KButton type="primary" @click="showModal"> showModal </KButton>
+      <KButton type="primary" @click="openCoverToast">toast cover</KButton>
+      <KButton type="primary" @click="showModal">showModal</KButton>
       <KButtonArea direction="horizontal">
-        <KButton @click="showLoading"> showLoading </KButton>
-        <KButton @click="hideLoading"> hideLoading </KButton>
+        <KButton @click="showLoading">showLoading</KButton>
+        <KButton @click="hideLoading">hideLoading</KButton>
       </KButtonArea>
       <KButton type="primary" @click="showActionSheet">
         showActionSheet

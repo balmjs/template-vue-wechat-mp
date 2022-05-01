@@ -1,6 +1,6 @@
 import axios from 'axios';
 import mpAdapter from 'axios-miniprogram-adapter';
-import { useBus } from '@/plugins/bus';
+import { useBus } from 'balm-ui/plugins/event';
 import { isMP } from '@/config';
 
 const bus = useBus();

@@ -9,37 +9,37 @@ import Other from '@/demos/kbone-api/other';
 export default [
   {
     path: 'api',
-    name: 'demos.api',
+    name: 'main.demos.api',
     component: ApiDemos,
     children: [
       {
         path: 'interaction',
-        name: 'api.interaction',
+        name: 'main.demos.api.interaction',
         component: Interaction
       },
       {
         path: 'login',
-        name: 'api.login',
+        name: 'main.demos.api.login',
         component: Login
       },
       // {
       //   path: 'title-bar',
-      //   name: 'api.title-bar',
+      //   name: 'main.demos.api.title-bar',
       //   component: TitleBar
       // },
       // {
       //   path: 'pulldown',
-      //   name: 'api.pulldown',
+      //   name: 'main.demos.api.pulldown',
       //   component: PullDown
       // },
       {
         path: 'request',
-        name: 'api.request',
+        name: 'main.demos.api.request',
         component: Request
       },
       {
         path: 'other',
-        name: 'api.other',
+        name: 'main.demos.api.other',
         component: Other
       }
     ]

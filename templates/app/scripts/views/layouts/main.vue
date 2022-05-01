@@ -2,10 +2,10 @@
   <div :class="['container', { 'is-mp': isMP }]">
     <!-- <template v-if="isMP">
       <top-app-bar
-        title="BalmJS for MP"
+        title="BalmJS - main page"
         :hiddenGoBack="hiddenGoBack"
-        bgColor="#A6D8FD"
-        :colorStop="['#A6D8FD', '#6DB0FA']"
+        bgColor="#9c27b0"
+        :colorStop="['#9c27b0', '#4a148c']"
         @ready="onReady"
         @back="goBack"
       ></top-app-bar>
@@ -18,27 +18,22 @@
     <KFlex class="main-nav">
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'home' }">Home</router-link>
+          <router-link :to="{ name: 'main' }">Home</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.ui' }">UI</router-link>
+          <router-link :to="{ name: 'main.demos.ui' }">UI</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.api' }">API</router-link>
+          <router-link :to="{ name: 'main.demos.api' }">API</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.test' }">Test</router-link>
-        </KView>
-      </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
-          <router-link :to="{ name: 'demos.wx' }">WX</router-link>
+          <router-link :to="{ name: 'main.demos.wx' }">WX</router-link>
         </KView>
       </KFlexItem>
     </KFlex>
@@ -55,7 +50,7 @@
 import miniprogram from '@/mixins/miniprogram';
 
 export default {
-  name: 'App',
+  name: 'MainApp',
   mixins: [miniprogram],
   data() {
     return {
@@ -63,11 +58,11 @@ export default {
     };
   },
   created() {
-    this.$bus.$on('on-loading', () => {
+    this.$bus.on('on-loading', () => {
       this.isLoading = true;
     });
 
-    this.$bus.$on('off-loading', () => {
+    this.$bus.on('off-loading', () => {
       this.isLoading = false;
     });
   }

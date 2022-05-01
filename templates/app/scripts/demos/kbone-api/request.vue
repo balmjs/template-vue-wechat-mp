@@ -5,8 +5,8 @@
       <p class="page__desc">请求 apis 相关内容</p>
     </KView>
     <KView class="page__hd">
-      <KButton @click="requestUrl"> 发起请求 </KButton>
-      <KButton @click="downloadUrl"> 图片下载 </KButton>
+      <KButton @click="requestUrl">发起请求</KButton>
+      <KButton @click="downloadUrl">图片下载</KButton>
       <KView style="text-align: center; margin: 20px">
         <img
           v-show="imgUrl"

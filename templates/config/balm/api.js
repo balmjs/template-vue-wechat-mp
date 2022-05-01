@@ -4,7 +4,7 @@ const useWeuiCss = require('../init/css-weui');
 const useMP = require('./mp');
 const publish = require('./publish');
 
-module.exports = (balm, wxInit) => {
+module.exports = (wxInit) => {
   const api = (mix) => {
     if (wxInit) {
       getResetCss(mix);
@@ -16,9 +16,9 @@ module.exports = (balm, wxInit) => {
       useMP(mix);
     } else {
       // Clear miniprogram css
-      mix.remove('dist/web/css/reset.css');
+      mix.remove(['dist/web/rev-manifest.json', 'dist/web/css/reset.css']);
 
-      publish(mix);
+      // publish(mix);
     }
   };
 
