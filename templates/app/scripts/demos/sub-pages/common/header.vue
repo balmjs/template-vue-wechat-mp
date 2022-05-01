@@ -3,9 +3,14 @@
     <h1>Hello {{ $store.sitename }}</h1>
 
     <div>
-      <a href="/wx" target="_blank">link main page</a>
-      <KButton @click="$store.onClickJump('/wx')">jump main page</KButton>
-      <KButton @click="$store.onClickOpen('/wx')">open main page</KButton>
+      <router-link :to="{ name: 'main' }">router main page</router-link>
+      <a href="/main/demos/wx" target="_blank">link main page</a>
+      <KButton @click="$store.onClickJump('/main/demos/wx')">
+        Jump main page
+      </KButton>
+      <KButton @click="$store.onClickOpen('/main/demos/wx')">
+        Open main page
+      </KButton>
     </div>
   </div>
 </template>

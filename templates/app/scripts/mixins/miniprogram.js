@@ -1,4 +1,4 @@
-const goBackBlockList = ['home', 'sub']; // vue route names
+const goBackBlockList = ['main', 'sub']; // vue route names
 
 export default {
   data() {
@@ -9,7 +9,7 @@ export default {
     };
   },
   computed: {
-    routeKey() {
+    routeEntry() {
       return this.$route.name.split('.')[0];
     },
     hiddenGoBack() {
@@ -20,15 +20,18 @@ export default {
     }
   },
   async created() {
-    this.$store.router.set(this.routeKey, this.$router);
-    // await this.wxlogin();
+    await this.wxlogin();
   },
   methods: {
     onReady({ detail }) {
       this.topAppBarHeight = detail.height;
     },
     goBack() {
-      this.$store.router.get(this.routeKey).back();
+      if (window.history.length === 1) {
+        this.$router.replace({ name: this.routeEntry });
+      } else {
+        this.$router.back();
+      }
     },
     async wxlogin() {
       let { code } = await this.$api.login();

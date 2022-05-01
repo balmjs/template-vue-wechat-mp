@@ -4,6 +4,7 @@
       <rich-text :content="html"></rich-text>
 
       <div>
+        <router-link :to="{ name: 'sub' }">router sub page</router-link>
         <a href="/sub/home" target="_blank">link sub page</a>
         <KButton @click="$store.onClickJump('/sub/home')">
           Jump sub page
