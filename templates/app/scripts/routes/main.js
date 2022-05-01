@@ -5,8 +5,8 @@ import demoRoutes from './demos';
 
 const routes = [
   {
-    path: '/home',
-    name: 'home',
+    path: '/main/home',
+    name: 'main',
     component: Home,
     alias: '/'
   },

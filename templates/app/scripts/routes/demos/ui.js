@@ -31,42 +31,42 @@ import Toptips from '@/demos/kbone-ui/toptips';
 const formRoutes = [
   {
     path: 'form-page',
-    name: 'ui.form.page',
+    name: 'main.demos.ui.form-page',
     component: FormPage
   },
   {
     path: 'form-input-status',
-    name: 'ui.form.input-status',
+    name: 'main.demos.ui.form-input-status',
     component: FormInputStatus
   },
   {
     path: 'form-vcode',
-    name: 'ui.form.vcode',
+    name: 'main.demos.ui.form-vcode',
     component: FormVcode
   },
   {
     path: 'form-checkbox',
-    name: 'ui.form.checkbox',
+    name: 'main.demos.ui.form-checkbox',
     component: FormCheckbox
   },
   {
     path: 'form-radio',
-    name: 'ui.form.radio',
+    name: 'main.demos.ui.form-radio',
     component: FormRadio
   },
   {
     path: 'form-switch',
-    name: 'ui.form.switch',
+    name: 'main.demos.ui.form.switch',
     component: FormSwitch
   },
   {
     path: 'form-select',
-    name: 'ui.form.select',
+    name: 'main.demos.ui.form-select',
     component: FormSelect
   },
   {
     path: 'form-textarea',
-    name: 'ui.form.textarea',
+    name: 'main.demos.ui.form-textarea',
     component: FormTextarea
   }
 ];
@@ -74,104 +74,104 @@ const formRoutes = [
 const uiRoutes = [
   {
     path: 'forms',
-    name: 'demos.ui.forms',
+    name: 'main.demos.ui.forms',
     component: BlankLayout,
     children: [
       {
         path: 'button',
-        name: 'ui.button',
+        name: 'main.demos.ui.button',
         component: Button
       },
       {
         path: 'form',
-        name: 'ui.form',
+        name: 'main.demos.ui.form',
         component: Form,
         children: formRoutes
       },
       {
         path: 'cells',
-        name: 'ui.cells',
+        name: 'main.demos.ui.cells',
         component: Cells
       },
       {
         path: 'slider',
-        name: 'ui.slider',
+        name: 'main.demos.ui.slider',
         component: Slider
       }
     ]
   },
   {
     path: 'basics',
-    name: 'demos.ui.basics',
+    name: 'main.demos.ui.basics',
     component: BlankLayout,
     children: [
       {
         path: 'flex',
-        name: 'ui.flex',
+        name: 'main.demos.ui.flex',
         component: Flex
       },
       {
         path: 'icons',
-        name: 'ui.icon',
+        name: 'main.demos.ui.icon',
         component: Icon
       },
       {
         path: 'progress',
-        name: 'ui.progress',
+        name: 'main.demos.ui.progress',
         component: Progress
       }
     ]
   },
   {
     path: 'views',
-    name: 'demos.ui.views',
+    name: 'main.demos.ui.views',
     component: BlankLayout,
     children: [
       {
         path: 'swiper',
-        name: 'ui.swiper',
+        name: 'main.demos.ui.swiper',
         component: Swiper
       },
       {
         path: 'scroll-view',
-        name: 'ui.scroll-view',
+        name: 'main.demos.ui.scroll-view',
         component: ScrollView
       },
       {
         path: 'movable',
-        name: 'ui.movable',
+        name: 'main.demos.ui.movable',
         component: Movable
       }
     ]
   },
   {
     path: 'feedback',
-    name: 'demos.ui.feedback',
+    name: 'main.demos.ui.feedback',
     component: BlankLayout,
     children: [
       {
         path: 'action-sheet',
-        name: 'ui.action-sheet',
+        name: 'main.demos.ui.action-sheet',
         component: ActionSheet
       },
       {
         path: 'dialog',
-        name: 'ui.dialog',
+        name: 'main.demos.ui.dialog',
         component: Dialog
       },
       {
         path: 'picker',
-        name: 'ui.picker',
+        name: 'main.demos.ui.picker',
         component: Picker
       },
       {
         path: 'toast',
-        name: 'ui.toast',
+        name: 'main.demos.ui.toast',
         component: Toast
       },
       {
         path: 'toptips',
-        name: 'ui.toptips',
+        name: 'main.demos.ui.toptips',
         component: Toptips
       }
     ]
@@ -181,7 +181,7 @@ const uiRoutes = [
 export default [
   {
     path: 'ui',
-    name: 'demos.ui',
+    name: 'main.demos.ui',
     component: UiDemos,
     children: uiRoutes
   }

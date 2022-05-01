@@ -1,12 +1,4 @@
-const goBackBlockList = [
-  'home',
-  'demos.ui',
-  'demos.api',
-  'demos.test',
-  'test.list',
-  'test.detail',
-  'demos.wx'
-]; // vue route names
+const goBackBlockList = ['home', 'sub']; // vue route names
 
 export default {
   data() {
@@ -17,6 +9,9 @@ export default {
     };
   },
   computed: {
+    routeKey() {
+      return this.$route.name.split('.')[0];
+    },
     hiddenGoBack() {
       return goBackBlockList.includes(this.$route.name);
     },
@@ -25,6 +20,7 @@ export default {
     }
   },
   async created() {
+    this.$store.router.set(this.routeKey, this.$router);
     // await this.wxlogin();
   },
   methods: {
@@ -32,11 +28,7 @@ export default {
       this.topAppBarHeight = detail.height;
     },
     goBack() {
-      if (this.$route.name === 'test.home') {
-        this.$router.replace({ name: 'home' });
-      } else {
-        this.$router.back();
-      }
+      this.$store.router.get(this.routeKey).back();
     },
     async wxlogin() {
       let { code } = await this.$api.login();

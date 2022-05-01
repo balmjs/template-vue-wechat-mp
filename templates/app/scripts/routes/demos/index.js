@@ -5,8 +5,8 @@ import wxDemosRoutes from './wx';
 
 export default [
   {
-    path: '/demos',
-    name: 'demos',
+    path: '/main/demos',
+    name: 'main.demos',
     component: DemosLayout,
     children: [].concat(uiDemosRoutes, apiDemosRoutes)
   },

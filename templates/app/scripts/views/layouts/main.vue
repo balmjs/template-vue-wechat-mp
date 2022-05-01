@@ -18,22 +18,22 @@
     <KFlex class="main-nav">
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'home' }">Home</router-link>
+          <router-link :to="{ name: 'main' }">Home</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.ui' }">UI</router-link>
+          <router-link :to="{ name: 'main.demos.ui' }">UI</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.api' }">API</router-link>
+          <router-link :to="{ name: 'main.demos.api' }">API</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.wx' }">WX</router-link>
+          <router-link :to="{ name: 'main.demos.wx' }">WX</router-link>
         </KView>
       </KFlexItem>
     </KFlex>
