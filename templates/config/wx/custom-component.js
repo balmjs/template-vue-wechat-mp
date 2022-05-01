@@ -1,4 +1,5 @@
 const path = require('path');
+const env = require('../env');
 
 const useCustomComponent = true; // 是否使用自定义微信组件
 
@@ -29,8 +30,9 @@ const wxCustomComponents = {
 module.exports = useCustomComponent
   ? {
       generate: {
+        subpackages: env.subPackages,
         wxCustomComponent: {
-          root: path.join(__dirname, '../../app/wx-components'),
+          root: path.join(__dirname, `../../${env.appRoot}/wx-components`),
           usingComponents: Object.assign(
             {},
             wxVendorComponents,

@@ -2,10 +2,10 @@
   <div :class="['container', { 'is-mp': isMP }]">
     <template v-if="isMP">
       <top-app-bar
-        title="BalmJS for MP"
+        title="BalmJS - main page"
         :hiddenGoBack="hiddenGoBack"
-        bgColor="#A6D8FD"
-        :colorStop="['#A6D8FD', '#6DB0FA']"
+        bgColor="#9c27b0"
+        :colorStop="['#9c27b0', '#4a148c']"
         @ready="onReady"
         @back="goBack"
       ></top-app-bar>
@@ -33,12 +33,12 @@
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.test' }">Test</router-link>
+          <router-link :to="{ name: 'demos.wx' }">WX</router-link>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <router-link :to="{ name: 'demos.wx' }">WX</router-link>
+          <router-link :to="{ name: 'sub' }">Sub</router-link>
         </KView>
       </KFlexItem>
     </KFlex>
@@ -55,7 +55,7 @@
 import miniprogram from '@/mixins/miniprogram';
 
 export default {
-  name: 'App',
+  name: 'MainApp',
   mixins: [miniprogram],
   data() {
     return {

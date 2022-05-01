@@ -1,4 +1,4 @@
 import 'lib-flexible';
-import createApp from '@/main.mp';
+import createMainApp from '@/main.mp';
 
-createApp();
+createMainApp();

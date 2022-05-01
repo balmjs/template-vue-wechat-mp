@@ -25,7 +25,7 @@ export default {
     }
   },
   async created() {
-    await this.wxlogin();
+    // await this.wxlogin();
   },
   methods: {
     onReady({ detail }) {

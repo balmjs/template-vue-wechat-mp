@@ -12,8 +12,6 @@ function resolve(dir) {
   return path.join(workspace, dir);
 }
 
-const appRoot = 'app';
-
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
 module.exports = (balm, wxInit) => {
@@ -40,7 +38,7 @@ module.exports = (balm, wxInit) => {
           }
         },
         roots: {
-          source: appRoot,
+          source: env.appRoot,
           tmp: isMP ? '.mp' : '.tmp',
           target: isMP ? 'dist/mp' : 'dist/web'
         },
@@ -52,8 +50,11 @@ module.exports = (balm, wxInit) => {
             lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
             ui: ['kbone-ui'],
             main: isMP
-              ? `./${appRoot}/scripts/main.mp.js`
-              : `./${appRoot}/scripts/main.js`
+              ? `./${env.appRoot}/scripts/main.mp.js`
+              : `./${env.appRoot}/scripts/main.js`,
+            sub: isMP
+              ? `./${env.appRoot}/scripts/sub.mp.js`
+              : `./${env.appRoot}/scripts/sub.js`
           },
           loaders: [
             {
@@ -99,7 +100,7 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': resolve(`${appRoot}/scripts`)
+            '@': resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
             node: {
