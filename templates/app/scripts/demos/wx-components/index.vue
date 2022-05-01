@@ -1,13 +1,15 @@
 <template>
-  <div v-if="isMP" class="page--wx-demos">
-    <div>（开启）自定义组件</div>
-    <rich-text :content="html"></rich-text>
+  <div class="page--wx-demos">
+    <template v-if="isMP">
+      <rich-text :content="html"></rich-text>
 
-    <div>
-      <a href="/sub/home" target="_blank">link sub page</a>
-      <KButton @click="onClickJump('/sub/home')">jump sub page</KButton>
-      <KButton @click="onClickOpen('/sub/home')">open sub page</KButton>
-    </div>
+      <div>
+        <a href="/sub/home" target="_blank">link sub page</a>
+        <KButton @click="onClickJump('/sub/home')">jump sub page</KButton>
+        <KButton @click="onClickOpen('/sub/home')">open sub page</KButton>
+      </div>
+    </template>
+    <div v-else>未开启自定义组件配置</div>
   </div>
 </template>
 

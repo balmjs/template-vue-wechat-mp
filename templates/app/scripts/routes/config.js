@@ -14,7 +14,7 @@ function createRouter(routes) {
   //   routerOptions.base = '/m/'; // NOTE: for Back-end
   // }
 
-  const router = new VueRouter(routerOptions);
+  return new VueRouter(routerOptions);
 }
 
 export default createRouter;

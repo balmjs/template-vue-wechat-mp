@@ -36,11 +36,6 @@
           <router-link :to="{ name: 'demos.wx' }">WX</router-link>
         </KView>
       </KFlexItem>
-      <KFlexItem>
-        <KView class="placeholder">
-          <router-link :to="{ name: 'sub' }">Sub</router-link>
-        </KView>
-      </KFlexItem>
     </KFlex>
     <KToast type="loading" v-model="isLoading"></KToast>
     <!-- <template v-if="isMP">
