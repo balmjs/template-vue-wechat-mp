@@ -1,4 +1,5 @@
 const devWithMP = process.argv.includes('--with-mp');
+const devSub = process.argv.includes('--sub');
 const path = require('path');
 const { spawn } = require('child_process');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -11,8 +12,6 @@ const workspace = path.join(__dirname, '..', '..');
 function resolve(dir) {
   return path.join(workspace, dir);
 }
-
-const appRoot = 'app';
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
@@ -32,7 +31,9 @@ module.exports = (balm, wxInit) => {
               changeOrigin: true // Needed for virtual hosted sites
             }
           },
-          historyOptions: true, // For vue-router `mode: 'history'`,
+          historyOptions: {
+            index: devSub ? '/sub.html' : '/index.html'
+          }, // For vue-router `mode: 'history'`,
           next: () => {
             if (!isMP && devWithMP) {
               spawn('npm', ['run', 'mp:dev'], { stdio: 'inherit' });
@@ -40,7 +41,7 @@ module.exports = (balm, wxInit) => {
           }
         },
         roots: {
-          source: appRoot,
+          source: env.appRoot,
           tmp: isMP ? '.mp' : '.tmp',
           target: isMP ? 'dist/mp' : 'dist/web'
         },
@@ -52,8 +53,11 @@ module.exports = (balm, wxInit) => {
             lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
             ui: ['kbone-ui'],
             main: isMP
-              ? `./${appRoot}/scripts/main.mp.js`
-              : `./${appRoot}/scripts/main.js`
+              ? `./${env.appRoot}/scripts/main.mp.js`
+              : `./${env.appRoot}/scripts/main.js`,
+            sub: isMP
+              ? `./${env.appRoot}/scripts/sub.mp.js`
+              : `./${env.appRoot}/scripts/sub.js`
           },
           loaders: [
             {
@@ -88,7 +92,7 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
-            '@': resolve(`${appRoot}/scripts`)
+            '@': resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
             node: {

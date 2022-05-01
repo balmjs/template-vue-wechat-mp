@@ -7,7 +7,9 @@ const kboneConfig = {
   origin: env.host,
   entry: '/',
   router: {
-    main: router // NOTE: `main` 必须与 `balmrc.js` 中的 `scripts.entry` 入口文件输出名保持一致
+    // NOTE: key name 必须与 `balmrc.js` 中的 `scripts.entry` 入口文件输出名保持一致
+    main: router.main,
+    sub: router.sub
   },
   redirect: {
     notFound: 'main',

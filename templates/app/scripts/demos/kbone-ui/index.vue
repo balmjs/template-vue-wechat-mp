@@ -1,6 +1,6 @@
 <template>
   <div class="page--ui-demos">
-    <template v-if="/^demos\.ui/.test($route.name)">
+    <template v-if="$route.name === 'main.demos.ui'">
       <KCells
         v-for="navItem in navItems"
         :key="navItem.key"
@@ -48,9 +48,11 @@ export default {
   },
   methods: {
     goto({ name }) {
-      this.$router.push({
-        name
-      });
+      if (this.$route.name !== name) {
+        this.$router.push({
+          name
+        });
+      }
     }
   }
 };

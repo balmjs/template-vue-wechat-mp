@@ -1,6 +1,6 @@
 <template>
   <div class="page--ui-demos">
-    <template v-if="$route.name === 'ui.form'">
+    <template v-if="$route.name === 'main.demos.ui.form'">
       <KCells title="表单页">
         <KCell
           v-for="item in navItems"
@@ -48,9 +48,11 @@ export default {
   },
   methods: {
     goto({ name }) {
-      this.$router.push({
-        name
-      });
+      if (this.$route.name !== name) {
+        this.$router.push({
+          name
+        });
+      }
     }
   }
 };

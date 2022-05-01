@@ -1,3 +1,3 @@
 @import '../../common/css/reset.wxss';
-/* @import '../../custom-component/components/vant-ui/common/index.wxss'; */
+@import '../../common/css/kbone-ui-weui.wxss';
 @import '../../common/css/main.wxss';

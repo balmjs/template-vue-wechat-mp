@@ -1,12 +1,4 @@
-const goBackBlockList = [
-  'home',
-  'demos.ui',
-  'demos.api',
-  'demos.test',
-  'test.list',
-  'test.detail',
-  'demos.wx'
-]; // vue route names
+const goBackBlockList = ['main', 'sub']; // vue route names
 
 export default {
   data() {
@@ -17,6 +9,9 @@ export default {
     };
   },
   computed: {
+    routeEntry() {
+      return this.$route.name.split('.')[0];
+    },
     hiddenGoBack() {
       return goBackBlockList.includes(this.$route.name);
     },
@@ -25,22 +20,21 @@ export default {
     }
   },
   async created() {
-    await this.wxlogin();
+    // await this.wxlogin();
   },
   methods: {
     onReady({ detail }) {
       this.topAppBarHeight = detail.height;
     },
     goBack() {
-      if (this.$route.name === 'test.home') {
-        this.$router.replace({ name: 'home' });
+      if (window.history.length === 1) {
+        this.$router.replace({ name: this.routeEntry });
       } else {
         this.$router.back();
       }
     },
     async wxlogin() {
       let { code } = await this.$api.login();
-      console.log('login code', code);
       this.code = code;
     },
     async login(detail) {
@@ -51,7 +45,7 @@ export default {
       console.log(res); // TODO: 自动登录后获取用户信息
     },
     async getUserInfo({ detail }) {
-      this.$bus.$emit('on-loading');
+      this.$bus.emit('on-loading');
       this.showLogin = false;
 
       try {

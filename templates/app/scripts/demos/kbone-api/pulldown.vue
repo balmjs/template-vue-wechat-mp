@@ -5,8 +5,8 @@
       <p class="page__desc">使用页面下拉</p>
     </KView>
     <KView class="page__hd">
-      <KButton @click="pulldown"> 页面下拉 </KButton>
-      <KButton @click="stop"> 停止下拉 </KButton>
+      <KButton @click="pulldown">页面下拉</KButton>
+      <KButton @click="stop">停止下拉</KButton>
     </KView>
   </KView>
 </template>
