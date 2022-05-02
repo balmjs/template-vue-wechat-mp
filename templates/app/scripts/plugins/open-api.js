@@ -1,14 +1,7 @@
 import cloud from 'wx-server-sdk';
-import env from '../../../config/env';
 
 cloud.init({
   env: cloud.DYNAMIC_CURRENT_ENV
-});
-
-cloud.auth.getAccessToken({
-  grant_type: 'client_credential',
-  appid: env.appId,
-  secret: env.appSecret
 });
 
 async function getAcode(path) {
