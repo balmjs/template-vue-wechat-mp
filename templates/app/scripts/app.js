@@ -1,8 +1,11 @@
 import Vue from 'vue';
+// import $openApi from '@/plugins/open-api';
 import $http from '@/plugins/http';
 import $event from 'balm-ui/plugins/event';
 import $store from 'balm-ui/plugins/store';
 import myStore from '@/store';
+// import $globalStore from '@/plugins/global-store';
+// import myGlobalStore from '@/store/global';
 import wxInit from '@/config/wx';
 import logInit from '@/config/logger';
 
@@ -17,9 +20,11 @@ function createApp(App, router = {}, fn = () => {}) {
   logInit();
 
   Vue.config.productionTip = false;
+  // Vue.use($openApi);
   Vue.use($http);
   Vue.use($event);
   Vue.use($store, myStore);
+  // Vue.use($globalStore, myGlobalStore); // TODO: 未实现
 
   Vue.use(KboneUI);
 
