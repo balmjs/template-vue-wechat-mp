@@ -1,6 +1,11 @@
 <template>
   <div class="page-home">
     <header class="hero">
+      <img
+        v-if="!isMP"
+        src="https://mp.balmjs.com/img/vue-wechat-mp.jpg"
+        alt="BalmJS for wechat mp"
+      />
       <h1>BalmJS</h1>
       <p>Webapp@vue to WeChat mini program</p>
     </header>
