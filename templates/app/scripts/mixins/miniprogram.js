@@ -1,4 +1,6 @@
-const goBackBlockList = ['main', 'sub']; // vue route names
+import wxRouter from '../../../config/wx/router';
+
+const goBackBlockList = Object.keys(wxRouter);
 
 export default {
   data() {

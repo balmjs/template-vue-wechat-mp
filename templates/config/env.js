@@ -4,5 +4,5 @@ module.exports = {
     package1: ['sub']
   },
   host: 'https://your.project.dev',
-  appid: ''
+  appId: ''
 };
