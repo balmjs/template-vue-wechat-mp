@@ -4,12 +4,14 @@
     <KFlex>
       <KFlexItem>
         <KView class="placeholder">
-          <a href="/test/home">回到测试首页</a>
+          <a href="/sub/home">回到测试首页</a>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <KButton size="mini" @click="onClickJump">回到测试首页</KButton>
+          <KButton size="mini" @click="$store.onClickJump('/sub/home')">
+            回到测试首页
+          </KButton>
         </KView>
       </KFlexItem>
     </KFlex>
@@ -32,11 +34,6 @@ export default {
     window.addEventListener('wxready', () => console.log('page2 wxready'));
     window.addEventListener('wxhide', () => console.log('page2 wxhide'));
     window.addEventListener('wxunload', () => console.log('page2 wxunload'));
-  },
-  methods: {
-    onClickJump() {
-      window.location.href = '/test/home';
-    }
   }
 };
 </script>

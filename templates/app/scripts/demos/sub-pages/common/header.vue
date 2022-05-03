@@ -3,8 +3,14 @@
     <h1>Hello {{ $store.sitename }}</h1>
 
     <div>
-      <router-link :to="{ name: 'main' }">router main page</router-link>
-      <a href="/main/demos/wx" target="_blank">link main page</a>
+      <KFlex>
+        <KFlexItem>
+          <KView class="placeholder">
+            <a href="/main/demos/wx" target="_blank">link main page</a>
+          </KView>
+        </KFlexItem>
+      </KFlex>
+
       <KButton @click="$store.onClickJump('/main/demos/wx')">
         Jump main page
       </KButton>

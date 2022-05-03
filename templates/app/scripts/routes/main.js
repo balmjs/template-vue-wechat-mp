@@ -1,9 +1,10 @@
 import createRouter from './config';
-import NotFound from '@/views/not-found';
 import Home from '@/views/home';
 import demoRoutes from './demos';
+import subRoutes from './demos/sub';
+import { isMP } from '@/config';
 
-const routes = [
+const mainRoutes = [
   {
     path: '/main/home',
     name: 'main',
@@ -11,10 +12,7 @@ const routes = [
     alias: '/'
   },
   ...demoRoutes,
-  {
-    path: '*',
-    component: NotFound
-  }
+  ...(isMP ? [] : subRoutes)
 ];
 
-export default createRouter(routes);
+export default createRouter(mainRoutes);

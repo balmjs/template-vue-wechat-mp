@@ -18,6 +18,7 @@ const kboneConfig = {
   generate: Object.assign(
     {
       appWxss: 'default',
+      subpackages: env.subPackages,
       autoBuildNpm: 'npm'
     },
     customConfig.generate
@@ -28,12 +29,17 @@ const kboneConfig = {
     },
     customConfig.app
   ),
+  // appExtraConfig: {
+  //   useExtendedLib: {
+  //     kbone: true
+  //   }
+  // },
   global: {
     share: true,
     rem: true
   },
   projectConfig: {
-    appid: env.appid,
+    appid: env.appId,
     projectname: 'vue-wechat-mp'
   },
   packageConfig: {

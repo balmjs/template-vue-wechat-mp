@@ -4,12 +4,12 @@
     <KFlex>
       <KFlexItem>
         <KView class="placeholder">
-          <a href="/test/list/123">当前页跳转</a>
+          <a href="/sub/list/123">当前页跳转</a>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <a href="/test/detail/123" target="_blank">新开页面跳转</a>
+          <a href="/sub/detail/123" target="_blank">新开页面跳转</a>
         </KView>
       </KFlexItem>
     </KFlex>
@@ -17,12 +17,16 @@
     <KFlex>
       <KFlexItem>
         <KView class="placeholder">
-          <KButton @click="onClickJump" size="mini">当前页跳转</KButton>
+          <KButton @click="$store.onClickJump('/sub/list/123')" size="mini">
+            当前页跳转
+          </KButton>
         </KView>
       </KFlexItem>
       <KFlexItem>
         <KView class="placeholder">
-          <KButton @click="onClickOpen" size="mini">新开页面跳转</KButton>
+          <KButton @click="$store.onClickOpen('/sub/detail/123')" size="mini">
+            新开页面跳转
+          </KButton>
         </KView>
       </KFlexItem>
     </KFlex>
@@ -60,14 +64,6 @@ export default {
       console.log('I am in miniprogram');
     } else {
       console.log('I am in Web');
-    }
-  },
-  methods: {
-    onClickJump() {
-      window.location.href = '/test/list/123';
-    },
-    onClickOpen() {
-      window.open('/test/detail/123');
     }
   }
 };

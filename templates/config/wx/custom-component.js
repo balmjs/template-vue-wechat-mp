@@ -30,7 +30,6 @@ const wxCustomComponents = {
 module.exports = useCustomComponent
   ? {
       generate: {
-        subpackages: env.subPackages,
         wxCustomComponent: {
           root: path.join(__dirname, `../../${env.appRoot}/wx-components`),
           usingComponents: Object.assign(
@@ -47,8 +46,6 @@ module.exports = useCustomComponent
         : {}
     }
   : {
-      generate: {
-        subpackages: env.subPackages
-      },
+      generate: {},
       app: {}
     };
