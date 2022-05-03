@@ -1,13 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import NotFound from '@/views/not-found';
 import { isMP } from '@/config';
 
-function createRouter(routes) {
+function createRouter(routes = []) {
   Vue.use(VueRouter);
 
   const routerOptions = {
     mode: 'history',
-    routes
+    routes: routes.concat({
+      path: '*',
+      component: NotFound
+    })
   };
 
   // if (!isMP) {
