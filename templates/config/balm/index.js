@@ -100,6 +100,8 @@ module.exports = (balm, wxInit) => {
           // },
           alias: {
             vue$: 'vue/dist/vue.esm.js',
+            'balm-ui-event': 'balm-ui/plugins/event/index.js',
+            'balm-ui-store': 'balm-ui/plugins/store/index.js',
             '@': resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {

@@ -1,8 +1,8 @@
 import Vue from 'vue';
 // import $openApi from '@/plugins/open-api';
 import $http from '@/plugins/http';
-import $event from 'balm-ui/plugins/event';
-import $store from 'balm-ui/plugins/store';
+import $event from 'balm-ui-event';
+import $store from 'balm-ui-store';
 import myStore from '@/store';
 // import $globalStore from '@/plugins/global-store';
 // import myGlobalStore from '@/store/global';
