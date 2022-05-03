@@ -1,5 +1,4 @@
 const devWithMP = process.argv.includes('--with-mp');
-const devSub = process.argv.includes('--sub');
 const path = require('path');
 const { spawn } = require('child_process');
 const { VueLoaderPlugin } = require('vue-loader');
@@ -31,9 +30,7 @@ module.exports = (balm, wxInit) => {
               changeOrigin: true // Needed for virtual hosted sites
             }
           },
-          historyOptions: {
-            index: devSub ? '/sub.html' : '/index.html'
-          }, // For vue-router `mode: 'history'`,
+          historyOptions: true, // For vue-router `mode: 'history'`,
           next: () => {
             if (!isMP && devWithMP) {
               spawn('npm', ['run', 'mp:dev'], { stdio: 'inherit' });
