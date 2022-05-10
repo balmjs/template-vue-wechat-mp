@@ -3,14 +3,14 @@
     <div class="title">mp-dialog</div>
     <div class="comp-cnt">
       <wx-button
-        class="wx-button"
+        class="weui-btn wx-button"
         type="default"
         @click="mpDialog.dialogShow = true"
       >
         确认取消按钮
       </wx-button>
       <wx-button
-        class="wx-button"
+        class="weui-btn wx-button"
         type="default"
         @click="mpDialog.showOneButtonDialog = true"
       >

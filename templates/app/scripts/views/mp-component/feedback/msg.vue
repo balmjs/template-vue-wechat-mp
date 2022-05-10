@@ -11,8 +11,12 @@
           <div>2. 说明2</div>
         </div>
         <div slot="handle">
-          <wx-button class="wx-button" type="primary">主要操作</wx-button>
-          <wx-button class="wx-button" type="default">辅助操作</wx-button>
+          <wx-button class="weui-btn wx-button" type="primary">
+            主要操作
+          </wx-button>
+          <wx-button class="weui-btn wx-button" type="default">
+            辅助操作
+          </wx-button>
         </div>
         <div slot="footer">
           <div class="weui-footer__links">

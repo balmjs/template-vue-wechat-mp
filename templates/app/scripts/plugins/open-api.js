@@ -17,12 +17,12 @@ async function getAcode(path) {
   }
 }
 
-const openApi = {
+const wxCloud = {
   getAcode
 };
 
 export default {
   install(app) {
-    app.prototype.$openApi = openApi;
+    app.prototype.$wxCloud = wxCloud;
   }
 };

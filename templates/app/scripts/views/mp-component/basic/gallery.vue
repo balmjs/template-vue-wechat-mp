@@ -3,7 +3,7 @@
     <div class="title">mp-gallery</div>
     <div class="comp-cnt">
       <wx-button
-        class="wx-button"
+        class="weui-btn wx-button"
         type="default"
         @click="mpGallery.show = true"
       >

@@ -40,7 +40,7 @@ export default {
           url: '/wx-cloud'
         }
       ],
-      subNavIndex: 0
+      subNavIndex: -1
     };
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
       window.open(url);
     },
     bufferToBase64(arrayBuffer) {
-      return `data:image/png;base64,${this.$api.arrayBufferToBase64(
+      return `data:image/png;base64,${this.$wxApi.arrayBufferToBase64(
         arrayBuffer
       )}`;
     }

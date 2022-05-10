@@ -94,7 +94,11 @@
                 class="weui-input"
                 placeholder="请输入手机号"
               ></wx-input>
-              <wx-button slot="footer" type="default" class="weui-vcode-btn">
+              <wx-button
+                slot="footer"
+                type="default"
+                class="weui-btn weui-vcode-btn"
+              >
                 获取验证码
               </wx-button>
             </mp-cell>

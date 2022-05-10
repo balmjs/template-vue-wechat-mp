@@ -2,7 +2,10 @@
   <div>
     <div class="title">mp-actionsheet</div>
     <div class="comp-cnt">
-      <wx-button class="wx-button opr-button" @tap="mpActionSheet.show = true">
+      <wx-button
+        class="weui-btn wx-button opr-button"
+        @tap="mpActionSheet.show = true"
+      >
         模拟 ActionSheet
       </wx-button>
       <mp-actionsheet

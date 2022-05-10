@@ -4,21 +4,21 @@
     <div class="comp-cnt">
       <div class="opr-cnt">
         <wx-button
-          class="wx-button opr-button"
+          class="weui-btn wx-button opr-button"
           type="primary"
           @tap="mpHalfScreenDialog.typeF = true"
         >
           样式一
         </wx-button>
         <wx-button
-          class="wx-button opr-button"
+          class="weui-btn wx-button opr-button"
           type="primary"
           @tap="mpHalfScreenDialog.typeS = true"
         >
           样式二
         </wx-button>
         <wx-button
-          class="wx-button opr-button"
+          class="weui-btn wx-button opr-button"
           type="primary"
           @tap="mpHalfScreenDialog.typeT = true"
         >

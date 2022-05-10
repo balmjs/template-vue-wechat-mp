@@ -41,20 +41,20 @@ export default {
   name: 'Interaction',
   methods: {
     openToast() {
-      this.$api.showToast({
+      this.$wxApi.showToast({
         title: 'Hello BalmJS',
         icon: 'success'
       });
     },
     openCoverToast() {
-      this.$api.showToast({
+      this.$wxApi.showToast({
         title: 'Hello BalmJS',
         icon: 'loading',
         mask: true
       });
     },
     showModal() {
-      this.$api.showModal({
+      this.$wxApi.showModal({
         title: '微信小程序',
         content: 'Hello BalmJS',
         cancelText: '取消',
@@ -62,18 +62,18 @@ export default {
       });
     },
     hideToast() {
-      this.$api.hideToast();
+      this.$wxApi.hideToast();
     },
     showLoading() {
-      this.$api.showLoading({
+      this.$wxApi.showLoading({
         title: 'loading 状态'
       });
     },
     hideLoading() {
-      this.$api.hideLoading();
+      this.$wxApi.hideLoading();
     },
     showActionSheet() {
-      this.$api
+      this.$wxApi
         .showActionSheet({
           itemList: ['1', '2', '3']
         })

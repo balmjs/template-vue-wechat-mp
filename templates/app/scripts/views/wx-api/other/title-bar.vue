@@ -22,16 +22,16 @@ export default {
   },
   methods: {
     changeTitle() {
-      this.$api.setNavigationBarTitle({
+      this.$wxApi.setNavigationBarTitle({
         title: 'Hello BalmJS'
       });
     },
     toggleAnimation() {
       if (this.toggleFlag) {
-        this.$api.hideNavigationBarLoading();
+        this.$wxApi.hideNavigationBarLoading();
         this.toggleFlag = undefined;
       } else {
-        this.toggleFlag = this.$api.showNavigationBarLoading();
+        this.toggleFlag = this.$wxApi.showNavigationBarLoading();
       }
     }
   }

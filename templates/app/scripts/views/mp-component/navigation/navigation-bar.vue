@@ -23,13 +23,13 @@
           ></wx-switch>
         </div>
         <wx-button
-          class="wx-button opr-button"
+          class="weui-btn wx-button opr-button"
           @tap="mpNavigationBar.color = '#07C160'"
         >
           修改文字颜色
         </wx-button>
         <wx-button
-          class="wx-button opr-button"
+          class="weui-btn wx-button opr-button"
           @tap="mpNavigationBar.background = '#ededed'"
         >
           修改背景颜色

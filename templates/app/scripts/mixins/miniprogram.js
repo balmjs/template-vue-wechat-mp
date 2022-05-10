@@ -48,7 +48,7 @@ export default {
       }
     },
     async wxlogin() {
-      let { code } = await this.$api.login();
+      let { code } = await this.$wxApi.login();
       this.code = code;
     },
     async login(detail) {
@@ -63,7 +63,7 @@ export default {
       this.showLogin = false;
 
       try {
-        await this.$api.checkSession();
+        await this.$wxApi.checkSession();
         // session_key 未过期，并且在本生命周期一直有效
         this.login(detail);
       } catch (e) {

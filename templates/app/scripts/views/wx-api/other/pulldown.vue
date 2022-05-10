@@ -16,10 +16,10 @@ export default {
   name: 'PullDown',
   methods: {
     pulldown() {
-      this.$api.startPullDownRefresh();
+      this.$wxApi.startPullDownRefresh();
     },
     stop() {
-      this.$api.stopPullDownRefresh();
+      this.$wxApi.stopPullDownRefresh();
     }
   }
 };

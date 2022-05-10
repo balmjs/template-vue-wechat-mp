@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import $wxApi, { responsive, autoUpdateVersion } from '@/plugins/wx-api';
+import $wxApi from '@/plugins/wx-api';
 // import $openApi from '@/plugins/open-api';
 import $http from '@/plugins/http';
 import $event from 'balm-ui-event';
