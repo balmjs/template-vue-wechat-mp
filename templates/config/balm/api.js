@@ -15,7 +15,12 @@ module.exports = (wxInit) => {
       useMP(mix);
     } else {
       // Clear miniprogram css
-      mix.remove(['dist/web/rev-manifest.json', 'dist/web/css/reset.css']);
+      mix.remove([
+        'dist/web/rev-manifest.json',
+        'dist/web/css/reset.css',
+        'dist/web/js/mp-*.js',
+        'dist/web/js/wx-*.js'
+      ]);
     }
   };
 
