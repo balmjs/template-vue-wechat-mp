@@ -4860,15 +4860,10 @@ kbone-api@^0.2.1:
   resolved "https://registry.yarnpkg.com/kbone-api/-/kbone-api-0.2.1.tgz#67deee7970f4a88eac89e64faf98b5f0da689bc9"
   integrity sha512-Jd0LY4S8yQufbDfuTx7VqtJIYmaoY9rks87JzrvArMjG66FisI5z3Bq7Z8PvuXSfLjoVZosJjPvf/Z2mXYfITg==
 
-kbone-ui@0.6.17:
-  version "0.6.17"
-  resolved "https://registry.yarnpkg.com/kbone-ui/-/kbone-ui-0.6.17.tgz#3bc26235099ee15df2fdc3e56e00bde69da53891"
-  integrity sha512-RotV1Gp10kqx5jy3P9xLEFMfeiubp5GG59QlsEWXOsT8z80qU6vxsUzUw/PKfZH2rxvi8NIjW0vxbP193X5H0g==
-  dependencies:
-    vue "^2.6.10"
-    vue-router "^3.0.1"
-    vuex "^3.1.1"
-    vuex-router-sync "^5.0.0"
+kbone-ui@^1.0.11:
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/kbone-ui/-/kbone-ui-1.0.11.tgz#e0f9f4e79df93747b887fddaad4ea7907fafcc00"
+  integrity sha512-HC3uHKn3Q/t0LNn8vHIY0AB5bUsqXZTO/g0B9tyD4mChq9BhJqSYNTSYRRzT91jmVJrPTlo0q+v21nSOC+HZlg==
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -7303,7 +7298,7 @@ vue-loader@15:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@3, vue-router@^3.0.1:
+vue-router@3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.3.tgz#041048053e336829d05dafacf6a8fb669a2e7999"
   integrity sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==
@@ -7329,20 +7324,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@2, vue@^2.6.10:
+vue@2:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
-
-vuex-router-sync@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/vuex-router-sync/-/vuex-router-sync-5.0.0.tgz#1a225c17a1dd9e2f74af0a1b2c62072e9492b305"
-  integrity sha512-Mry2sO4kiAG64714X1CFpTA/shUH1DmkZ26DFDtwoM/yyx6OtMrc+MxrU+7vvbNLO9LSpgwkiJ8W+rlmRtsM+w==
-
-vuex@^3.1.1:
-  version "3.6.2"
-  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.6.2.tgz#236bc086a870c3ae79946f107f16de59d5895e71"
-  integrity sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==
 
 watchpack-chokidar2@^2.0.1:
   version "2.0.1"
@@ -7464,6 +7449,11 @@ webpack@^5.44.0:
     terser-webpack-plugin "^5.1.3"
     watchpack "^2.3.1"
     webpack-sources "^3.2.3"
+
+weui@^2.5.4:
+  version "2.5.4"
+  resolved "https://registry.yarnpkg.com/weui/-/weui-2.5.4.tgz#374ee1f7a69e8c76f9fef3e05670a03de225587f"
+  integrity sha512-N3VyhScMUXU3deOhusfxyUSTkVnat7vMgcd96seqd1xnKUc7/6vt7eDKbw+McG/pPduQYp2bZ1JdG8UxjFq0KQ==
 
 whatwg-url@^7.0.0:
   version "7.1.0"

@@ -1,0 +1,13 @@
+.sub-nav {
+  .sub-nav-item {
+    margin: 8px 0;
+    background-color: var(--weui-BG-2);
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .weui-flex {
+    padding: 20px;
+  }
+}

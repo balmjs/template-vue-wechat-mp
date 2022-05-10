@@ -18,10 +18,11 @@
     "axios-miniprogram-adapter": "^0.3.2",
     "balm-ui": "8",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "0.6.17",
+    "kbone-ui": "^1.0.11",
     "lib-flexible": "^0.3.2",
     "vue": "2",
     "vue-router": "3",
+    "weui": "^2.5.4",
     "wx-server-sdk": "^2.6.1"
   },
   "devDependencies": {

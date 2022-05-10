@@ -1,0 +1,15 @@
+<view class="ui-editor">
+  <editor
+    id="editor"
+    read-only="{{ readOnly }}"
+    placeholder="{{ placeholder }}"
+    show-img-size="{{ showImgSize }}"
+    show-img-toolbar="{{ showImgToolbar }}"
+    show-img-resize="{{ showImgResize }}"
+    bindready="onReady"
+    bindfocus="onFocus"
+    bindblur="onBlur"
+    bindinput="onInput"
+    bindstatuschange="onStatusChange"
+  ></editor>
+</view>

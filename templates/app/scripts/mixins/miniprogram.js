@@ -1,6 +1,5 @@
 import wxRouter from '../../../config/wx/router';
-
-const goBackBlockList = Object.keys(wxRouter);
+import { responsive } from '@/plugins/wx-api';
 
 export default {
   data() {
@@ -12,17 +11,30 @@ export default {
   },
   computed: {
     routeEntry() {
-      return this.$route.name.split('.')[0];
+      return this.$route.name && this.$route.name.split('.')[0];
     },
     hiddenGoBack() {
-      return goBackBlockList.includes(this.$route.name);
+      return Object.keys(wxRouter).includes(this.$route.name);
     },
     contentStyle() {
       return this.isMP ? { 'padding-top': `${this.topAppBarHeight}px` } : {};
     }
   },
   async created() {
-    await this.wxlogin();
+    // await this.wxlogin();
+  },
+  mounted() {
+    if (!this.isMP) {
+      responsive();
+      window.addEventListener('balmResize', responsive);
+      window.addEventListener('orientationchange', responsive);
+    }
+  },
+  beforeDestroy() {
+    if (!this.isMP) {
+      window.removeEventListener('balmResize', responsive);
+      window.removeEventListener('orientationchange', responsive);
+    }
   },
   methods: {
     onReady({ detail }) {

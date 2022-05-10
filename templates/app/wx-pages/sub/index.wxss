@@ -1,3 +1,0 @@
-@import '../../../common/css/reset.wxss';
-@import '../../../common/css/kbone-ui-weui.wxss';
-@import '../../../common/css/main.wxss';

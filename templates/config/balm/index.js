@@ -5,6 +5,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
+const getEntry = require('./entry');
 
 const workspace = path.join(__dirname, '..', '..');
 
@@ -49,12 +50,7 @@ module.exports = (balm, wxInit) => {
           entry: {
             lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
             ui: ['kbone-ui'],
-            main: isMP
-              ? `./${env.appRoot}/scripts/main.mp.js`
-              : `./${env.appRoot}/scripts/main.js`,
-            sub: isMP
-              ? `./${env.appRoot}/scripts/sub.mp.js`
-              : `./${env.appRoot}/scripts/sub.js`
+            ...getEntry(isMP)
           },
           loaders: [
             {

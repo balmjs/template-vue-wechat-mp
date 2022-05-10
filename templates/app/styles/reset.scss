@@ -13,10 +13,14 @@
   }
 }
 
-.main-nav {
-  .h5-a {
-    display: block;
-  }
+.h5-ul,
+.h5-li {
+  margin: 0;
+  padding: 0;
+}
+
+.h5-img {
+  max-width: 100%;
 }
 
 .h5-code[class*='language-'],

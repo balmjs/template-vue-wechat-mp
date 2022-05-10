@@ -1,6 +1,5 @@
-@use './global/index';
-@use './layouts/main';
-@use './components/picker';
-@use './custom-components/top-status-bar';
-@use './pages/home';
-@use './pages/demos';
+@use './global';
+@use './layouts';
+@use './components';
+@use './custom-components';
+@use './pages';

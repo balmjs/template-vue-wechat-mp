@@ -1,5 +1,6 @@
 const { src, dest, parallel } = require('gulp');
 const env = require('../env');
+const getEntry = require('./entry');
 
 const tmpRoot = '.mp';
 const wxssEntry = `./${env.appRoot}/wx-pages/main/index.wxss`;
@@ -45,17 +46,9 @@ module.exports = function useMP(mix) {
             break;
           case 'js':
           case 'vue':
-            mix.webpack(
-              {
-                main: `./${env.appRoot}/scripts/main.mp.js`,
-                sub: `./${env.appRoot}/scripts/sub.mp.js`
-              },
-              `${mpCommonDir}/js`,
-              {},
-              () => {
-                parallel(syncMainWxss, syncSubWxss)();
-              }
-            );
+            mix.webpack(getEntry(true), `${mpCommonDir}/js`, {}, () => {
+              parallel(syncMainWxss, syncSubWxss)();
+            });
             break;
           default:
         }
