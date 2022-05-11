@@ -13,8 +13,8 @@ export default {
     routeEntry() {
       return this.$route.name && this.$route.name.split('.')[0];
     },
-    hiddenGoBack() {
-      return Object.keys(wxRouter).includes(this.$route.name);
+    isHomePage() {
+      return /\.home$/.test(this.$route.name);
     },
     contentStyle() {
       return this.isMP ? { 'padding-top': `${this.topAppBarHeight}px` } : {};

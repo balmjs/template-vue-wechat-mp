@@ -48,8 +48,15 @@ module.exports = (balm, wxInit) => {
         },
         scripts: {
           entry: {
-            lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
-            ui: ['kbone-ui'],
+            lib: [
+              'vue',
+              'vue-router',
+              'axios',
+              'axios-miniprogram-adapter',
+              'balm-ui',
+              'kbone-api',
+              'wx-server-sdk'
+            ],
             ...getEntry(isMP)
           },
           loaders: [

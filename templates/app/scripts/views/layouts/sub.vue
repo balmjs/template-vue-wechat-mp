@@ -3,7 +3,7 @@
     <template v-if="isMP">
       <top-app-bar
         title="BalmJS - sub page"
-        :hiddenGoBack="hiddenGoBack"
+        :hiddenGoBack="isHomePage"
         bgColor="#009688"
         :colorStop="['#009688', '#004d40']"
         @ready="onReady"

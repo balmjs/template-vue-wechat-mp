@@ -3,7 +3,7 @@
     <!-- <template v-if="isMP">
       <top-app-bar
         title="BalmJS - main page"
-        :hiddenGoBack="hiddenGoBack"
+        :hiddenGoBack="isHomePage"
         bgColor="#9c27b0"
         :colorStop="['#9c27b0', '#4a148c']"
         @ready="onReady"
@@ -99,7 +99,7 @@ export default {
       return result;
     }
   },
-  created() {
+  mounted() {
     this.$bus.on('on-loading', () => {
       this.isLoading = true;
     });
@@ -107,10 +107,20 @@ export default {
     this.$bus.on('off-loading', () => {
       this.isLoading = false;
     });
+
+    this.$bus.on('nav-back', () => {
+      console.log(this.routeEntry);
+    });
   },
   methods: {
     onNavBack() {
-      this.isMP ? this.$wxApi.navigateBack() : this.$router.back();
+      if (this.isMP) {
+        this.isHomePage
+          ? this.$store.onClickOpen('/main')
+          : this.$router.back();
+      } else {
+        this.$router.back();
+      }
     },
     onTabbarChange({ detail }) {
       const { index, item } = detail;
