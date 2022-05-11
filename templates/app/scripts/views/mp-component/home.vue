@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>扩展能力</h1>
-    <p>
+    <p v-if="!isMP">
       <a
         href="https://wechat-miniprogram.github.io/weui/docs"
         target="_blank"

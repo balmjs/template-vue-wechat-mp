@@ -1,4 +1,4 @@
-.top-app-bar {
+.ui-navigation-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.top-app-bar__row {
+.ui-navigation-bar__row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +18,12 @@
 }
 
 /* Go Back */
-.top-app-bar .top-app-bar__section--align-start {
+.ui-navigation-bar .ui-navigation-bar__section--align-start {
   position: absolute;
   top: 6px;
   left: 10px;
 }
-.top-app-bar .go-back {
+.ui-navigation-bar .go-back {
   width: 22px;
   height: 22px;
   padding: 4px 10px;
@@ -32,25 +32,25 @@
 }
 
 /* Title */
-.top-app-bar .top-app-bar__section {
+.ui-navigation-bar .ui-navigation-bar__section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.top-app-bar .top-app-bar__section .title {
+.ui-navigation-bar .ui-navigation-bar__section .title {
   height: 44px;
   line-height: 44px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.top-app-bar.top-app-bar--transparent {
+.ui-navigation-bar.ui-navigation-bar--transparent {
   background: transparent !important;
 }
-.top-app-bar.top-app-bar--transparent .go-back {
+.ui-navigation-bar.ui-navigation-bar--transparent .go-back {
   background: #ccc;
 }
-.top-app-bar.top-app-bar--transparent .title {
+.ui-navigation-bar.ui-navigation-bar--transparent .title {
   color: #000;
   font-weight: normal;
 }

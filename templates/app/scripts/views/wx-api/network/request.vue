@@ -1,5 +1,5 @@
 <template>
-  <div class="page login js_show">
+  <div>
     <wx-button
       class="weui-btn"
       type="primary"

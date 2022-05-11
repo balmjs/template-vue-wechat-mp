@@ -26,6 +26,7 @@ import Tabbar from '@/views/mp-component/navigation/tabbar';
 // 搜索相关
 import Searchbar from '@/views/mp-component/search/searchbar';
 // 扩展组件
+import { isMP } from '@/config';
 
 const formRoutes = [
   {
@@ -173,12 +174,16 @@ const mpSubRoutes = [
     component: BlankLayout,
     children: searchRoutes
   },
-  {
-    path: 'extended',
-    name: 'mp-component.extended',
-    component: BlankLayout,
-    children: []
-  }
+  ...(isMP
+    ? [
+        {
+          path: 'extended',
+          name: 'mp-component.extended',
+          component: BlankLayout,
+          children: []
+        }
+      ]
+    : [])
 ];
 
 export default [

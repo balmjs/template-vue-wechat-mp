@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>小程序接口</h1>
-    <p>
+    <p v-if="!isMP">
       <a
         href="https://developers.weixin.qq.com/miniprogram/dev/api"
         target="_blank"

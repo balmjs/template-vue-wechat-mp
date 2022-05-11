@@ -44,14 +44,14 @@ Component({
     showGoBack: false
   },
   observers: {
-    hiddenGoBack: function(value) {
+    hiddenGoBack(value) {
       this.setData({
         showGoBack: !value
       });
     }
   },
   lifetimes: {
-    ready: function() {
+    ready() {
       if (this.data.contentOffset) {
         this.data.topAppBarHeight = this.data.statusBarHeight + 44;
       }
@@ -62,7 +62,7 @@ Component({
     }
   },
   methods: {
-    goBack: function() {
+    onNavBack() {
       this.triggerEvent('back');
     }
   }

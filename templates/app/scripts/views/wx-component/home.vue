@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>小程序官方组件</h1>
-    <p>
+    <h1>小程序组件</h1>
+    <p v-if="!isMP">
       <a
         href="https://developers.weixin.qq.com/miniprogram/dev/component/"
         target="_blank"

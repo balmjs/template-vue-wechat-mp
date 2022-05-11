@@ -20,5 +20,5 @@ module.exports = {
   subPackages: getSubPackages(wxRouter),
   host: 'https://mp.balmjs.com',
   appId: 'wx08d0ca8fad40ec22',
-  useCustomComponent: true // 是否使用自定义微信组件
+  useCustomComponent: false // 是否使用自定义微信组件
 };

@@ -13,8 +13,8 @@
 
     <mp-navigation-bar
       back="false"
-      :background="background"
-      color="#fff"
+      :background="color.bgColor"
+      :color="color.frontColor"
       :loading="isLoading"
       animated="true"
       show="true"
@@ -74,8 +74,29 @@ export default {
     title() {
       return `BalmJS - ${this.routeEntry}`;
     },
-    background() {
-      return this.routeEntry === 'main' ? '#6200ee' : '#018786';
+    color() {
+      const result = {
+        bgColor: '#6200ee',
+        frontColor: '#fff'
+      };
+
+      switch (this.routeEntry) {
+        case 'wx-component':
+          result.bgColor = '#d32f2f';
+          break;
+        case 'mp-component':
+          result.bgColor = '#388e3c';
+          break;
+        case 'wx-api':
+          result.bgColor = '#1976d2';
+          break;
+        case 'wx-cloud':
+          result.bgColor = '#f57c00';
+          result.frontColor = '#000';
+          break;
+      }
+
+      return result;
     }
   },
   created() {
@@ -89,7 +110,7 @@ export default {
   },
   methods: {
     onNavBack() {
-      this.$router.back();
+      this.isMP ? this.$wxApi.navigateBack() : this.$router.back();
     },
     onTabbarChange({ detail }) {
       const { index, item } = detail;
