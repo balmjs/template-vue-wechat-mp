@@ -1,39 +1,44 @@
-const { src, dest, parallel } = require('gulp');
+const { parallel } = require('gulp');
+const wxRouter = require('../wx/router');
 const env = require('../env');
 const getEntry = require('./entry');
 
 const tmpRoot = '.mp';
-const wxssEntry = `./${env.appRoot}/wx-pages/main/index.wxss`;
-
-function syncMainWxss() {
-  return src(wxssEntry).pipe(dest(`${tmpRoot}/pages/main`));
-}
-
-function syncSubWxss(done) {
-  for (const [key, value] of Object.entries(env.subPackages)) {
-    const name = value[0];
-    src(`./${env.appRoot}/wx-pages/${name}/index.wxss`).pipe(
-      dest(`${tmpRoot}/${key}/pages/${name}`)
-    );
-  }
-  done();
-}
 
 module.exports = function useMP(mix) {
   const mpDir = mix.env.isProd ? './dist/mp' : tmpRoot;
   const mpCommonDir = `${mpDir}/common`;
 
-  mix.copy(`${env.appRoot}/styles/app-vendors/*`, `${mpCommonDir}/css`);
-  // sync wxss entry
-  mix.copy(wxssEntry, `${mpDir}/pages/main`);
-  // for sub packages
-  for (const [key, value] of Object.entries(env.subPackages)) {
-    const name = value[0];
-    mix.copy(
-      `./${env.appRoot}/wx-pages/${name}/index.wxss`,
-      `${mpDir}/${key}/pages/${name}`
+  function syncMainWxss(done) {
+    const wxRouterKeys = Object.keys(wxRouter).filter(
+      (key) => !/^wx-/.test(key)
     );
+
+    wxRouterKeys.forEach((name) => {
+      mix.copy(
+        `./${env.appRoot}/wx-pages/main/index.wxss`,
+        `${mpDir}/pages/${name}`
+      );
+    });
+
+    done && done();
   }
+
+  function syncSubWxss(done) {
+    for (const [key, value] of Object.entries(env.subPackages)) {
+      const name = value[0];
+      mix.copy(
+        `./${env.appRoot}/wx-pages/sub/index.wxss`,
+        `${mpDir}/${key}/pages/${name}`
+      );
+    }
+
+    done && done();
+  }
+
+  // sync wxss entry
+  syncMainWxss();
+  syncSubWxss();
 
   if (mix.env.isDev) {
     mix.serve((watcher, reload) => {

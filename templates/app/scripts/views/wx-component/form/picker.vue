@@ -1,124 +1,129 @@
 <template>
   <div>
-    <wx-picker
-      class="wx-picker"
-      :range="wxPicker.range1"
-      :value="wxPicker.value1"
-      @change="wxPicker.showText1 = wxPicker.range1[+$event.detail.value]"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>普通选择器：{{ wxPicker.showText1 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      header-text="selector"
-      range-key="name"
-      :range="wxPicker.range2"
-      :value="wxPicker.value2"
-      @change="wxPicker.showText2 = wxPicker.range2[+$event.detail.value].name"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>普通选择器2：{{ wxPicker.showText2 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="multiSelector"
-      :range="wxPicker.range3"
-      :value="wxPicker.value3"
-      @change="
-        wxPicker.showText3 = `${
-          wxPicker.range3[0][+$event.detail.value[0]]
-        } - ${wxPicker.range3[1][+$event.detail.value[1]]} - ${
-          wxPicker.range3[2][+$event.detail.value[2]]
-        }`
-      "
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-      @columnchange="onWxpicker3ColumnChange"
-    >
-      <div>多列选择器：{{ wxPicker.showText3 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="multiSelector"
-      range-key="name"
-      header-text="multiSelector"
-      :range="wxPicker.range4"
-      :value="wxPicker.value4"
-      @change="
-        wxPicker.showText4 = `${
-          wxPicker.range4[0][+$event.detail.value[0]].name
-        } - ${wxPicker.range4[1][+$event.detail.value[1]].name}`
-      "
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-      @columnchange="onWxpicker4ColumnChange"
-    >
-      <div>多列选择器2：{{ wxPicker.showText4 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="time"
-      start="09:01"
-      end="21:01"
-      :value="wxPicker.value5"
-      @change="wxPicker.value5 = $event.detail.value"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>时间选择器：{{ wxPicker.value5 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="date"
-      start="2015-09-01"
-      end="2020-09-01"
-      :value="wxPicker.value6"
-      @change="wxPicker.value6 = $event.detail.value"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>日期选择器：{{ wxPicker.value6 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="date"
-      start="2015-09-01"
-      end="2020-09-01"
-      fields="month"
-      :value="wxPicker.value7"
-      @change="wxPicker.value7 = $event.detail.value"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>日期选择器2：{{ wxPicker.value7 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="date"
-      start="2015-09-01"
-      end="2020-09-01"
-      fields="year"
-      :value="wxPicker.value8"
-      @change="wxPicker.value8 = $event.detail.value"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>日期选择器2：{{ wxPicker.value8 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="region"
-      :value="wxPicker.value9"
-      @change="wxPicker.showText9 = $event.detail.value.join('-')"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>省市选择器：{{ wxPicker.showText9 }}</div>
-    </wx-picker>
-    <wx-picker
-      class="wx-picker"
-      mode="region"
-      custom-item="全部"
-      :value="wxPicker.value10"
-      @change="wxPicker.showText10 = $event.detail.value.join('-')"
-      @cancel="$store.log('[wx-picker] cancel', $event)"
-    >
-      <div>省市选择器2：{{ wxPicker.showText10 }}</div>
-    </wx-picker>
+    <div class="title">wx-picker</div>
+    <div class="comp-cnt">
+      <wx-picker
+        class="wx-picker"
+        :range="wxPicker.range1"
+        :value="wxPicker.value1"
+        @change="wxPicker.showText1 = wxPicker.range1[+$event.detail.value]"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>普通选择器：{{ wxPicker.showText1 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        header-text="selector"
+        range-key="name"
+        :range="wxPicker.range2"
+        :value="wxPicker.value2"
+        @change="
+          wxPicker.showText2 = wxPicker.range2[+$event.detail.value].name
+        "
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>普通选择器2：{{ wxPicker.showText2 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="multiSelector"
+        :range="wxPicker.range3"
+        :value="wxPicker.value3"
+        @change="
+          wxPicker.showText3 = `${
+            wxPicker.range3[0][+$event.detail.value[0]]
+          } - ${wxPicker.range3[1][+$event.detail.value[1]]} - ${
+            wxPicker.range3[2][+$event.detail.value[2]]
+          }`
+        "
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+        @columnchange="onWxpicker3ColumnChange"
+      >
+        <div>多列选择器：{{ wxPicker.showText3 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="multiSelector"
+        range-key="name"
+        header-text="multiSelector"
+        :range="wxPicker.range4"
+        :value="wxPicker.value4"
+        @change="
+          wxPicker.showText4 = `${
+            wxPicker.range4[0][+$event.detail.value[0]].name
+          } - ${wxPicker.range4[1][+$event.detail.value[1]].name}`
+        "
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+        @columnchange="onWxpicker4ColumnChange"
+      >
+        <div>多列选择器2：{{ wxPicker.showText4 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="time"
+        start="09:01"
+        end="21:01"
+        :value="wxPicker.value5"
+        @change="wxPicker.value5 = $event.detail.value"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>时间选择器：{{ wxPicker.value5 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="date"
+        start="2015-09-01"
+        end="2020-09-01"
+        :value="wxPicker.value6"
+        @change="wxPicker.value6 = $event.detail.value"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>日期选择器：{{ wxPicker.value6 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="date"
+        start="2015-09-01"
+        end="2020-09-01"
+        fields="month"
+        :value="wxPicker.value7"
+        @change="wxPicker.value7 = $event.detail.value"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>日期选择器2：{{ wxPicker.value7 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="date"
+        start="2015-09-01"
+        end="2020-09-01"
+        fields="year"
+        :value="wxPicker.value8"
+        @change="wxPicker.value8 = $event.detail.value"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>日期选择器2：{{ wxPicker.value8 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="region"
+        :value="wxPicker.value9"
+        @change="wxPicker.showText9 = $event.detail.value.join('-')"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>省市选择器：{{ wxPicker.showText9 }}</div>
+      </wx-picker>
+      <wx-picker
+        class="wx-picker"
+        mode="region"
+        custom-item="全部"
+        :value="wxPicker.value10"
+        @change="wxPicker.showText10 = $event.detail.value.join('-')"
+        @cancel="$store.log('[wx-picker] cancel', $event)"
+      >
+        <div>省市选择器2：{{ wxPicker.showText10 }}</div>
+      </wx-picker>
+    </div>
   </div>
 </template>
 

@@ -11,13 +11,13 @@ const kboneConfig = {
     notFound: 'main',
     accessDenied: 'main'
   },
-  generate: Object.assign({
+  generate: {
     appWxss: 'default',
     subpackages: env.subPackages,
     wxCustomComponent,
     autoBuildNpm: false,
     weui: true
-  }),
+  },
   app: {
     navigationStyle: 'custom'
   },

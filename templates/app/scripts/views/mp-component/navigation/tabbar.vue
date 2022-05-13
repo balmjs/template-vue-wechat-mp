@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { tabbarDefaultIcon } from '@/config';
+
 export default {
   data() {
     return {
@@ -32,25 +34,25 @@ export default {
         list: [
           {
             text: '微信',
-            iconPath: this.$store.DEFAULT_TABBAR_ICON,
-            selectedIconPath: this.$store.DEFAULT_TABBAR_ICON,
+            iconPath: tabbarDefaultIcon,
+            selectedIconPath: tabbarDefaultIcon,
             badge: '8'
           },
           {
             text: '通讯录',
-            iconPath: this.$store.DEFAULT_TABBAR_ICON,
-            selectedIconPath: this.$store.DEFAULT_TABBAR_ICON
+            iconPath: tabbarDefaultIcon,
+            selectedIconPath: tabbarDefaultIcon
           },
           {
             text: '发现',
-            iconPath: this.$store.DEFAULT_TABBAR_ICON,
-            selectedIconPath: this.$store.DEFAULT_TABBAR_ICON,
+            iconPath: tabbarDefaultIcon,
+            selectedIconPath: tabbarDefaultIcon,
             dot: true
           },
           {
             text: '我',
-            iconPath: this.$store.DEFAULT_TABBAR_ICON,
-            selectedIconPath: this.$store.DEFAULT_TABBAR_ICON
+            iconPath: tabbarDefaultIcon,
+            selectedIconPath: tabbarDefaultIcon
           }
         ]
       }

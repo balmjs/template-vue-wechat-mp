@@ -1,10 +1,16 @@
+const path = require('path');
 const wxRouter = require('./wx/router');
+
+const workspace = path.join(__dirname, '..');
+
+function resolve(dir) {
+  return path.join(workspace, dir);
+}
 
 const subPackageNamespace = 'sub';
 
 function getSubPackages(wxRouter) {
-  const wxRouterKeys = Object.keys(wxRouter);
-  wxRouterKeys.shift();
+  const wxRouterKeys = Object.keys(wxRouter).filter((key) => /^wx-/.test(key));
 
   const subPackages = {};
   wxRouterKeys.forEach(
@@ -16,6 +22,8 @@ function getSubPackages(wxRouter) {
 }
 
 module.exports = {
+  workspace,
+  resolve,
   appRoot: 'app',
   subPackages: getSubPackages(wxRouter),
   host: 'https://mp.balmjs.com',

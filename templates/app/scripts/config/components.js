@@ -1,4 +1,8 @@
-import SubNav from '@/components/sub-nav';
+import { isMP } from '@/config';
+
+import UiTopAppBar from '@/components/ui-top-app-bar';
+import UiNavigationBar from '@/components/ui-navigation-bar';
+import UiSubNav from '@/components/ui-sub-nav';
 
 import MpFlex from '@/components/mp-flex';
 import MpFlexItem from '@/components/mp-flex-item';
@@ -9,9 +13,9 @@ import MpGridLabel from '@/components/mp-grid-label';
 import MpArticle from '@/components/mp-article';
 import MpFooter from '@/components/mp-footer';
 
-export const customComponents = [SubNav];
+let customComponents = [UiTopAppBar, UiNavigationBar, UiSubNav];
 
-export const mpComponents = [
+let mpComponents = [
   MpFlex,
   MpFlexItem,
   MpGrids,
@@ -21,3 +25,5 @@ export const mpComponents = [
   MpArticle,
   MpFooter
 ];
+
+export { customComponents, mpComponents };

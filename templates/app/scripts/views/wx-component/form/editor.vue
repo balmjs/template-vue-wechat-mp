@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isMP">
+  <div>
     <ui-editor
       placeholder="开始输入..."
       @ready="onReady"

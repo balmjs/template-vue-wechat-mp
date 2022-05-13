@@ -1,0 +1,14 @@
+<wxs src="top-app-bar.wxs" module="nav" />
+
+<view class="ui-top-app-bar{{ bgTransparent ? ' ui-top-app-bar--transparent' : '' }}" style="color:{{ color }};background-color:{{ bgColor }};{{ nav.linearGradient(isLinearGradient, sideOrCorner, colorStop) }}">
+  <view class="ui-top-app-bar__placeholder" style="height:{{ statusBarHeight }}px;"></view>
+  <view class="ui-top-app-bar__row">
+    <view class="ui-top-app-bar__section--align-start">
+      <image wx:if="{{ showGoBack }}" class="go-back" src="back.png" bindtap="onNavBack"></image>
+      <slot></slot>
+    </view>
+    <view class="ui-top-app-bar__section">
+      <text class="title">{{ title }}</text>
+    </view>
+  </view>
+</view>

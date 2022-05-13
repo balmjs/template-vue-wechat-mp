@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import $wxApi from '@/plugins/wx-api';
-// import $openApi from '@/plugins/open-api';
+// import $wxCloud from '@/plugins/wx-cloud';
 import $http from '@/plugins/http';
 import $event from 'balm-ui-event';
 import $store from 'balm-ui-store';
@@ -21,7 +21,7 @@ function createApp(App, router = {}, KBoneUI = false, fn = () => {}) {
   Vue.config.productionTip = false;
   Vue.prototype.isMP = isMP;
   Vue.use($wxApi);
-  // Vue.use($openApi);
+  // Vue.use($wxCloud);
   Vue.use($http);
   Vue.use($event);
   Vue.use($store, myStore);

@@ -10,7 +10,12 @@
         小程序API文档
       </a>
     </p>
-    <sub-nav v-if="isMP || DEBUG" :types="navTypes" :items="navItems"></sub-nav>
+
+    <ui-sub-nav
+      v-if="isMP || DEBUG"
+      :types="navTypes"
+      :items="navItems"
+    ></ui-sub-nav>
     <p v-else>请至“微信开发者工具”中测试 API</p>
   </div>
 </template>

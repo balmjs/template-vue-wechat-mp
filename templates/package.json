@@ -10,7 +10,7 @@
     "mp:dev": "rimraf .mp && balm -mp",
     "mp:prod": "balm -p -mp",
     "dev": "balm --with-mp",
-    "prod": "npm run web:prod && npm run mp:prod",
+    "prod": "rimraf dist && npm run web:prod && npm run mp:prod",
     "release:h5": "./scripts/release-h5.sh"
   },
   "dependencies": {

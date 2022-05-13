@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import NotFound from '@/views/not-found';
-import { useStore } from 'balm-ui-store';
 
 function createRouter(routes = []) {
   Vue.use(VueRouter);
@@ -16,15 +15,8 @@ function createRouter(routes = []) {
 
   const router = new VueRouter(routerOptions);
 
-  router.beforeEach((to, from, next) => {
-    const store = useStore();
-
-    const routeName = to.name && to.name.split('.')[0];
-    store.tabbarIndex = store.tabbarItems.findIndex(
-      (item) => item.url.replace('/', '') === routeName
-    );
-
-    next();
+  router.afterEach((to, from) => {
+    // TODO: scroll to top
   });
 
   return router;

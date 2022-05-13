@@ -10,7 +10,8 @@
         小程序组件文档
       </a>
     </p>
-    <sub-nav :types="navTypes" :items="navItems"></sub-nav>
+
+    <ui-sub-nav :types="navTypes" :items="navItems"></ui-sub-nav>
   </div>
 </template>
 

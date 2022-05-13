@@ -1,17 +1,10 @@
 const devWithMP = process.argv.includes('--with-mp');
-const path = require('path');
 const { spawn } = require('child_process');
 const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
 const getEntry = require('./entry');
-
-const workspace = path.join(__dirname, '..', '..');
-
-function resolve(dir) {
-  return path.join(workspace, dir);
-}
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
@@ -105,7 +98,7 @@ module.exports = (balm, wxInit) => {
             vue$: 'vue/dist/vue.esm.js',
             'balm-ui-event': 'balm-ui/plugins/event/index.js',
             'balm-ui-store': 'balm-ui/plugins/store/index.js',
-            '@': resolve(`${env.appRoot}/scripts`)
+            '@': env.resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
             node: {

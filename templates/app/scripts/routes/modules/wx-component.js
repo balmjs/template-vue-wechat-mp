@@ -1,6 +1,9 @@
 import BlankLayout from '@/views/layouts/blank';
 import Home from '@/views/wx-component/home';
-
+// 视图容器
+import View from '@/views/wx-component/view/view';
+// 基础内容
+// 表单组件
 import Button from '@/views/wx-component/form/button';
 import Checkbox from '@/views/wx-component/form/checkbox';
 import Form from '@/views/wx-component/form/form';
@@ -12,7 +15,22 @@ import PickerView from '@/views/wx-component/form/picker-view';
 import Slider from '@/views/wx-component/form/slider';
 import Switch from '@/views/wx-component/form/switch';
 import Textarea from '@/views/wx-component/form/textarea';
-import Editor from '@/views/wx-component/form/editor';
+// import Editor from '@/views/wx-component/form/editor';
+// 导航
+// 媒体组件
+// 地图
+// 画布
+// 开放能力
+// 无障碍访问
+import { isMP } from '@/config';
+
+const viewRoutes = [
+  {
+    path: 'view',
+    name: 'wx-component.view.view',
+    component: View
+  }
+];
 
 const formRoutes = [
   {
@@ -70,11 +88,15 @@ const formRoutes = [
     name: 'wx-component.form.textarea',
     component: Textarea
   }
-  // {
-  //   path: 'editor',
-  //   name: 'wx-component.form.editor',
-  //   component: Editor
-  // }
+  // ...(isMP
+  //   ? [
+  //       {
+  //         path: 'editor',
+  //         name: 'wx-component.form.editor',
+  //         component: Editor
+  //       }
+  //     ]
+  //   : [])
 ];
 
 const wxSubRoutes = [
@@ -82,7 +104,7 @@ const wxSubRoutes = [
     path: 'view',
     name: 'wx-component.view',
     component: BlankLayout,
-    children: []
+    children: viewRoutes
   },
   {
     path: 'basic',

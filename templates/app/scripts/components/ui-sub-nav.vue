@@ -1,9 +1,9 @@
 <template>
-  <ul class="sub-nav">
+  <ul v-if="items.length" class="ui-sub-nav">
     <li
       v-for="(item, index) in items"
       :key="index"
-      class="sub-nav-item"
+      class="ui-sub-nav-item"
       @click="onSubNavChange(index)"
     >
       <mp-flex>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'SubNav',
+  name: 'UiSubNav',
   props: {
     types: {
       type: Object,
@@ -40,7 +40,6 @@ export default {
   },
   methods: {
     onSubNavChange(index) {
-      console.log('onSubNavChange', index);
       this.$store.subNavIndex = this.$store.subNavIndex === index ? -1 : index;
     },
     redirect({ name }) {

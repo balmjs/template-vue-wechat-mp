@@ -1,4 +1,4 @@
-.ui-navigation-bar {
+.ui-top-app-bar {
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.ui-navigation-bar__row {
+.ui-top-app-bar__row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +18,12 @@
 }
 
 /* Go Back */
-.ui-navigation-bar .ui-navigation-bar__section--align-start {
+.ui-top-app-bar .ui-top-app-bar__section--align-start {
   position: absolute;
   top: 6px;
   left: 10px;
 }
-.ui-navigation-bar .go-back {
+.ui-top-app-bar .go-back {
   width: 22px;
   height: 22px;
   padding: 4px 10px;
@@ -32,22 +32,22 @@
 }
 
 /* Title */
-.ui-navigation-bar .ui-navigation-bar__section {
+.ui-top-app-bar .ui-top-app-bar__section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.ui-navigation-bar .ui-navigation-bar__section .title {
+.ui-top-app-bar .ui-top-app-bar__section .title {
   height: 44px;
   line-height: 44px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.ui-navigation-bar.ui-navigation-bar--transparent {
+.ui-top-app-bar.ui-top-app-bar--transparent {
   background: transparent !important;
 }
-.ui-navigation-bar.ui-navigation-bar--transparent .go-back {
+.ui-top-app-bar.ui-top-app-bar--transparent .go-back {
   background: #ccc;
 }
 .ui-navigation-bar.ui-navigation-bar--transparent .title {
