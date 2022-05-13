@@ -48,6 +48,8 @@ module.exports = (balm, wxInit) => {
               'axios-miniprogram-adapter',
               'balm-ui',
               'kbone-api',
+              'marked',
+              'prismjs',
               'wx-server-sdk'
             ],
             ...getEntry(isMP)
