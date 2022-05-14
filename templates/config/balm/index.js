@@ -100,6 +100,7 @@ module.exports = (balm, wxInit) => {
             vue$: 'vue/dist/vue.esm.js',
             'balm-ui-event': 'balm-ui/plugins/event/index.js',
             'balm-ui-store': 'balm-ui/plugins/store/index.js',
+            'kbone-ui': 'kbone-ui/dist/index.dev.js', // NOTE: production version has bug :(
             '@': env.resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
