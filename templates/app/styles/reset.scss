@@ -7,6 +7,8 @@
 // Case 2: generate.appWxss = 'display'
 // @use './app-reset/app.display' as app-display;
 
+@use './mp-components';
+
 .miniprogram-root {
   .for-web {
     display: none;
