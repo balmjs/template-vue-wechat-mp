@@ -4,14 +4,14 @@
     <div class="comp-cnt">
       <wx-button
         class="weui-btn wx-button"
-        type="default"
+        type="primary"
         @click="mpDialog.dialogShow = true"
       >
         确认取消按钮
       </wx-button>
       <wx-button
         class="weui-btn wx-button"
-        type="default"
+        type="primary"
         @click="mpDialog.showOneButtonDialog = true"
       >
         只有确认按钮

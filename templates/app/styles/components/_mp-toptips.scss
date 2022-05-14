@@ -5,7 +5,7 @@ $top: 8px + $topStatusBarHeight;
 .container.is-mp {
   .weui-toptips {
     top: $top;
-    z-index: 3;
+    z-index: 5;
     transform: translateZ(0) translateY(#{'calc(-100% - ' + $top + ')'});
 
     &.weui-toptips_show {

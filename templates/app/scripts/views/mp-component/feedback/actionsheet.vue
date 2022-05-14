@@ -4,12 +4,14 @@
     <div class="comp-cnt">
       <wx-button
         class="weui-btn wx-button opr-button"
+        type="primary"
         @tap="mpActionSheet.show = true"
       >
         模拟 ActionSheet
       </wx-button>
       <mp-actionsheet
         :show="mpActionSheet.show"
+        cancel-text="取消"
         :actions="mpActionSheet.groups"
         title="这是一个标题，可以为一行或者两行。"
         @close="mpActionSheet.show = false"

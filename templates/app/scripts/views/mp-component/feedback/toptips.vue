@@ -16,7 +16,7 @@
           @input="mpToptips.value = $event.detail.value"
         />
       </div>
-      <wx-button class="weui-btn wx-button" type="default" @tap="showMpToptips">
+      <wx-button class="weui-btn wx-button" type="primary" @tap="showMpToptips">
         确认
       </wx-button>
     </div>
