@@ -9,8 +9,12 @@ function ready(fn) {
 function fixHandler() {
   const pickerEl = this.parentNode;
 
-  if (pickerEl.parentNode != null) {
-    pickerEl.parentNode.removeChild(pickerEl);
+  const hasOut = pickerEl.classList.contains('wx-picker-dialog-out');
+
+  if (hasOut && pickerEl.parentNode != null) {
+    try {
+      pickerEl.parentNode.removeChild(pickerEl);
+    } catch (e) {}
   }
 }
 
@@ -29,7 +33,6 @@ ready(() => {
         ) {
           if (target.matches(elementSelector)) {
             fixHandler.call(target, e);
-
             break;
           }
         }
