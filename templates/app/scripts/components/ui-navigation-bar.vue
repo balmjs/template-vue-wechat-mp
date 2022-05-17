@@ -69,6 +69,11 @@ export default {
       current: 0
     };
   },
+  watch: {
+    '$route.name'() {
+      this.init();
+    }
+  },
   created() {
     this.init();
   },
