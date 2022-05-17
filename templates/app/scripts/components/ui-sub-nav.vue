@@ -38,6 +38,9 @@ export default {
       default: () => []
     }
   },
+  mounted() {
+    this.$bus.on('reset-sub-nav', () => (this.$store.subNavIndex = -1));
+  },
   methods: {
     onSubNavChange(index) {
       this.$store.subNavIndex = this.$store.subNavIndex === index ? -1 : index;

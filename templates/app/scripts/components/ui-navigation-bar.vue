@@ -83,6 +83,8 @@ export default {
       this.current = list.findIndex((item) => item.name === routeName);
     },
     onTabbarChange({ detail }) {
+      this.$bus.emit('reset-sub-nav');
+
       const { index, item } = detail;
       this.current = index;
       this.isMP
