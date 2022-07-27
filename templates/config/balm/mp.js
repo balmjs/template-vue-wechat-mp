@@ -47,7 +47,8 @@ module.exports = function useMP(mix) {
 
         switch (extname) {
           case 'scss':
-            mix.sass(`${env.appRoot}/styles/main.scss`, `${mpCommonDir}/css`);
+            mix.sass(`${env.appRoot}/styles/mp.scss`, `${mpCommonDir}/css`);
+            mix.sass(`${env.appRoot}/styles/web.scss`, `${mpCommonDir}/css`);
             break;
           case 'js':
           case 'vue':

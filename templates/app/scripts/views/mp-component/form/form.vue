@@ -15,20 +15,7 @@
       >
         <mp-form id="form" :rules="mpForm.rules" :models="mpForm.formData">
           <mp-cells title="单选列表项">
-            <wx-radio-group v-if="isMP" @change="onFormRadioChange">
-              <label
-                v-for="(item, index) in mpForm.radioItems"
-                :key="index"
-                class="weui-cell weui-check__label"
-              >
-                <div class="weui-cell__hd">
-                  <wx-radio :value="item.value" :checked="item.checked" />
-                </div>
-                <div class="weui-cell__bd">{{ item.name }}</div>
-              </label>
-            </wx-radio-group>
             <mp-checkbox-group
-              v-else
               prop="radio"
               multi="false"
               @change="onFormRadioChange"
@@ -44,20 +31,7 @@
           </mp-cells>
 
           <mp-cells title="复选列表项">
-            <wx-checkbox-group v-if="isMP" @change="onFormCheckboxChange">
-              <label
-                v-for="(item, index) in mpForm.checkboxItems"
-                :key="index"
-                class="weui-cell weui-check__label"
-              >
-                <div class="weui-cell__hd">
-                  <wx-checkbox :value="item.value" :checked="item.checked" />
-                </div>
-                <div class="weui-cell__bd">{{ item.name }}</div>
-              </label>
-            </wx-checkbox-group>
             <mp-checkbox-group
-              v-else
               prop="checkbox"
               multi="true"
               @change="onFormCheckboxChange"

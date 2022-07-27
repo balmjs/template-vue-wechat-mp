@@ -1,0 +1,49 @@
+.wx-comp-mp-cells {
+  margin-top: 8px;
+  background-color: #fff;
+  background-color: var(--weui-BG-2);
+  line-height: 1.41176471;
+  font-size: 17px;
+  overflow: hidden;
+  position: relative;
+}
+
+.wx-comp-mp-cells:before {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--weui-FG-3);
+  color: rgba(0, 0, 0, 0.1);
+  color: var(--weui-FG-3);
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+
+.wx-comp-mp-cells:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--weui-FG-3);
+  color: rgba(0, 0, 0, 0.1);
+  color: var(--weui-FG-3);
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+  z-index: 2;
+}
+
+.weui-cells__group {
+  border: 0;
+}
+
+.weui-cells__group:first-child {
+  margin-top: 0;
+}

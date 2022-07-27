@@ -2,7 +2,15 @@ import BlankLayout from '@/views/layouts/blank';
 import Home from '@/views/wx-component/home';
 // 视图容器
 import View from '@/views/wx-component/view/view';
+import ScrollView from '@/views/wx-component/view/scroll-view';
+import Swiper from '@/views/wx-component/view/swiper';
+import MovableView from '@/views/wx-component/view/movable-view';
+import CoverView from '@/views/wx-component/view/cover-view';
 // 基础内容
+import Text from '@/views/wx-component/basic/text';
+import Icon from '@/views/wx-component/basic/icon';
+import Progress from '@/views/wx-component/basic/progress';
+import RichText from '@/views/wx-component/basic/rich-text';
 // 表单组件
 import Button from '@/views/wx-component/form/button';
 import Checkbox from '@/views/wx-component/form/checkbox';
@@ -29,6 +37,49 @@ const viewRoutes = [
     path: 'view',
     name: 'wx-component.view.view',
     component: View
+  },
+  {
+    path: 'scroll-view',
+    name: 'wx-component.view.scroll-view',
+    component: ScrollView
+  },
+  {
+    path: 'swiper',
+    name: 'wx-component.view.swiper',
+    component: Swiper
+  },
+  {
+    path: 'movable-view',
+    name: 'wx-component.view.movable-view',
+    component: MovableView
+  },
+  {
+    path: 'cover-view',
+    name: 'wx-component.view.cover-view',
+    component: CoverView
+  }
+];
+
+const basicRoutes = [
+  {
+    path: 'text',
+    name: 'wx-component.basic.text',
+    component: Text
+  },
+  {
+    path: 'icon',
+    name: 'wx-component.basic.icon',
+    component: Icon
+  },
+  {
+    path: 'progress',
+    name: 'wx-component.basic.progress',
+    component: Progress
+  },
+  {
+    path: 'rich-text',
+    name: 'wx-component.basic.rich-text',
+    component: RichText
   }
 ];
 
@@ -110,7 +161,7 @@ const wxSubRoutes = [
     path: 'basic',
     name: 'wx-component.basic',
     component: BlankLayout,
-    children: []
+    children: basicRoutes
   },
   {
     path: 'form',

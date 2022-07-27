@@ -1,2 +1,2 @@
-@import '../../common/css/reset.wxss';
-@import '../../common/css/main.wxss';
+@import '../../common/css/mp.wxss';
+@import '../../common/css/web.wxss';

@@ -1,16 +1,16 @@
 <template>
   <ul v-if="items.length" class="ui-sub-nav">
-    <li
-      v-for="(item, index) in items"
-      :key="index"
-      class="ui-sub-nav-item"
-      @click="onSubNavChange(index)"
-    >
-      <mp-flex>
-        <mp-flex-item>{{ types[item.path] }}</mp-flex-item>
-      </mp-flex>
-      <mp-cells v-if="index === $store.subNavIndex">
-        <template v-if="item.children.length">
+    <template v-for="(item, index) in items">
+      <li
+        v-if="item.children.length"
+        :key="item.name"
+        class="ui-sub-nav-item"
+        @click="onSubNavChange(index)"
+      >
+        <mp-flex>
+          <mp-flex-item>{{ types[item.path] }}</mp-flex-item>
+        </mp-flex>
+        <mp-cells v-if="index === $store.subNavIndex">
           <mp-cell
             v-for="subItem in item.children"
             :key="subItem.name"
@@ -18,10 +18,9 @@
             :value="subItem.path"
             @click.stop="redirect(subItem)"
           ></mp-cell>
-        </template>
-        <mp-cell v-else value="暂无数据"></mp-cell>
-      </mp-cells>
-    </li>
+        </mp-cells>
+      </li>
+    </template>
   </ul>
 </template>
 
