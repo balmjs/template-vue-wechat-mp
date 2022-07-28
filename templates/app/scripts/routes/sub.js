@@ -1,4 +1,4 @@
-import createRouter from './config';
-import subRoutes from './demos/sub';
+import createRouter from './create-router';
+import subRoutes from './modules/sub';
 
 export default createRouter(subRoutes);

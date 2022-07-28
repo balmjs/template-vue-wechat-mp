@@ -1,0 +1,15 @@
+/// 自定义 mp-navigation-bar 需重置 `.weui-toptips`
+$topStatusBarHeight: 64px;
+$top: 8px + $topStatusBarHeight;
+
+.container.is-mp {
+  .weui-toptips {
+    top: $top;
+    z-index: 5;
+    transform: translateZ(0) translateY(#{'calc(-100% - ' + $top + ')'});
+
+    &.weui-toptips_show {
+      transform: translateZ(0) translateY(0);
+    }
+  }
+}

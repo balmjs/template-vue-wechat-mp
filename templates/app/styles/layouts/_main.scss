@@ -1,4 +1,4 @@
-@use '../global/index' as global;
+@use '../global';
 
 body {
   margin: 0;
@@ -23,18 +23,8 @@ body {
   overflow-y: auto;
 }
 
-.main-nav {
-  height: global.px2rem(44);
-  line-height: global.px2rem(44);
-  text-align: center;
-  border-top: 1px solid gray;
-
-  a {
-    display: block;
-  }
-
-  .router-link-active {
-    color: red;
-    font-weight: bold;
+@media only screen and (min-width: 450px) {
+  .main-body {
+    padding-left: 60px;
   }
 }

@@ -1,42 +1,39 @@
 const env = require('../env');
 const router = require('./router');
-const customConfig = require('./custom-component');
+const wxCustomComponent = require('./custom-component');
 
 // Kbone 配置 - https://wechat-miniprogram.github.io/kbone/docs/config/
 const kboneConfig = {
   origin: env.host,
   entry: '/',
-  router: {
-    // NOTE: key name 必须与 `balmrc.js` 中的 `scripts.entry` 入口文件输出名保持一致
-    main: router.main,
-    sub: router.sub
-  },
+  router,
   redirect: {
     notFound: 'main',
     accessDenied: 'main'
   },
-  generate: Object.assign(
-    {
-      appWxss: 'default',
-      subpackages: env.subPackages,
-      autoBuildNpm: 'npm'
-    },
-    customConfig.generate
-  ),
-  app: Object.assign(
-    {
-      navigationBarTitleText: 'BalmJS for MP'
-    },
-    customConfig.app
-  ),
-  // appExtraConfig: {
-  //   useExtendedLib: {
-  //     kbone: true
-  //   }
-  // },
+  generate: {
+    appWxss: 'default',
+    subpackages: env.subPackages,
+    wxCustomComponent,
+    autoBuildNpm: false,
+    weui: true
+  },
+  app: {
+    navigationStyle: 'custom'
+  },
+  appExtraConfig: {
+    useExtendedLib: {
+      kbone: true,
+      weui: true
+    }
+  },
   global: {
     share: true,
+    // shareTimeline: true,
     rem: true
+  },
+  optimization: {
+    wxssUniversalSelector: 'classprefix'
   },
   projectConfig: {
     appid: env.appId,

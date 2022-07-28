@@ -1,13 +1,10 @@
-import demo from './modules/demo';
+import global from './global';
 
 export default {
-  mixins: [demo],
+  mixins: [global],
   methods: {
-    onClickJump(url) {
-      window.location.href = url;
-    },
-    onClickOpen(url) {
-      window.open(url);
+    log(...args) {
+      console.log.apply(console, args);
     }
   }
 };

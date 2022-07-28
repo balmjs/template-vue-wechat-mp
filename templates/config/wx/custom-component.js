@@ -1,7 +1,4 @@
-const path = require('path');
 const env = require('../env');
-
-const useCustomComponent = false; // 是否使用自定义微信组件
 
 // NOTE: run `npm run wx:init` first
 const wxVendorComponents = {};
@@ -18,34 +15,12 @@ const wxCustomComponents = {
     path: 'login-dialog/index',
     props: ['open'],
     events: ['getPhoneNumber']
-  },
-  // 小程序官方组件
-  'rich-text': {
-    path: 'rich-text/index',
-    props: ['content'],
-    events: ['input']
   }
 };
 
-module.exports = useCustomComponent
+module.exports = env.useCustomComponent
   ? {
-      generate: {
-        wxCustomComponent: {
-          root: path.join(__dirname, `../../${env.appRoot}/wx-components`),
-          usingComponents: Object.assign(
-            {},
-            wxVendorComponents,
-            wxCustomComponents
-          )
-        }
-      },
-      app: wxCustomComponents['top-app-bar']
-        ? {
-            navigationStyle: 'custom'
-          }
-        : {}
+      root: env.resolve(`${env.appRoot}/wx-custom-components`),
+      usingComponents: Object.assign({}, wxVendorComponents, wxCustomComponents)
     }
-  : {
-      generate: {},
-      app: {}
-    };
+  : {};

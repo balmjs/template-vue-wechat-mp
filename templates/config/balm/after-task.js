@@ -17,7 +17,7 @@ function updateAppConfig(balm, wxInit) {
             let appConfig = Object.assign(defaultAppCnfig, myAppConfig);
             let jsonString = JSON.stringify(appConfig, null, '\t');
 
-            fs.writeFile(targetFile, jsonString, err => {
+            fs.writeFile(targetFile, jsonString, (err) => {
               if (err) return console.error(err);
               console.log('"app.json" updated');
             });

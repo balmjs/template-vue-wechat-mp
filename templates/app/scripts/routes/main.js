@@ -1,17 +1,15 @@
-import createRouter from './config';
-import Home from '@/views/home';
-import demoRoutes from './demos';
-import subRoutes from './demos/sub';
+import createRouter from './create-router';
+import Home from '@/views/main/home';
 import { isMP } from '@/config';
+import subRoutes from './modules';
 
 const mainRoutes = [
   {
-    path: '/main/home',
+    path: '/main',
     name: 'main',
     component: Home,
     alias: '/'
   },
-  ...demoRoutes,
   ...(isMP ? [] : subRoutes)
 ];
 

@@ -1,16 +1,10 @@
 const devWithMP = process.argv.includes('--with-mp');
-const path = require('path');
 const { spawn } = require('child_process');
 const { VueLoaderPlugin } = require('vue-loader');
 const webpack = require('webpack');
 const MpPlugin = require('mp-webpack-plugin');
 const env = require('../env');
-
-const workspace = path.join(__dirname, '..', '..');
-
-function resolve(dir) {
-  return path.join(workspace, dir);
-}
+const getEntry = require('./entry');
 
 // Documentation - https://balm.js.org/docs/config/
 // 中文文档 - https://balm.js.org/docs/zh/config/
@@ -47,14 +41,15 @@ module.exports = (balm, wxInit) => {
         },
         scripts: {
           entry: {
-            lib: ['vue', 'vue-router', 'axios', 'kbone-api'],
-            ui: ['kbone-ui'],
-            main: isMP
-              ? `./${env.appRoot}/scripts/main.mp.js`
-              : `./${env.appRoot}/scripts/main.js`,
-            sub: isMP
-              ? `./${env.appRoot}/scripts/sub.mp.js`
-              : `./${env.appRoot}/scripts/sub.js`
+            lib: [
+              'vue',
+              'vue-router',
+              'axios',
+              'axios-miniprogram-adapter',
+              'kbone-api'
+            ],
+            ui: ['balm-ui', 'kbone-ui', 'lib-flexible'],
+            ...getEntry(isMP)
           },
           loaders: [
             {
@@ -91,7 +86,8 @@ module.exports = (balm, wxInit) => {
             vue$: 'vue/dist/vue.esm.js',
             'balm-ui-event': 'balm-ui/plugins/event/index.js',
             'balm-ui-store': 'balm-ui/plugins/store/index.js',
-            '@': resolve(`${env.appRoot}/scripts`)
+            'kbone-ui': 'kbone-ui/dist/index.dev.js', // NOTE: production version has bug :(
+            '@': env.resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
             node: {
@@ -103,7 +99,7 @@ module.exports = (balm, wxInit) => {
         assets: isMP
           ? {}
           : {
-              root: 'assets', // Replace 'assets' to your remote project root
+              // root: 'assets', // Replace 'assets' to your remote project root
               cache: true,
               excludes: ['dist/web/css/reset.css']
             }
