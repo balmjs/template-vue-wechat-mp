@@ -14,26 +14,27 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "axios-miniprogram-adapter": "^0.3.2",
+    "axios-miniprogram-adapter": "^0.3.5",
     "balm-ui": "8",
     "kbone-api": "^0.2.1",
-    "kbone-ui": "^1.0.11",
+    "kbone-ui": "^1.0.14",
     "lib-flexible": "^0.3.2",
     "vue": "2",
     "vue-router": "3",
-    "weui": "^2.5.9"
+    "weui": "^2.5.16"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.18.0",
-    "balm": "^3.26.0",
+    "@babel/eslint-parser": "^7.19.0",
+    "balm": "^4.15.0",
     "eslint": "^8.0.0",
     "eslint-plugin-vue": "^9.0.0",
-    "mp-webpack-plugin": "^1.6.1",
-    "rimraf": "^3.0.2",
+    "mp-webpack-plugin": "^1.6.5",
+    "path-browserify": "^1.0.1",
+    "rimraf": "^4.1.2",
     "vue-improve-loader": "^0.3.5",
     "vue-loader": "15",
     "vue-template-compiler": "2",
-    "webpack": "4"
+    "webpack": "^5.75.0"
   },
   "private": true
 }

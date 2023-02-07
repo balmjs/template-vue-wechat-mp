@@ -90,10 +90,16 @@ module.exports = (balm, wxInit) => {
             '@': env.resolve(`${env.appRoot}/scripts`)
           },
           webpackOptions: {
-            node: {
-              // 避免 webpack 注入不必要的 setImmediate polyfill 因为 Vue 已经将其包含在内
-              setImmediate: false
+            // NOTE: (webpack@5)
+            resolve: {
+              fallback: {
+                path: require.resolve('path-browserify')
+              }
             }
+            // NOTE: (webpack@4) 避免 webpack 注入不必要的 setImmediate polyfill 因为 Vue 已经将其包含在内
+            // node: {
+            //   setImmediate: false
+            // }
           }
         },
         assets: isMP
